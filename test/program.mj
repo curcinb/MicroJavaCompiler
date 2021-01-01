@@ -1,0 +1,85 @@
+// Test301
+
+program test301
+
+	const int nula = 0;
+	const int jedan = 1;
+	const int pet = 5;
+
+	int niz[];
+	char nizch[];
+	char chr;
+	bool nizModifikacija[];
+	char nizModifikacija3[];
+{
+	void main(int bla)	
+		int bodovi;
+	{
+		bodovi = 0;
+		bodovi++;
+		bodovi = bodovi + jedan;
+		bodovi = bodovi * pet;
+		bodovi--;
+		print(bodovi); 
+			
+		
+		niz = new int[3];
+		niz[nula] = jedan;
+		niz[1] = 2;
+		niz[niz[jedan]] = niz[niz[0]] * 3;
+		bodovi = niz[2]/niz[0];
+		print(bodovi); 
+		print(niz[2]);
+		
+		read(bodovi);
+		niz[2] += bodovi *= niz[1] -= pet;
+		niz[2]++;
+		print(niz[2]);
+		
+		
+		nizch = new char[3];
+		nizch[0] = 'a';
+		nizch[jedan] = 'b';
+		nizch[pet - 3] = 'c';
+		print(nizch[1]);
+		print(nizch[jedan * 2]);
+			
+		
+		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3); 
+		print(bodovi);
+		
+		print(501);
+		
+		print(niz @ 2 * 3);
+		
+		chr = [ 'A' # 2 ];
+		print(chr);
+		
+		chr = [[[ 'A' # 2 ] # -3 ] # 1];
+		print(chr);
+		
+		nizModifikacija = new bool[8];
+		nizModifikacija[0] = false;
+		nizModifikacija[1] = true;
+		nizModifikacija[2] = false;
+		nizModifikacija[3] = false;
+		nizModifikacija[4] = false;
+		nizModifikacija[5] = false;
+		nizModifikacija[6] = true;
+		nizModifikacija[7] = false;
+		
+		print($nizModifikacija);
+		
+		
+		nizModifikacija3 = ^1094861636;
+		print(nizModifikacija3[0]);
+		print(nizModifikacija3[1]);
+		print(nizModifikacija3[2]);
+		print(nizModifikacija3[3]);
+		
+		
+		print(|2*5+1::1+4::4*2|);
+	}
+}
+
+

@@ -1,0 +1,2529 @@
+INFO  21:04:09,332 - Compiling source file: D:\Bosko\ETF\VIISemestar\PP1\Projekat\Projekat\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  21:04:09,374 - #2 program
+INFO  21:04:09,374 - #24 test301
+INFO  21:04:09,374 - #19 const
+INFO  21:04:09,375 - #24 int
+INFO  21:04:09,375 - #24 nula
+INFO  21:04:09,375 - #13 =
+INFO  21:04:09,375 - #25 0
+INFO  21:04:09,376 - #10 ;
+INFO  21:04:09,376 - #19 const
+INFO  21:04:09,377 - #24 int
+INFO  21:04:09,377 - #24 jedan
+INFO  21:04:09,377 - #13 =
+INFO  21:04:09,377 - #25 1
+INFO  21:04:09,377 - #10 ;
+INFO  21:04:09,377 - #19 const
+INFO  21:04:09,378 - #24 int
+INFO  21:04:09,378 - #24 pet
+INFO  21:04:09,378 - #13 =
+INFO  21:04:09,378 - #25 5
+INFO  21:04:09,378 - #10 ;
+INFO  21:04:09,378 - #24 int
+INFO  21:04:09,379 - #24 niz
+INFO  21:04:09,379 - #7 [
+INFO  21:04:09,379 - #8 ]
+INFO  21:04:09,379 - #10 ;
+INFO  21:04:09,379 - #24 char
+INFO  21:04:09,379 - #24 nizch
+INFO  21:04:09,379 - #7 [
+INFO  21:04:09,379 - #8 ]
+INFO  21:04:09,379 - #10 ;
+INFO  21:04:09,379 - #24 char
+INFO  21:04:09,380 - #24 chr
+INFO  21:04:09,380 - #10 ;
+INFO  21:04:09,380 - #24 bool
+INFO  21:04:09,380 - #24 nizModifikacija
+INFO  21:04:09,380 - #7 [
+INFO  21:04:09,380 - #8 ]
+INFO  21:04:09,380 - #10 ;
+INFO  21:04:09,380 - #24 char
+INFO  21:04:09,380 - #24 nizModifikacija3
+INFO  21:04:09,380 - #7 [
+INFO  21:04:09,380 - #8 ]
+INFO  21:04:09,380 - #10 ;
+INFO  21:04:09,380 - #3 {
+INFO  21:04:09,380 - #9 void
+INFO  21:04:09,381 - #24 main
+INFO  21:04:09,381 - #5 (
+INFO  21:04:09,382 - #24 int
+INFO  21:04:09,382 - #24 bla
+INFO  21:04:09,382 - #6 )
+INFO  21:04:09,382 - #24 int
+INFO  21:04:09,383 - #24 bodovi
+INFO  21:04:09,383 - #10 ;
+INFO  21:04:09,383 - #3 {
+INFO  21:04:09,383 - #24 bodovi
+INFO  21:04:09,384 - #13 =
+INFO  21:04:09,384 - #25 0
+INFO  21:04:09,385 - #10 ;
+INFO  21:04:09,386 - #24 bodovi
+INFO  21:04:09,386 - #21 ++
+INFO  21:04:09,386 - #10 ;
+INFO  21:04:09,386 - #24 bodovi
+INFO  21:04:09,386 - #13 =
+INFO  21:04:09,386 - #24 bodovi
+INFO  21:04:09,386 - #14 +
+INFO  21:04:09,387 - #24 jedan
+INFO  21:04:09,388 - #10 ;
+INFO  21:04:09,388 - #24 bodovi
+INFO  21:04:09,388 - #13 =
+INFO  21:04:09,388 - #24 bodovi
+INFO  21:04:09,388 - #18 *
+INFO  21:04:09,389 - #24 pet
+INFO  21:04:09,390 - #10 ;
+INFO  21:04:09,390 - #24 bodovi
+INFO  21:04:09,390 - #22 --
+INFO  21:04:09,390 - #10 ;
+INFO  21:04:09,390 - #12 print
+INFO  21:04:09,391 - #5 (
+INFO  21:04:09,391 - #24 bodovi
+INFO  21:04:09,391 - #6 )
+INFO  21:04:09,391 - #10 ;
+INFO  21:04:09,391 - #24 niz
+INFO  21:04:09,392 - #13 =
+INFO  21:04:09,392 - #23 new
+INFO  21:04:09,392 - #24 int
+INFO  21:04:09,392 - #7 [
+INFO  21:04:09,392 - #25 3
+INFO  21:04:09,392 - #8 ]
+INFO  21:04:09,392 - #10 ;
+INFO  21:04:09,392 - #24 niz
+INFO  21:04:09,392 - #7 [
+INFO  21:04:09,393 - #24 nula
+INFO  21:04:09,393 - #8 ]
+INFO  21:04:09,393 - #13 =
+INFO  21:04:09,393 - #24 jedan
+INFO  21:04:09,393 - #10 ;
+INFO  21:04:09,393 - #24 niz
+INFO  21:04:09,393 - #7 [
+INFO  21:04:09,393 - #25 1
+INFO  21:04:09,393 - #8 ]
+INFO  21:04:09,394 - #13 =
+INFO  21:04:09,394 - #25 2
+INFO  21:04:09,394 - #10 ;
+INFO  21:04:09,394 - #24 niz
+INFO  21:04:09,394 - #7 [
+INFO  21:04:09,394 - #24 niz
+INFO  21:04:09,394 - #7 [
+INFO  21:04:09,394 - #24 jedan
+INFO  21:04:09,394 - #8 ]
+INFO  21:04:09,394 - #8 ]
+INFO  21:04:09,394 - #13 =
+INFO  21:04:09,394 - #24 niz
+INFO  21:04:09,394 - #7 [
+INFO  21:04:09,394 - #24 niz
+INFO  21:04:09,394 - #7 [
+INFO  21:04:09,394 - #25 0
+INFO  21:04:09,394 - #8 ]
+INFO  21:04:09,394 - #8 ]
+INFO  21:04:09,395 - #18 *
+INFO  21:04:09,395 - #25 3
+INFO  21:04:09,395 - #10 ;
+INFO  21:04:09,395 - #24 bodovi
+INFO  21:04:09,395 - #13 =
+INFO  21:04:09,395 - #24 niz
+INFO  21:04:09,395 - #7 [
+INFO  21:04:09,395 - #25 2
+INFO  21:04:09,395 - #8 ]
+INFO  21:04:09,395 - #17 /
+INFO  21:04:09,395 - #24 niz
+INFO  21:04:09,396 - #7 [
+INFO  21:04:09,396 - #25 0
+INFO  21:04:09,396 - #8 ]
+INFO  21:04:09,396 - #10 ;
+INFO  21:04:09,396 - #12 print
+INFO  21:04:09,396 - #5 (
+INFO  21:04:09,396 - #24 bodovi
+INFO  21:04:09,396 - #6 )
+INFO  21:04:09,396 - #10 ;
+INFO  21:04:09,396 - #12 print
+INFO  21:04:09,396 - #5 (
+INFO  21:04:09,396 - #24 niz
+INFO  21:04:09,396 - #7 [
+INFO  21:04:09,396 - #25 2
+INFO  21:04:09,396 - #8 ]
+INFO  21:04:09,396 - #6 )
+INFO  21:04:09,397 - #10 ;
+INFO  21:04:09,397 - #11 read
+INFO  21:04:09,397 - #5 (
+INFO  21:04:09,397 - #24 bodovi
+INFO  21:04:09,397 - #6 )
+INFO  21:04:09,397 - #10 ;
+INFO  21:04:09,397 - #24 niz
+INFO  21:04:09,397 - #7 [
+INFO  21:04:09,397 - #25 2
+INFO  21:04:09,397 - #8 ]
+INFO  21:04:09,397 - #28 +=
+INFO  21:04:09,397 - #24 bodovi
+INFO  21:04:09,398 - #30 *=
+INFO  21:04:09,398 - #24 niz
+INFO  21:04:09,399 - #7 [
+INFO  21:04:09,399 - #25 1
+INFO  21:04:09,399 - #8 ]
+INFO  21:04:09,399 - #29 -=
+INFO  21:04:09,399 - #24 pet
+INFO  21:04:09,400 - #10 ;
+INFO  21:04:09,400 - #24 niz
+INFO  21:04:09,400 - #7 [
+INFO  21:04:09,400 - #25 2
+INFO  21:04:09,400 - #8 ]
+INFO  21:04:09,400 - #21 ++
+INFO  21:04:09,400 - #10 ;
+INFO  21:04:09,400 - #12 print
+INFO  21:04:09,400 - #5 (
+INFO  21:04:09,401 - #24 niz
+INFO  21:04:09,401 - #7 [
+INFO  21:04:09,401 - #25 2
+INFO  21:04:09,401 - #8 ]
+INFO  21:04:09,401 - #6 )
+INFO  21:04:09,401 - #10 ;
+INFO  21:04:09,401 - #24 nizch
+INFO  21:04:09,401 - #13 =
+INFO  21:04:09,401 - #23 new
+INFO  21:04:09,401 - #24 char
+INFO  21:04:09,401 - #7 [
+INFO  21:04:09,401 - #25 3
+INFO  21:04:09,401 - #8 ]
+INFO  21:04:09,401 - #10 ;
+INFO  21:04:09,401 - #24 nizch
+INFO  21:04:09,401 - #7 [
+INFO  21:04:09,401 - #25 0
+INFO  21:04:09,401 - #8 ]
+INFO  21:04:09,401 - #13 =
+INFO  21:04:09,402 - #26 a
+INFO  21:04:09,402 - #10 ;
+INFO  21:04:09,402 - #24 nizch
+INFO  21:04:09,402 - #7 [
+INFO  21:04:09,408 - #24 jedan
+INFO  21:04:09,408 - #8 ]
+INFO  21:04:09,408 - #13 =
+INFO  21:04:09,408 - #26 b
+INFO  21:04:09,408 - #10 ;
+INFO  21:04:09,408 - #24 nizch
+INFO  21:04:09,408 - #7 [
+INFO  21:04:09,408 - #24 pet
+INFO  21:04:09,408 - #15 -
+INFO  21:04:09,408 - #25 3
+INFO  21:04:09,409 - #8 ]
+INFO  21:04:09,409 - #13 =
+INFO  21:04:09,409 - #26 c
+INFO  21:04:09,409 - #10 ;
+INFO  21:04:09,409 - #12 print
+INFO  21:04:09,409 - #5 (
+INFO  21:04:09,409 - #24 nizch
+INFO  21:04:09,409 - #7 [
+INFO  21:04:09,409 - #25 1
+INFO  21:04:09,409 - #8 ]
+INFO  21:04:09,409 - #6 )
+INFO  21:04:09,409 - #10 ;
+INFO  21:04:09,409 - #12 print
+INFO  21:04:09,409 - #5 (
+INFO  21:04:09,409 - #24 nizch
+INFO  21:04:09,409 - #7 [
+INFO  21:04:09,409 - #24 jedan
+INFO  21:04:09,409 - #18 *
+INFO  21:04:09,409 - #25 2
+INFO  21:04:09,409 - #8 ]
+INFO  21:04:09,410 - #6 )
+INFO  21:04:09,410 - #10 ;
+INFO  21:04:09,410 - #24 bodovi
+INFO  21:04:09,410 - #13 =
+INFO  21:04:09,410 - #24 bodovi
+INFO  21:04:09,410 - #14 +
+INFO  21:04:09,410 - #5 (
+INFO  21:04:09,410 - #24 pet
+INFO  21:04:09,410 - #18 *
+INFO  21:04:09,410 - #24 jedan
+INFO  21:04:09,410 - #15 -
+INFO  21:04:09,410 - #25 1
+INFO  21:04:09,410 - #6 )
+INFO  21:04:09,410 - #18 *
+INFO  21:04:09,410 - #24 bodovi
+INFO  21:04:09,410 - #15 -
+INFO  21:04:09,410 - #5 (
+INFO  21:04:09,410 - #25 3
+INFO  21:04:09,410 - #16 %
+INFO  21:04:09,410 - #25 2
+INFO  21:04:09,411 - #14 +
+INFO  21:04:09,411 - #25 3
+INFO  21:04:09,411 - #18 *
+INFO  21:04:09,411 - #25 2
+INFO  21:04:09,411 - #15 -
+INFO  21:04:09,411 - #25 3
+INFO  21:04:09,411 - #6 )
+INFO  21:04:09,411 - #10 ;
+INFO  21:04:09,411 - #12 print
+INFO  21:04:09,412 - #5 (
+INFO  21:04:09,412 - #24 bodovi
+INFO  21:04:09,412 - #6 )
+INFO  21:04:09,412 - #10 ;
+INFO  21:04:09,412 - #12 print
+INFO  21:04:09,412 - #5 (
+INFO  21:04:09,412 - #24 niz
+INFO  21:04:09,412 - #34 @
+INFO  21:04:09,412 - #25 2
+INFO  21:04:09,412 - #18 *
+INFO  21:04:09,412 - #25 3
+INFO  21:04:09,412 - #6 )
+INFO  21:04:09,412 - #10 ;
+INFO  21:04:09,412 - #24 chr
+INFO  21:04:09,412 - #13 =
+INFO  21:04:09,412 - #7 [
+INFO  21:04:09,412 - #26 A
+INFO  21:04:09,412 - #35 #
+INFO  21:04:09,413 - #25 2
+INFO  21:04:09,413 - #8 ]
+INFO  21:04:09,413 - #10 ;
+INFO  21:04:09,413 - #12 print
+INFO  21:04:09,413 - #5 (
+INFO  21:04:09,413 - #24 chr
+INFO  21:04:09,413 - #6 )
+INFO  21:04:09,413 - #10 ;
+INFO  21:04:09,413 - #24 chr
+INFO  21:04:09,413 - #13 =
+INFO  21:04:09,413 - #7 [
+INFO  21:04:09,413 - #7 [
+INFO  21:04:09,414 - #7 [
+INFO  21:04:09,414 - #26 A
+INFO  21:04:09,414 - #35 #
+INFO  21:04:09,414 - #25 2
+INFO  21:04:09,414 - #8 ]
+INFO  21:04:09,414 - #35 #
+INFO  21:04:09,414 - #15 -
+INFO  21:04:09,414 - #25 3
+INFO  21:04:09,414 - #8 ]
+INFO  21:04:09,414 - #35 #
+INFO  21:04:09,414 - #25 1
+INFO  21:04:09,414 - #8 ]
+INFO  21:04:09,414 - #10 ;
+INFO  21:04:09,414 - #12 print
+INFO  21:04:09,414 - #5 (
+INFO  21:04:09,414 - #24 chr
+INFO  21:04:09,414 - #6 )
+INFO  21:04:09,414 - #10 ;
+INFO  21:04:09,414 - #24 nizModifikacija
+INFO  21:04:09,414 - #13 =
+INFO  21:04:09,414 - #23 new
+INFO  21:04:09,414 - #24 bool
+INFO  21:04:09,414 - #7 [
+INFO  21:04:09,414 - #25 8
+INFO  21:04:09,414 - #8 ]
+INFO  21:04:09,414 - #10 ;
+INFO  21:04:09,414 - #24 nizModifikacija
+INFO  21:04:09,414 - #7 [
+INFO  21:04:09,414 - #25 0
+INFO  21:04:09,414 - #8 ]
+INFO  21:04:09,415 - #13 =
+INFO  21:04:09,415 - #27 false
+INFO  21:04:09,415 - #10 ;
+INFO  21:04:09,415 - #24 nizModifikacija
+INFO  21:04:09,415 - #7 [
+INFO  21:04:09,415 - #25 1
+INFO  21:04:09,415 - #8 ]
+INFO  21:04:09,415 - #13 =
+INFO  21:04:09,415 - #27 true
+INFO  21:04:09,415 - #10 ;
+INFO  21:04:09,415 - #24 nizModifikacija
+INFO  21:04:09,415 - #7 [
+INFO  21:04:09,415 - #25 2
+INFO  21:04:09,415 - #8 ]
+INFO  21:04:09,415 - #13 =
+INFO  21:04:09,415 - #27 false
+INFO  21:04:09,415 - #10 ;
+INFO  21:04:09,415 - #24 nizModifikacija
+INFO  21:04:09,415 - #7 [
+INFO  21:04:09,415 - #25 3
+INFO  21:04:09,415 - #8 ]
+INFO  21:04:09,415 - #13 =
+INFO  21:04:09,415 - #27 false
+INFO  21:04:09,415 - #10 ;
+INFO  21:04:09,415 - #24 nizModifikacija
+INFO  21:04:09,415 - #7 [
+INFO  21:04:09,415 - #25 4
+INFO  21:04:09,415 - #8 ]
+INFO  21:04:09,416 - #13 =
+INFO  21:04:09,416 - #27 false
+INFO  21:04:09,416 - #10 ;
+INFO  21:04:09,416 - #24 nizModifikacija
+INFO  21:04:09,416 - #7 [
+INFO  21:04:09,416 - #25 5
+INFO  21:04:09,416 - #8 ]
+INFO  21:04:09,416 - #13 =
+INFO  21:04:09,416 - #27 false
+INFO  21:04:09,416 - #10 ;
+INFO  21:04:09,416 - #24 nizModifikacija
+INFO  21:04:09,416 - #7 [
+INFO  21:04:09,416 - #25 6
+INFO  21:04:09,416 - #8 ]
+INFO  21:04:09,416 - #13 =
+INFO  21:04:09,416 - #27 true
+INFO  21:04:09,416 - #10 ;
+INFO  21:04:09,416 - #24 nizModifikacija
+INFO  21:04:09,416 - #7 [
+INFO  21:04:09,416 - #25 7
+INFO  21:04:09,416 - #8 ]
+INFO  21:04:09,416 - #13 =
+INFO  21:04:09,416 - #27 false
+INFO  21:04:09,416 - #10 ;
+INFO  21:04:09,416 - #12 print
+INFO  21:04:09,417 - #5 (
+INFO  21:04:09,417 - #36 $
+INFO  21:04:09,417 - #24 nizModifikacija
+INFO  21:04:09,417 - #6 )
+INFO  21:04:09,417 - #10 ;
+INFO  21:04:09,417 - #24 nizModifikacija3
+INFO  21:04:09,417 - #13 =
+INFO  21:04:09,417 - #37 ^
+INFO  21:04:09,417 - #25 1094861636
+INFO  21:04:09,417 - #10 ;
+INFO  21:04:09,417 - #12 print
+INFO  21:04:09,417 - #5 (
+INFO  21:04:09,417 - #24 nizModifikacija3
+INFO  21:04:09,417 - #7 [
+INFO  21:04:09,417 - #25 0
+INFO  21:04:09,417 - #8 ]
+INFO  21:04:09,417 - #6 )
+INFO  21:04:09,417 - #10 ;
+INFO  21:04:09,417 - #12 print
+INFO  21:04:09,417 - #5 (
+INFO  21:04:09,418 - #24 nizModifikacija3
+INFO  21:04:09,418 - #7 [
+INFO  21:04:09,418 - #25 1
+INFO  21:04:09,418 - #8 ]
+INFO  21:04:09,418 - #6 )
+INFO  21:04:09,418 - #10 ;
+INFO  21:04:09,418 - #12 print
+INFO  21:04:09,418 - #5 (
+INFO  21:04:09,418 - #24 nizModifikacija3
+INFO  21:04:09,418 - #7 [
+INFO  21:04:09,418 - #25 2
+INFO  21:04:09,418 - #8 ]
+INFO  21:04:09,418 - #6 )
+INFO  21:04:09,418 - #10 ;
+INFO  21:04:09,418 - #12 print
+INFO  21:04:09,418 - #5 (
+INFO  21:04:09,418 - #24 nizModifikacija3
+INFO  21:04:09,418 - #7 [
+INFO  21:04:09,418 - #25 3
+INFO  21:04:09,418 - #8 ]
+INFO  21:04:09,418 - #6 )
+INFO  21:04:09,418 - #10 ;
+INFO  21:04:09,418 - #12 print
+INFO  21:04:09,418 - #5 (
+INFO  21:04:09,418 - #38 |
+INFO  21:04:09,418 - #25 2
+INFO  21:04:09,418 - #18 *
+INFO  21:04:09,418 - #25 5
+INFO  21:04:09,418 - #14 +
+INFO  21:04:09,419 - #25 1
+INFO  21:04:09,419 - #39 :
+INFO  21:04:09,419 - #25 1
+INFO  21:04:09,419 - #14 +
+INFO  21:04:09,419 - #25 4
+INFO  21:04:09,419 - #39 :
+INFO  21:04:09,419 - #25 4
+INFO  21:04:09,419 - #18 *
+INFO  21:04:09,419 - #25 2
+INFO  21:04:09,419 - #38 |
+INFO  21:04:09,419 - #6 )
+INFO  21:04:09,419 - #10 ;
+INFO  21:04:09,419 - #4 }
+INFO  21:04:09,419 - #4 }
+INFO  21:04:09,465 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        VarDeclarations(
+          VarDeclarations(
+            ConstDeclarations(
+              ConstDeclarations(
+                ConstDeclarations(
+                  NoDeclList(
+                  ) [NoDeclList]
+                  ConstDeclaration(
+                    PraviTip(
+                     int
+                    ) [PraviTip]
+                   nula
+                    IntType(
+                     0
+                    ) [IntType]
+                    NoConstList(
+                    ) [NoConstList]
+                  ) [ConstDeclaration]
+                ) [ConstDeclarations]
+                ConstDeclaration(
+                  PraviTip(
+                   int
+                  ) [PraviTip]
+                 jedan
+                  IntType(
+                   1
+                  ) [IntType]
+                  NoConstList(
+                  ) [NoConstList]
+                ) [ConstDeclaration]
+              ) [ConstDeclarations]
+              ConstDeclaration(
+                PraviTip(
+                 int
+                ) [PraviTip]
+               pet
+                IntType(
+                 5
+                ) [IntType]
+                NoConstList(
+                ) [NoConstList]
+              ) [ConstDeclaration]
+            ) [ConstDeclarations]
+            VarDeclar(
+              PraviTip(
+               int
+              ) [PraviTip]
+              VarListSingle(
+                VarDefArr(
+                 niz
+                ) [VarDefArr]
+              ) [VarListSingle]
+            ) [VarDeclar]
+          ) [VarDeclarations]
+          VarDeclar(
+            PraviTip(
+             char
+            ) [PraviTip]
+            VarListSingle(
+              VarDefArr(
+               nizch
+              ) [VarDefArr]
+            ) [VarListSingle]
+          ) [VarDeclar]
+        ) [VarDeclarations]
+        VarDeclar(
+          PraviTip(
+           char
+          ) [PraviTip]
+          VarListSingle(
+            VarDefinition(
+             chr
+            ) [VarDefinition]
+          ) [VarListSingle]
+        ) [VarDeclar]
+      ) [VarDeclarations]
+      VarDeclar(
+        PraviTip(
+         bool
+        ) [PraviTip]
+        VarListSingle(
+          VarDefArr(
+           nizModifikacija
+          ) [VarDefArr]
+        ) [VarListSingle]
+      ) [VarDeclar]
+    ) [VarDeclarations]
+    VarDeclar(
+      PraviTip(
+       char
+      ) [PraviTip]
+      VarListSingle(
+        VarDefArr(
+         nizModifikacija3
+        ) [VarDefArr]
+      ) [VarListSingle]
+    ) [VarDeclar]
+  ) [VarDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodName(
+        ReturnTypeVoid(
+        ) [ReturnTypeVoid]
+       main
+      ) [MethodName]
+      FormParametres(
+        SingleFormalParamDecl(
+          FormParam(
+            PraviTip(
+             int
+            ) [PraviTip]
+           bla
+          ) [FormParam]
+        ) [SingleFormalParamDecl]
+      ) [FormParametres]
+      LocalVarDeclList(
+        NoLocalVarDeclList(
+        ) [NoLocalVarDeclList]
+        VarDeclar(
+          PraviTip(
+           int
+          ) [PraviTip]
+          VarListSingle(
+            VarDefinition(
+             bodovi
+            ) [VarDefinition]
+          ) [VarListSingle]
+        ) [VarDeclar]
+      ) [LocalVarDeclList]
+      Statements(
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              Statements(
+                                Statements(
+                                  Statements(
+                                    Statements(
+                                      Statements(
+                                        Statements(
+                                          Statements(
+                                            Statements(
+                                              Statements(
+                                                Statements(
+                                                  Statements(
+                                                    Statements(
+                                                      Statements(
+                                                        Statements(
+                                                          Statements(
+                                                            Statements(
+                                                              Statements(
+                                                                Statements(
+                                                                  Statements(
+                                                                    Statements(
+                                                                      Statements(
+                                                                        Statements(
+                                                                          Statements(
+                                                                            Statements(
+                                                                              Statements(
+                                                                                Statements(
+                                                                                  Statements(
+                                                                                    Statements(
+                                                                                      Statements(
+                                                                                        Statements(
+                                                                                          Statements(
+                                                                                            Statements(
+                                                                                              Statements(
+                                                                                                Statements(
+                                                                                                  NoStatement(
+                                                                                                  ) [NoStatement]
+                                                                                                  StatementDesignator(
+                                                                                                    DesignatorAssignment(
+                                                                                                      DesignatorAsg(
+                                                                                                        DesignatorSimple(
+                                                                                                         bodovi
+                                                                                                        ) [DesignatorSimple]
+                                                                                                      ) [DesignatorAsg]
+                                                                                                      Asg(
+                                                                                                      ) [Asg]
+                                                                                                      Expression(
+                                                                                                        PocetakIzraza(
+                                                                                                        ) [PocetakIzraza]
+                                                                                                        SingleTerm(
+                                                                                                          SinglTerm(
+                                                                                                            NumFactor(
+                                                                                                             0
+                                                                                                            ) [NumFactor]
+                                                                                                          ) [SinglTerm]
+                                                                                                        ) [SingleTerm]
+                                                                                                      ) [Expression]
+                                                                                                    ) [DesignatorAssignment]
+                                                                                                  ) [StatementDesignator]
+                                                                                                ) [Statements]
+                                                                                                StatementDesignator(
+                                                                                                  DesignatorIncrement(
+                                                                                                    DesignatorSimple(
+                                                                                                     bodovi
+                                                                                                    ) [DesignatorSimple]
+                                                                                                  ) [DesignatorIncrement]
+                                                                                                ) [StatementDesignator]
+                                                                                              ) [Statements]
+                                                                                              StatementDesignator(
+                                                                                                DesignatorAssignment(
+                                                                                                  DesignatorAsg(
+                                                                                                    DesignatorSimple(
+                                                                                                     bodovi
+                                                                                                    ) [DesignatorSimple]
+                                                                                                  ) [DesignatorAsg]
+                                                                                                  Asg(
+                                                                                                  ) [Asg]
+                                                                                                  Expression(
+                                                                                                    PocetakIzraza(
+                                                                                                    ) [PocetakIzraza]
+                                                                                                    MultipleTerms(
+                                                                                                      SingleTerm(
+                                                                                                        SinglTerm(
+                                                                                                          DesignatorFactor(
+                                                                                                            DesignatorSimple(
+                                                                                                             bodovi
+                                                                                                            ) [DesignatorSimple]
+                                                                                                          ) [DesignatorFactor]
+                                                                                                        ) [SinglTerm]
+                                                                                                      ) [SingleTerm]
+                                                                                                      AddLeftOp(
+                                                                                                        AddPlus(
+                                                                                                        ) [AddPlus]
+                                                                                                      ) [AddLeftOp]
+                                                                                                      SinglTerm(
+                                                                                                        DesignatorFactor(
+                                                                                                          DesignatorSimple(
+                                                                                                           jedan
+                                                                                                          ) [DesignatorSimple]
+                                                                                                        ) [DesignatorFactor]
+                                                                                                      ) [SinglTerm]
+                                                                                                    ) [MultipleTerms]
+                                                                                                  ) [Expression]
+                                                                                                ) [DesignatorAssignment]
+                                                                                              ) [StatementDesignator]
+                                                                                            ) [Statements]
+                                                                                            StatementDesignator(
+                                                                                              DesignatorAssignment(
+                                                                                                DesignatorAsg(
+                                                                                                  DesignatorSimple(
+                                                                                                   bodovi
+                                                                                                  ) [DesignatorSimple]
+                                                                                                ) [DesignatorAsg]
+                                                                                                Asg(
+                                                                                                ) [Asg]
+                                                                                                Expression(
+                                                                                                  PocetakIzraza(
+                                                                                                  ) [PocetakIzraza]
+                                                                                                  SingleTerm(
+                                                                                                    MultiplTerms(
+                                                                                                      SinglTerm(
+                                                                                                        DesignatorFactor(
+                                                                                                          DesignatorSimple(
+                                                                                                           bodovi
+                                                                                                          ) [DesignatorSimple]
+                                                                                                        ) [DesignatorFactor]
+                                                                                                      ) [SinglTerm]
+                                                                                                      MulLeftOp(
+                                                                                                        MulOpMul(
+                                                                                                        ) [MulOpMul]
+                                                                                                      ) [MulLeftOp]
+                                                                                                      DesignatorFactor(
+                                                                                                        DesignatorSimple(
+                                                                                                         pet
+                                                                                                        ) [DesignatorSimple]
+                                                                                                      ) [DesignatorFactor]
+                                                                                                    ) [MultiplTerms]
+                                                                                                  ) [SingleTerm]
+                                                                                                ) [Expression]
+                                                                                              ) [DesignatorAssignment]
+                                                                                            ) [StatementDesignator]
+                                                                                          ) [Statements]
+                                                                                          StatementDesignator(
+                                                                                            DesignatorDecrement(
+                                                                                              DesignatorSimple(
+                                                                                               bodovi
+                                                                                              ) [DesignatorSimple]
+                                                                                            ) [DesignatorDecrement]
+                                                                                          ) [StatementDesignator]
+                                                                                        ) [Statements]
+                                                                                        PrintStatement(
+                                                                                          Expression(
+                                                                                            PocetakIzraza(
+                                                                                            ) [PocetakIzraza]
+                                                                                            SingleTerm(
+                                                                                              SinglTerm(
+                                                                                                DesignatorFactor(
+                                                                                                  DesignatorSimple(
+                                                                                                   bodovi
+                                                                                                  ) [DesignatorSimple]
+                                                                                                ) [DesignatorFactor]
+                                                                                              ) [SinglTerm]
+                                                                                            ) [SingleTerm]
+                                                                                          ) [Expression]
+                                                                                          NoOptionalPrint(
+                                                                                          ) [NoOptionalPrint]
+                                                                                        ) [PrintStatement]
+                                                                                      ) [Statements]
+                                                                                      StatementDesignator(
+                                                                                        DesignatorAssignment(
+                                                                                          DesignatorAsg(
+                                                                                            DesignatorSimple(
+                                                                                             niz
+                                                                                            ) [DesignatorSimple]
+                                                                                          ) [DesignatorAsg]
+                                                                                          Asg(
+                                                                                          ) [Asg]
+                                                                                          Expression(
+                                                                                            PocetakIzraza(
+                                                                                            ) [PocetakIzraza]
+                                                                                            SingleTerm(
+                                                                                              SinglTerm(
+                                                                                                NewFactorExpr(
+                                                                                                  PraviTip(
+                                                                                                   int
+                                                                                                  ) [PraviTip]
+                                                                                                  Expression(
+                                                                                                    PocetakIzraza(
+                                                                                                    ) [PocetakIzraza]
+                                                                                                    SingleTerm(
+                                                                                                      SinglTerm(
+                                                                                                        NumFactor(
+                                                                                                         3
+                                                                                                        ) [NumFactor]
+                                                                                                      ) [SinglTerm]
+                                                                                                    ) [SingleTerm]
+                                                                                                  ) [Expression]
+                                                                                                ) [NewFactorExpr]
+                                                                                              ) [SinglTerm]
+                                                                                            ) [SingleTerm]
+                                                                                          ) [Expression]
+                                                                                        ) [DesignatorAssignment]
+                                                                                      ) [StatementDesignator]
+                                                                                    ) [Statements]
+                                                                                    StatementDesignator(
+                                                                                      DesignatorAssignment(
+                                                                                        DesignatorAsg(
+                                                                                          DesignatorArr(
+                                                                                            DesignatorNiz(
+                                                                                              DesignatorSimple(
+                                                                                               niz
+                                                                                              ) [DesignatorSimple]
+                                                                                            ) [DesignatorNiz]
+                                                                                            Expression(
+                                                                                              PocetakIzraza(
+                                                                                              ) [PocetakIzraza]
+                                                                                              SingleTerm(
+                                                                                                SinglTerm(
+                                                                                                  DesignatorFactor(
+                                                                                                    DesignatorSimple(
+                                                                                                     nula
+                                                                                                    ) [DesignatorSimple]
+                                                                                                  ) [DesignatorFactor]
+                                                                                                ) [SinglTerm]
+                                                                                              ) [SingleTerm]
+                                                                                            ) [Expression]
+                                                                                          ) [DesignatorArr]
+                                                                                        ) [DesignatorAsg]
+                                                                                        Asg(
+                                                                                        ) [Asg]
+                                                                                        Expression(
+                                                                                          PocetakIzraza(
+                                                                                          ) [PocetakIzraza]
+                                                                                          SingleTerm(
+                                                                                            SinglTerm(
+                                                                                              DesignatorFactor(
+                                                                                                DesignatorSimple(
+                                                                                                 jedan
+                                                                                                ) [DesignatorSimple]
+                                                                                              ) [DesignatorFactor]
+                                                                                            ) [SinglTerm]
+                                                                                          ) [SingleTerm]
+                                                                                        ) [Expression]
+                                                                                      ) [DesignatorAssignment]
+                                                                                    ) [StatementDesignator]
+                                                                                  ) [Statements]
+                                                                                  StatementDesignator(
+                                                                                    DesignatorAssignment(
+                                                                                      DesignatorAsg(
+                                                                                        DesignatorArr(
+                                                                                          DesignatorNiz(
+                                                                                            DesignatorSimple(
+                                                                                             niz
+                                                                                            ) [DesignatorSimple]
+                                                                                          ) [DesignatorNiz]
+                                                                                          Expression(
+                                                                                            PocetakIzraza(
+                                                                                            ) [PocetakIzraza]
+                                                                                            SingleTerm(
+                                                                                              SinglTerm(
+                                                                                                NumFactor(
+                                                                                                 1
+                                                                                                ) [NumFactor]
+                                                                                              ) [SinglTerm]
+                                                                                            ) [SingleTerm]
+                                                                                          ) [Expression]
+                                                                                        ) [DesignatorArr]
+                                                                                      ) [DesignatorAsg]
+                                                                                      Asg(
+                                                                                      ) [Asg]
+                                                                                      Expression(
+                                                                                        PocetakIzraza(
+                                                                                        ) [PocetakIzraza]
+                                                                                        SingleTerm(
+                                                                                          SinglTerm(
+                                                                                            NumFactor(
+                                                                                             2
+                                                                                            ) [NumFactor]
+                                                                                          ) [SinglTerm]
+                                                                                        ) [SingleTerm]
+                                                                                      ) [Expression]
+                                                                                    ) [DesignatorAssignment]
+                                                                                  ) [StatementDesignator]
+                                                                                ) [Statements]
+                                                                                StatementDesignator(
+                                                                                  DesignatorAssignment(
+                                                                                    DesignatorAsg(
+                                                                                      DesignatorArr(
+                                                                                        DesignatorNiz(
+                                                                                          DesignatorSimple(
+                                                                                           niz
+                                                                                          ) [DesignatorSimple]
+                                                                                        ) [DesignatorNiz]
+                                                                                        Expression(
+                                                                                          PocetakIzraza(
+                                                                                          ) [PocetakIzraza]
+                                                                                          SingleTerm(
+                                                                                            SinglTerm(
+                                                                                              DesignatorFactor(
+                                                                                                DesignatorArr(
+                                                                                                  DesignatorNiz(
+                                                                                                    DesignatorSimple(
+                                                                                                     niz
+                                                                                                    ) [DesignatorSimple]
+                                                                                                  ) [DesignatorNiz]
+                                                                                                  Expression(
+                                                                                                    PocetakIzraza(
+                                                                                                    ) [PocetakIzraza]
+                                                                                                    SingleTerm(
+                                                                                                      SinglTerm(
+                                                                                                        DesignatorFactor(
+                                                                                                          DesignatorSimple(
+                                                                                                           jedan
+                                                                                                          ) [DesignatorSimple]
+                                                                                                        ) [DesignatorFactor]
+                                                                                                      ) [SinglTerm]
+                                                                                                    ) [SingleTerm]
+                                                                                                  ) [Expression]
+                                                                                                ) [DesignatorArr]
+                                                                                              ) [DesignatorFactor]
+                                                                                            ) [SinglTerm]
+                                                                                          ) [SingleTerm]
+                                                                                        ) [Expression]
+                                                                                      ) [DesignatorArr]
+                                                                                    ) [DesignatorAsg]
+                                                                                    Asg(
+                                                                                    ) [Asg]
+                                                                                    Expression(
+                                                                                      PocetakIzraza(
+                                                                                      ) [PocetakIzraza]
+                                                                                      SingleTerm(
+                                                                                        MultiplTerms(
+                                                                                          SinglTerm(
+                                                                                            DesignatorFactor(
+                                                                                              DesignatorArr(
+                                                                                                DesignatorNiz(
+                                                                                                  DesignatorSimple(
+                                                                                                   niz
+                                                                                                  ) [DesignatorSimple]
+                                                                                                ) [DesignatorNiz]
+                                                                                                Expression(
+                                                                                                  PocetakIzraza(
+                                                                                                  ) [PocetakIzraza]
+                                                                                                  SingleTerm(
+                                                                                                    SinglTerm(
+                                                                                                      DesignatorFactor(
+                                                                                                        DesignatorArr(
+                                                                                                          DesignatorNiz(
+                                                                                                            DesignatorSimple(
+                                                                                                             niz
+                                                                                                            ) [DesignatorSimple]
+                                                                                                          ) [DesignatorNiz]
+                                                                                                          Expression(
+                                                                                                            PocetakIzraza(
+                                                                                                            ) [PocetakIzraza]
+                                                                                                            SingleTerm(
+                                                                                                              SinglTerm(
+                                                                                                                NumFactor(
+                                                                                                                 0
+                                                                                                                ) [NumFactor]
+                                                                                                              ) [SinglTerm]
+                                                                                                            ) [SingleTerm]
+                                                                                                          ) [Expression]
+                                                                                                        ) [DesignatorArr]
+                                                                                                      ) [DesignatorFactor]
+                                                                                                    ) [SinglTerm]
+                                                                                                  ) [SingleTerm]
+                                                                                                ) [Expression]
+                                                                                              ) [DesignatorArr]
+                                                                                            ) [DesignatorFactor]
+                                                                                          ) [SinglTerm]
+                                                                                          MulLeftOp(
+                                                                                            MulOpMul(
+                                                                                            ) [MulOpMul]
+                                                                                          ) [MulLeftOp]
+                                                                                          NumFactor(
+                                                                                           3
+                                                                                          ) [NumFactor]
+                                                                                        ) [MultiplTerms]
+                                                                                      ) [SingleTerm]
+                                                                                    ) [Expression]
+                                                                                  ) [DesignatorAssignment]
+                                                                                ) [StatementDesignator]
+                                                                              ) [Statements]
+                                                                              StatementDesignator(
+                                                                                DesignatorAssignment(
+                                                                                  DesignatorAsg(
+                                                                                    DesignatorSimple(
+                                                                                     bodovi
+                                                                                    ) [DesignatorSimple]
+                                                                                  ) [DesignatorAsg]
+                                                                                  Asg(
+                                                                                  ) [Asg]
+                                                                                  Expression(
+                                                                                    PocetakIzraza(
+                                                                                    ) [PocetakIzraza]
+                                                                                    SingleTerm(
+                                                                                      MultiplTerms(
+                                                                                        SinglTerm(
+                                                                                          DesignatorFactor(
+                                                                                            DesignatorArr(
+                                                                                              DesignatorNiz(
+                                                                                                DesignatorSimple(
+                                                                                                 niz
+                                                                                                ) [DesignatorSimple]
+                                                                                              ) [DesignatorNiz]
+                                                                                              Expression(
+                                                                                                PocetakIzraza(
+                                                                                                ) [PocetakIzraza]
+                                                                                                SingleTerm(
+                                                                                                  SinglTerm(
+                                                                                                    NumFactor(
+                                                                                                     2
+                                                                                                    ) [NumFactor]
+                                                                                                  ) [SinglTerm]
+                                                                                                ) [SingleTerm]
+                                                                                              ) [Expression]
+                                                                                            ) [DesignatorArr]
+                                                                                          ) [DesignatorFactor]
+                                                                                        ) [SinglTerm]
+                                                                                        MulLeftOp(
+                                                                                          MulOpDiv(
+                                                                                          ) [MulOpDiv]
+                                                                                        ) [MulLeftOp]
+                                                                                        DesignatorFactor(
+                                                                                          DesignatorArr(
+                                                                                            DesignatorNiz(
+                                                                                              DesignatorSimple(
+                                                                                               niz
+                                                                                              ) [DesignatorSimple]
+                                                                                            ) [DesignatorNiz]
+                                                                                            Expression(
+                                                                                              PocetakIzraza(
+                                                                                              ) [PocetakIzraza]
+                                                                                              SingleTerm(
+                                                                                                SinglTerm(
+                                                                                                  NumFactor(
+                                                                                                   0
+                                                                                                  ) [NumFactor]
+                                                                                                ) [SinglTerm]
+                                                                                              ) [SingleTerm]
+                                                                                            ) [Expression]
+                                                                                          ) [DesignatorArr]
+                                                                                        ) [DesignatorFactor]
+                                                                                      ) [MultiplTerms]
+                                                                                    ) [SingleTerm]
+                                                                                  ) [Expression]
+                                                                                ) [DesignatorAssignment]
+                                                                              ) [StatementDesignator]
+                                                                            ) [Statements]
+                                                                            PrintStatement(
+                                                                              Expression(
+                                                                                PocetakIzraza(
+                                                                                ) [PocetakIzraza]
+                                                                                SingleTerm(
+                                                                                  SinglTerm(
+                                                                                    DesignatorFactor(
+                                                                                      DesignatorSimple(
+                                                                                       bodovi
+                                                                                      ) [DesignatorSimple]
+                                                                                    ) [DesignatorFactor]
+                                                                                  ) [SinglTerm]
+                                                                                ) [SingleTerm]
+                                                                              ) [Expression]
+                                                                              NoOptionalPrint(
+                                                                              ) [NoOptionalPrint]
+                                                                            ) [PrintStatement]
+                                                                          ) [Statements]
+                                                                          PrintStatement(
+                                                                            Expression(
+                                                                              PocetakIzraza(
+                                                                              ) [PocetakIzraza]
+                                                                              SingleTerm(
+                                                                                SinglTerm(
+                                                                                  DesignatorFactor(
+                                                                                    DesignatorArr(
+                                                                                      DesignatorNiz(
+                                                                                        DesignatorSimple(
+                                                                                         niz
+                                                                                        ) [DesignatorSimple]
+                                                                                      ) [DesignatorNiz]
+                                                                                      Expression(
+                                                                                        PocetakIzraza(
+                                                                                        ) [PocetakIzraza]
+                                                                                        SingleTerm(
+                                                                                          SinglTerm(
+                                                                                            NumFactor(
+                                                                                             2
+                                                                                            ) [NumFactor]
+                                                                                          ) [SinglTerm]
+                                                                                        ) [SingleTerm]
+                                                                                      ) [Expression]
+                                                                                    ) [DesignatorArr]
+                                                                                  ) [DesignatorFactor]
+                                                                                ) [SinglTerm]
+                                                                              ) [SingleTerm]
+                                                                            ) [Expression]
+                                                                            NoOptionalPrint(
+                                                                            ) [NoOptionalPrint]
+                                                                          ) [PrintStatement]
+                                                                        ) [Statements]
+                                                                        ReadStatement(
+                                                                          DesignatorSimple(
+                                                                           bodovi
+                                                                          ) [DesignatorSimple]
+                                                                        ) [ReadStatement]
+                                                                      ) [Statements]
+                                                                      StatementDesignator(
+                                                                        DesignatorAssignment(
+                                                                          DesignatorAsg(
+                                                                            DesignatorArr(
+                                                                              DesignatorNiz(
+                                                                                DesignatorSimple(
+                                                                                 niz
+                                                                                ) [DesignatorSimple]
+                                                                              ) [DesignatorNiz]
+                                                                              Expression(
+                                                                                PocetakIzraza(
+                                                                                ) [PocetakIzraza]
+                                                                                SingleTerm(
+                                                                                  SinglTerm(
+                                                                                    NumFactor(
+                                                                                     2
+                                                                                    ) [NumFactor]
+                                                                                  ) [SinglTerm]
+                                                                                ) [SingleTerm]
+                                                                              ) [Expression]
+                                                                            ) [DesignatorArr]
+                                                                          ) [DesignatorAsg]
+                                                                          AddRight(
+                                                                            AddEq(
+                                                                            ) [AddEq]
+                                                                          ) [AddRight]
+                                                                          Expression(
+                                                                            PocetakIzraza(
+                                                                            ) [PocetakIzraza]
+                                                                            MultipleTerms(
+                                                                              SingleTerm(
+                                                                                MultiplTerms(
+                                                                                  SinglTerm(
+                                                                                    DesignatorFactor(
+                                                                                      DesignatorSimple(
+                                                                                       bodovi
+                                                                                      ) [DesignatorSimple]
+                                                                                    ) [DesignatorFactor]
+                                                                                  ) [SinglTerm]
+                                                                                  MulRightOp(
+                                                                                    MulAsgOp(
+                                                                                    ) [MulAsgOp]
+                                                                                  ) [MulRightOp]
+                                                                                  DesignatorFactor(
+                                                                                    DesignatorArr(
+                                                                                      DesignatorNiz(
+                                                                                        DesignatorSimple(
+                                                                                         niz
+                                                                                        ) [DesignatorSimple]
+                                                                                      ) [DesignatorNiz]
+                                                                                      Expression(
+                                                                                        PocetakIzraza(
+                                                                                        ) [PocetakIzraza]
+                                                                                        SingleTerm(
+                                                                                          SinglTerm(
+                                                                                            NumFactor(
+                                                                                             1
+                                                                                            ) [NumFactor]
+                                                                                          ) [SinglTerm]
+                                                                                        ) [SingleTerm]
+                                                                                      ) [Expression]
+                                                                                    ) [DesignatorArr]
+                                                                                  ) [DesignatorFactor]
+                                                                                ) [MultiplTerms]
+                                                                              ) [SingleTerm]
+                                                                              AddRightOp(
+                                                                                SubEq(
+                                                                                ) [SubEq]
+                                                                              ) [AddRightOp]
+                                                                              SinglTerm(
+                                                                                DesignatorFactor(
+                                                                                  DesignatorSimple(
+                                                                                   pet
+                                                                                  ) [DesignatorSimple]
+                                                                                ) [DesignatorFactor]
+                                                                              ) [SinglTerm]
+                                                                            ) [MultipleTerms]
+                                                                          ) [Expression]
+                                                                        ) [DesignatorAssignment]
+                                                                      ) [StatementDesignator]
+                                                                    ) [Statements]
+                                                                    StatementDesignator(
+                                                                      DesignatorIncrement(
+                                                                        DesignatorArr(
+                                                                          DesignatorNiz(
+                                                                            DesignatorSimple(
+                                                                             niz
+                                                                            ) [DesignatorSimple]
+                                                                          ) [DesignatorNiz]
+                                                                          Expression(
+                                                                            PocetakIzraza(
+                                                                            ) [PocetakIzraza]
+                                                                            SingleTerm(
+                                                                              SinglTerm(
+                                                                                NumFactor(
+                                                                                 2
+                                                                                ) [NumFactor]
+                                                                              ) [SinglTerm]
+                                                                            ) [SingleTerm]
+                                                                          ) [Expression]
+                                                                        ) [DesignatorArr]
+                                                                      ) [DesignatorIncrement]
+                                                                    ) [StatementDesignator]
+                                                                  ) [Statements]
+                                                                  PrintStatement(
+                                                                    Expression(
+                                                                      PocetakIzraza(
+                                                                      ) [PocetakIzraza]
+                                                                      SingleTerm(
+                                                                        SinglTerm(
+                                                                          DesignatorFactor(
+                                                                            DesignatorArr(
+                                                                              DesignatorNiz(
+                                                                                DesignatorSimple(
+                                                                                 niz
+                                                                                ) [DesignatorSimple]
+                                                                              ) [DesignatorNiz]
+                                                                              Expression(
+                                                                                PocetakIzraza(
+                                                                                ) [PocetakIzraza]
+                                                                                SingleTerm(
+                                                                                  SinglTerm(
+                                                                                    NumFactor(
+                                                                                     2
+                                                                                    ) [NumFactor]
+                                                                                  ) [SinglTerm]
+                                                                                ) [SingleTerm]
+                                                                              ) [Expression]
+                                                                            ) [DesignatorArr]
+                                                                          ) [DesignatorFactor]
+                                                                        ) [SinglTerm]
+                                                                      ) [SingleTerm]
+                                                                    ) [Expression]
+                                                                    NoOptionalPrint(
+                                                                    ) [NoOptionalPrint]
+                                                                  ) [PrintStatement]
+                                                                ) [Statements]
+                                                                StatementDesignator(
+                                                                  DesignatorAssignment(
+                                                                    DesignatorAsg(
+                                                                      DesignatorSimple(
+                                                                       nizch
+                                                                      ) [DesignatorSimple]
+                                                                    ) [DesignatorAsg]
+                                                                    Asg(
+                                                                    ) [Asg]
+                                                                    Expression(
+                                                                      PocetakIzraza(
+                                                                      ) [PocetakIzraza]
+                                                                      SingleTerm(
+                                                                        SinglTerm(
+                                                                          NewFactorExpr(
+                                                                            PraviTip(
+                                                                             char
+                                                                            ) [PraviTip]
+                                                                            Expression(
+                                                                              PocetakIzraza(
+                                                                              ) [PocetakIzraza]
+                                                                              SingleTerm(
+                                                                                SinglTerm(
+                                                                                  NumFactor(
+                                                                                   3
+                                                                                  ) [NumFactor]
+                                                                                ) [SinglTerm]
+                                                                              ) [SingleTerm]
+                                                                            ) [Expression]
+                                                                          ) [NewFactorExpr]
+                                                                        ) [SinglTerm]
+                                                                      ) [SingleTerm]
+                                                                    ) [Expression]
+                                                                  ) [DesignatorAssignment]
+                                                                ) [StatementDesignator]
+                                                              ) [Statements]
+                                                              StatementDesignator(
+                                                                DesignatorAssignment(
+                                                                  DesignatorAsg(
+                                                                    DesignatorArr(
+                                                                      DesignatorNiz(
+                                                                        DesignatorSimple(
+                                                                         nizch
+                                                                        ) [DesignatorSimple]
+                                                                      ) [DesignatorNiz]
+                                                                      Expression(
+                                                                        PocetakIzraza(
+                                                                        ) [PocetakIzraza]
+                                                                        SingleTerm(
+                                                                          SinglTerm(
+                                                                            NumFactor(
+                                                                             0
+                                                                            ) [NumFactor]
+                                                                          ) [SinglTerm]
+                                                                        ) [SingleTerm]
+                                                                      ) [Expression]
+                                                                    ) [DesignatorArr]
+                                                                  ) [DesignatorAsg]
+                                                                  Asg(
+                                                                  ) [Asg]
+                                                                  Expression(
+                                                                    PocetakIzraza(
+                                                                    ) [PocetakIzraza]
+                                                                    SingleTerm(
+                                                                      SinglTerm(
+                                                                        CharFactor(
+                                                                         a
+                                                                        ) [CharFactor]
+                                                                      ) [SinglTerm]
+                                                                    ) [SingleTerm]
+                                                                  ) [Expression]
+                                                                ) [DesignatorAssignment]
+                                                              ) [StatementDesignator]
+                                                            ) [Statements]
+                                                            StatementDesignator(
+                                                              DesignatorAssignment(
+                                                                DesignatorAsg(
+                                                                  DesignatorArr(
+                                                                    DesignatorNiz(
+                                                                      DesignatorSimple(
+                                                                       nizch
+                                                                      ) [DesignatorSimple]
+                                                                    ) [DesignatorNiz]
+                                                                    Expression(
+                                                                      PocetakIzraza(
+                                                                      ) [PocetakIzraza]
+                                                                      SingleTerm(
+                                                                        SinglTerm(
+                                                                          DesignatorFactor(
+                                                                            DesignatorSimple(
+                                                                             jedan
+                                                                            ) [DesignatorSimple]
+                                                                          ) [DesignatorFactor]
+                                                                        ) [SinglTerm]
+                                                                      ) [SingleTerm]
+                                                                    ) [Expression]
+                                                                  ) [DesignatorArr]
+                                                                ) [DesignatorAsg]
+                                                                Asg(
+                                                                ) [Asg]
+                                                                Expression(
+                                                                  PocetakIzraza(
+                                                                  ) [PocetakIzraza]
+                                                                  SingleTerm(
+                                                                    SinglTerm(
+                                                                      CharFactor(
+                                                                       b
+                                                                      ) [CharFactor]
+                                                                    ) [SinglTerm]
+                                                                  ) [SingleTerm]
+                                                                ) [Expression]
+                                                              ) [DesignatorAssignment]
+                                                            ) [StatementDesignator]
+                                                          ) [Statements]
+                                                          StatementDesignator(
+                                                            DesignatorAssignment(
+                                                              DesignatorAsg(
+                                                                DesignatorArr(
+                                                                  DesignatorNiz(
+                                                                    DesignatorSimple(
+                                                                     nizch
+                                                                    ) [DesignatorSimple]
+                                                                  ) [DesignatorNiz]
+                                                                  Expression(
+                                                                    PocetakIzraza(
+                                                                    ) [PocetakIzraza]
+                                                                    MultipleTerms(
+                                                                      SingleTerm(
+                                                                        SinglTerm(
+                                                                          DesignatorFactor(
+                                                                            DesignatorSimple(
+                                                                             pet
+                                                                            ) [DesignatorSimple]
+                                                                          ) [DesignatorFactor]
+                                                                        ) [SinglTerm]
+                                                                      ) [SingleTerm]
+                                                                      AddLeftOp(
+                                                                        AddMinus(
+                                                                        ) [AddMinus]
+                                                                      ) [AddLeftOp]
+                                                                      SinglTerm(
+                                                                        NumFactor(
+                                                                         3
+                                                                        ) [NumFactor]
+                                                                      ) [SinglTerm]
+                                                                    ) [MultipleTerms]
+                                                                  ) [Expression]
+                                                                ) [DesignatorArr]
+                                                              ) [DesignatorAsg]
+                                                              Asg(
+                                                              ) [Asg]
+                                                              Expression(
+                                                                PocetakIzraza(
+                                                                ) [PocetakIzraza]
+                                                                SingleTerm(
+                                                                  SinglTerm(
+                                                                    CharFactor(
+                                                                     c
+                                                                    ) [CharFactor]
+                                                                  ) [SinglTerm]
+                                                                ) [SingleTerm]
+                                                              ) [Expression]
+                                                            ) [DesignatorAssignment]
+                                                          ) [StatementDesignator]
+                                                        ) [Statements]
+                                                        PrintStatement(
+                                                          Expression(
+                                                            PocetakIzraza(
+                                                            ) [PocetakIzraza]
+                                                            SingleTerm(
+                                                              SinglTerm(
+                                                                DesignatorFactor(
+                                                                  DesignatorArr(
+                                                                    DesignatorNiz(
+                                                                      DesignatorSimple(
+                                                                       nizch
+                                                                      ) [DesignatorSimple]
+                                                                    ) [DesignatorNiz]
+                                                                    Expression(
+                                                                      PocetakIzraza(
+                                                                      ) [PocetakIzraza]
+                                                                      SingleTerm(
+                                                                        SinglTerm(
+                                                                          NumFactor(
+                                                                           1
+                                                                          ) [NumFactor]
+                                                                        ) [SinglTerm]
+                                                                      ) [SingleTerm]
+                                                                    ) [Expression]
+                                                                  ) [DesignatorArr]
+                                                                ) [DesignatorFactor]
+                                                              ) [SinglTerm]
+                                                            ) [SingleTerm]
+                                                          ) [Expression]
+                                                          NoOptionalPrint(
+                                                          ) [NoOptionalPrint]
+                                                        ) [PrintStatement]
+                                                      ) [Statements]
+                                                      PrintStatement(
+                                                        Expression(
+                                                          PocetakIzraza(
+                                                          ) [PocetakIzraza]
+                                                          SingleTerm(
+                                                            SinglTerm(
+                                                              DesignatorFactor(
+                                                                DesignatorArr(
+                                                                  DesignatorNiz(
+                                                                    DesignatorSimple(
+                                                                     nizch
+                                                                    ) [DesignatorSimple]
+                                                                  ) [DesignatorNiz]
+                                                                  Expression(
+                                                                    PocetakIzraza(
+                                                                    ) [PocetakIzraza]
+                                                                    SingleTerm(
+                                                                      MultiplTerms(
+                                                                        SinglTerm(
+                                                                          DesignatorFactor(
+                                                                            DesignatorSimple(
+                                                                             jedan
+                                                                            ) [DesignatorSimple]
+                                                                          ) [DesignatorFactor]
+                                                                        ) [SinglTerm]
+                                                                        MulLeftOp(
+                                                                          MulOpMul(
+                                                                          ) [MulOpMul]
+                                                                        ) [MulLeftOp]
+                                                                        NumFactor(
+                                                                         2
+                                                                        ) [NumFactor]
+                                                                      ) [MultiplTerms]
+                                                                    ) [SingleTerm]
+                                                                  ) [Expression]
+                                                                ) [DesignatorArr]
+                                                              ) [DesignatorFactor]
+                                                            ) [SinglTerm]
+                                                          ) [SingleTerm]
+                                                        ) [Expression]
+                                                        NoOptionalPrint(
+                                                        ) [NoOptionalPrint]
+                                                      ) [PrintStatement]
+                                                    ) [Statements]
+                                                    StatementDesignator(
+                                                      DesignatorAssignment(
+                                                        DesignatorAsg(
+                                                          DesignatorSimple(
+                                                           bodovi
+                                                          ) [DesignatorSimple]
+                                                        ) [DesignatorAsg]
+                                                        Asg(
+                                                        ) [Asg]
+                                                        Expression(
+                                                          PocetakIzraza(
+                                                          ) [PocetakIzraza]
+                                                          MultipleTerms(
+                                                            MultipleTerms(
+                                                              SingleTerm(
+                                                                SinglTerm(
+                                                                  DesignatorFactor(
+                                                                    DesignatorSimple(
+                                                                     bodovi
+                                                                    ) [DesignatorSimple]
+                                                                  ) [DesignatorFactor]
+                                                                ) [SinglTerm]
+                                                              ) [SingleTerm]
+                                                              AddLeftOp(
+                                                                AddPlus(
+                                                                ) [AddPlus]
+                                                              ) [AddLeftOp]
+                                                              MultiplTerms(
+                                                                SinglTerm(
+                                                                  ExprFactor(
+                                                                    Expression(
+                                                                      PocetakIzraza(
+                                                                      ) [PocetakIzraza]
+                                                                      MultipleTerms(
+                                                                        SingleTerm(
+                                                                          MultiplTerms(
+                                                                            SinglTerm(
+                                                                              DesignatorFactor(
+                                                                                DesignatorSimple(
+                                                                                 pet
+                                                                                ) [DesignatorSimple]
+                                                                              ) [DesignatorFactor]
+                                                                            ) [SinglTerm]
+                                                                            MulLeftOp(
+                                                                              MulOpMul(
+                                                                              ) [MulOpMul]
+                                                                            ) [MulLeftOp]
+                                                                            DesignatorFactor(
+                                                                              DesignatorSimple(
+                                                                               jedan
+                                                                              ) [DesignatorSimple]
+                                                                            ) [DesignatorFactor]
+                                                                          ) [MultiplTerms]
+                                                                        ) [SingleTerm]
+                                                                        AddLeftOp(
+                                                                          AddMinus(
+                                                                          ) [AddMinus]
+                                                                        ) [AddLeftOp]
+                                                                        SinglTerm(
+                                                                          NumFactor(
+                                                                           1
+                                                                          ) [NumFactor]
+                                                                        ) [SinglTerm]
+                                                                      ) [MultipleTerms]
+                                                                    ) [Expression]
+                                                                  ) [ExprFactor]
+                                                                ) [SinglTerm]
+                                                                MulLeftOp(
+                                                                  MulOpMul(
+                                                                  ) [MulOpMul]
+                                                                ) [MulLeftOp]
+                                                                DesignatorFactor(
+                                                                  DesignatorSimple(
+                                                                   bodovi
+                                                                  ) [DesignatorSimple]
+                                                                ) [DesignatorFactor]
+                                                              ) [MultiplTerms]
+                                                            ) [MultipleTerms]
+                                                            AddLeftOp(
+                                                              AddMinus(
+                                                              ) [AddMinus]
+                                                            ) [AddLeftOp]
+                                                            SinglTerm(
+                                                              ExprFactor(
+                                                                Expression(
+                                                                  PocetakIzraza(
+                                                                  ) [PocetakIzraza]
+                                                                  MultipleTerms(
+                                                                    MultipleTerms(
+                                                                      SingleTerm(
+                                                                        MultiplTerms(
+                                                                          SinglTerm(
+                                                                            NumFactor(
+                                                                             3
+                                                                            ) [NumFactor]
+                                                                          ) [SinglTerm]
+                                                                          MulLeftOp(
+                                                                            MulOpMod(
+                                                                            ) [MulOpMod]
+                                                                          ) [MulLeftOp]
+                                                                          NumFactor(
+                                                                           2
+                                                                          ) [NumFactor]
+                                                                        ) [MultiplTerms]
+                                                                      ) [SingleTerm]
+                                                                      AddLeftOp(
+                                                                        AddPlus(
+                                                                        ) [AddPlus]
+                                                                      ) [AddLeftOp]
+                                                                      MultiplTerms(
+                                                                        SinglTerm(
+                                                                          NumFactor(
+                                                                           3
+                                                                          ) [NumFactor]
+                                                                        ) [SinglTerm]
+                                                                        MulLeftOp(
+                                                                          MulOpMul(
+                                                                          ) [MulOpMul]
+                                                                        ) [MulLeftOp]
+                                                                        NumFactor(
+                                                                         2
+                                                                        ) [NumFactor]
+                                                                      ) [MultiplTerms]
+                                                                    ) [MultipleTerms]
+                                                                    AddLeftOp(
+                                                                      AddMinus(
+                                                                      ) [AddMinus]
+                                                                    ) [AddLeftOp]
+                                                                    SinglTerm(
+                                                                      NumFactor(
+                                                                       3
+                                                                      ) [NumFactor]
+                                                                    ) [SinglTerm]
+                                                                  ) [MultipleTerms]
+                                                                ) [Expression]
+                                                              ) [ExprFactor]
+                                                            ) [SinglTerm]
+                                                          ) [MultipleTerms]
+                                                        ) [Expression]
+                                                      ) [DesignatorAssignment]
+                                                    ) [StatementDesignator]
+                                                  ) [Statements]
+                                                  PrintStatement(
+                                                    Expression(
+                                                      PocetakIzraza(
+                                                      ) [PocetakIzraza]
+                                                      SingleTerm(
+                                                        SinglTerm(
+                                                          DesignatorFactor(
+                                                            DesignatorSimple(
+                                                             bodovi
+                                                            ) [DesignatorSimple]
+                                                          ) [DesignatorFactor]
+                                                        ) [SinglTerm]
+                                                      ) [SingleTerm]
+                                                    ) [Expression]
+                                                    NoOptionalPrint(
+                                                    ) [NoOptionalPrint]
+                                                  ) [PrintStatement]
+                                                ) [Statements]
+                                                PrintStatement(
+                                                  Expression(
+                                                    PocetakIzraza(
+                                                    ) [PocetakIzraza]
+                                                    SingleTerm(
+                                                      MultiplTerms(
+                                                        SinglTerm(
+                                                          ModifikacijaAt(
+                                                            DesignatorSimple(
+                                                             niz
+                                                            ) [DesignatorSimple]
+                                                            NumFactor(
+                                                             2
+                                                            ) [NumFactor]
+                                                          ) [ModifikacijaAt]
+                                                        ) [SinglTerm]
+                                                        MulLeftOp(
+                                                          MulOpMul(
+                                                          ) [MulOpMul]
+                                                        ) [MulLeftOp]
+                                                        NumFactor(
+                                                         3
+                                                        ) [NumFactor]
+                                                      ) [MultiplTerms]
+                                                    ) [SingleTerm]
+                                                  ) [Expression]
+                                                  NoOptionalPrint(
+                                                  ) [NoOptionalPrint]
+                                                ) [PrintStatement]
+                                              ) [Statements]
+                                              StatementDesignator(
+                                                DesignatorAssignment(
+                                                  DesignatorAsg(
+                                                    DesignatorSimple(
+                                                     chr
+                                                    ) [DesignatorSimple]
+                                                  ) [DesignatorAsg]
+                                                  Asg(
+                                                  ) [Asg]
+                                                  Expression(
+                                                    PocetakIzraza(
+                                                    ) [PocetakIzraza]
+                                                    ModifikacijaHash(
+                                                      SingleTerm(
+                                                        SinglTerm(
+                                                          CharFactor(
+                                                           A
+                                                          ) [CharFactor]
+                                                        ) [SinglTerm]
+                                                      ) [SingleTerm]
+                                                      HashMod(
+                                                      ) [HashMod]
+                                                      SingleTerm(
+                                                        SinglTerm(
+                                                          NumFactor(
+                                                           2
+                                                          ) [NumFactor]
+                                                        ) [SinglTerm]
+                                                      ) [SingleTerm]
+                                                    ) [ModifikacijaHash]
+                                                  ) [Expression]
+                                                ) [DesignatorAssignment]
+                                              ) [StatementDesignator]
+                                            ) [Statements]
+                                            PrintStatement(
+                                              Expression(
+                                                PocetakIzraza(
+                                                ) [PocetakIzraza]
+                                                SingleTerm(
+                                                  SinglTerm(
+                                                    DesignatorFactor(
+                                                      DesignatorSimple(
+                                                       chr
+                                                      ) [DesignatorSimple]
+                                                    ) [DesignatorFactor]
+                                                  ) [SinglTerm]
+                                                ) [SingleTerm]
+                                              ) [Expression]
+                                              NoOptionalPrint(
+                                              ) [NoOptionalPrint]
+                                            ) [PrintStatement]
+                                          ) [Statements]
+                                          StatementDesignator(
+                                            DesignatorAssignment(
+                                              DesignatorAsg(
+                                                DesignatorSimple(
+                                                 chr
+                                                ) [DesignatorSimple]
+                                              ) [DesignatorAsg]
+                                              Asg(
+                                              ) [Asg]
+                                              Expression(
+                                                PocetakIzraza(
+                                                ) [PocetakIzraza]
+                                                ModifikacijaHash(
+                                                  ModifikacijaHash(
+                                                    ModifikacijaHash(
+                                                      SingleTerm(
+                                                        SinglTerm(
+                                                          CharFactor(
+                                                           A
+                                                          ) [CharFactor]
+                                                        ) [SinglTerm]
+                                                      ) [SingleTerm]
+                                                      HashMod(
+                                                      ) [HashMod]
+                                                      SingleTerm(
+                                                        SinglTerm(
+                                                          NumFactor(
+                                                           2
+                                                          ) [NumFactor]
+                                                        ) [SinglTerm]
+                                                      ) [SingleTerm]
+                                                    ) [ModifikacijaHash]
+                                                    HashMod(
+                                                    ) [HashMod]
+                                                    SingleTermMinus(
+                                                      SinglTerm(
+                                                        NumFactor(
+                                                         3
+                                                        ) [NumFactor]
+                                                      ) [SinglTerm]
+                                                    ) [SingleTermMinus]
+                                                  ) [ModifikacijaHash]
+                                                  HashMod(
+                                                  ) [HashMod]
+                                                  SingleTerm(
+                                                    SinglTerm(
+                                                      NumFactor(
+                                                       1
+                                                      ) [NumFactor]
+                                                    ) [SinglTerm]
+                                                  ) [SingleTerm]
+                                                ) [ModifikacijaHash]
+                                              ) [Expression]
+                                            ) [DesignatorAssignment]
+                                          ) [StatementDesignator]
+                                        ) [Statements]
+                                        PrintStatement(
+                                          Expression(
+                                            PocetakIzraza(
+                                            ) [PocetakIzraza]
+                                            SingleTerm(
+                                              SinglTerm(
+                                                DesignatorFactor(
+                                                  DesignatorSimple(
+                                                   chr
+                                                  ) [DesignatorSimple]
+                                                ) [DesignatorFactor]
+                                              ) [SinglTerm]
+                                            ) [SingleTerm]
+                                          ) [Expression]
+                                          NoOptionalPrint(
+                                          ) [NoOptionalPrint]
+                                        ) [PrintStatement]
+                                      ) [Statements]
+                                      StatementDesignator(
+                                        DesignatorAssignment(
+                                          DesignatorAsg(
+                                            DesignatorSimple(
+                                             nizModifikacija
+                                            ) [DesignatorSimple]
+                                          ) [DesignatorAsg]
+                                          Asg(
+                                          ) [Asg]
+                                          Expression(
+                                            PocetakIzraza(
+                                            ) [PocetakIzraza]
+                                            SingleTerm(
+                                              SinglTerm(
+                                                NewFactorExpr(
+                                                  PraviTip(
+                                                   bool
+                                                  ) [PraviTip]
+                                                  Expression(
+                                                    PocetakIzraza(
+                                                    ) [PocetakIzraza]
+                                                    SingleTerm(
+                                                      SinglTerm(
+                                                        NumFactor(
+                                                         8
+                                                        ) [NumFactor]
+                                                      ) [SinglTerm]
+                                                    ) [SingleTerm]
+                                                  ) [Expression]
+                                                ) [NewFactorExpr]
+                                              ) [SinglTerm]
+                                            ) [SingleTerm]
+                                          ) [Expression]
+                                        ) [DesignatorAssignment]
+                                      ) [StatementDesignator]
+                                    ) [Statements]
+                                    StatementDesignator(
+                                      DesignatorAssignment(
+                                        DesignatorAsg(
+                                          DesignatorArr(
+                                            DesignatorNiz(
+                                              DesignatorSimple(
+                                               nizModifikacija
+                                              ) [DesignatorSimple]
+                                            ) [DesignatorNiz]
+                                            Expression(
+                                              PocetakIzraza(
+                                              ) [PocetakIzraza]
+                                              SingleTerm(
+                                                SinglTerm(
+                                                  NumFactor(
+                                                   0
+                                                  ) [NumFactor]
+                                                ) [SinglTerm]
+                                              ) [SingleTerm]
+                                            ) [Expression]
+                                          ) [DesignatorArr]
+                                        ) [DesignatorAsg]
+                                        Asg(
+                                        ) [Asg]
+                                        Expression(
+                                          PocetakIzraza(
+                                          ) [PocetakIzraza]
+                                          SingleTerm(
+                                            SinglTerm(
+                                              BoolFactor(
+                                               false
+                                              ) [BoolFactor]
+                                            ) [SinglTerm]
+                                          ) [SingleTerm]
+                                        ) [Expression]
+                                      ) [DesignatorAssignment]
+                                    ) [StatementDesignator]
+                                  ) [Statements]
+                                  StatementDesignator(
+                                    DesignatorAssignment(
+                                      DesignatorAsg(
+                                        DesignatorArr(
+                                          DesignatorNiz(
+                                            DesignatorSimple(
+                                             nizModifikacija
+                                            ) [DesignatorSimple]
+                                          ) [DesignatorNiz]
+                                          Expression(
+                                            PocetakIzraza(
+                                            ) [PocetakIzraza]
+                                            SingleTerm(
+                                              SinglTerm(
+                                                NumFactor(
+                                                 1
+                                                ) [NumFactor]
+                                              ) [SinglTerm]
+                                            ) [SingleTerm]
+                                          ) [Expression]
+                                        ) [DesignatorArr]
+                                      ) [DesignatorAsg]
+                                      Asg(
+                                      ) [Asg]
+                                      Expression(
+                                        PocetakIzraza(
+                                        ) [PocetakIzraza]
+                                        SingleTerm(
+                                          SinglTerm(
+                                            BoolFactor(
+                                             true
+                                            ) [BoolFactor]
+                                          ) [SinglTerm]
+                                        ) [SingleTerm]
+                                      ) [Expression]
+                                    ) [DesignatorAssignment]
+                                  ) [StatementDesignator]
+                                ) [Statements]
+                                StatementDesignator(
+                                  DesignatorAssignment(
+                                    DesignatorAsg(
+                                      DesignatorArr(
+                                        DesignatorNiz(
+                                          DesignatorSimple(
+                                           nizModifikacija
+                                          ) [DesignatorSimple]
+                                        ) [DesignatorNiz]
+                                        Expression(
+                                          PocetakIzraza(
+                                          ) [PocetakIzraza]
+                                          SingleTerm(
+                                            SinglTerm(
+                                              NumFactor(
+                                               2
+                                              ) [NumFactor]
+                                            ) [SinglTerm]
+                                          ) [SingleTerm]
+                                        ) [Expression]
+                                      ) [DesignatorArr]
+                                    ) [DesignatorAsg]
+                                    Asg(
+                                    ) [Asg]
+                                    Expression(
+                                      PocetakIzraza(
+                                      ) [PocetakIzraza]
+                                      SingleTerm(
+                                        SinglTerm(
+                                          BoolFactor(
+                                           false
+                                          ) [BoolFactor]
+                                        ) [SinglTerm]
+                                      ) [SingleTerm]
+                                    ) [Expression]
+                                  ) [DesignatorAssignment]
+                                ) [StatementDesignator]
+                              ) [Statements]
+                              StatementDesignator(
+                                DesignatorAssignment(
+                                  DesignatorAsg(
+                                    DesignatorArr(
+                                      DesignatorNiz(
+                                        DesignatorSimple(
+                                         nizModifikacija
+                                        ) [DesignatorSimple]
+                                      ) [DesignatorNiz]
+                                      Expression(
+                                        PocetakIzraza(
+                                        ) [PocetakIzraza]
+                                        SingleTerm(
+                                          SinglTerm(
+                                            NumFactor(
+                                             3
+                                            ) [NumFactor]
+                                          ) [SinglTerm]
+                                        ) [SingleTerm]
+                                      ) [Expression]
+                                    ) [DesignatorArr]
+                                  ) [DesignatorAsg]
+                                  Asg(
+                                  ) [Asg]
+                                  Expression(
+                                    PocetakIzraza(
+                                    ) [PocetakIzraza]
+                                    SingleTerm(
+                                      SinglTerm(
+                                        BoolFactor(
+                                         false
+                                        ) [BoolFactor]
+                                      ) [SinglTerm]
+                                    ) [SingleTerm]
+                                  ) [Expression]
+                                ) [DesignatorAssignment]
+                              ) [StatementDesignator]
+                            ) [Statements]
+                            StatementDesignator(
+                              DesignatorAssignment(
+                                DesignatorAsg(
+                                  DesignatorArr(
+                                    DesignatorNiz(
+                                      DesignatorSimple(
+                                       nizModifikacija
+                                      ) [DesignatorSimple]
+                                    ) [DesignatorNiz]
+                                    Expression(
+                                      PocetakIzraza(
+                                      ) [PocetakIzraza]
+                                      SingleTerm(
+                                        SinglTerm(
+                                          NumFactor(
+                                           4
+                                          ) [NumFactor]
+                                        ) [SinglTerm]
+                                      ) [SingleTerm]
+                                    ) [Expression]
+                                  ) [DesignatorArr]
+                                ) [DesignatorAsg]
+                                Asg(
+                                ) [Asg]
+                                Expression(
+                                  PocetakIzraza(
+                                  ) [PocetakIzraza]
+                                  SingleTerm(
+                                    SinglTerm(
+                                      BoolFactor(
+                                       false
+                                      ) [BoolFactor]
+                                    ) [SinglTerm]
+                                  ) [SingleTerm]
+                                ) [Expression]
+                              ) [DesignatorAssignment]
+                            ) [StatementDesignator]
+                          ) [Statements]
+                          StatementDesignator(
+                            DesignatorAssignment(
+                              DesignatorAsg(
+                                DesignatorArr(
+                                  DesignatorNiz(
+                                    DesignatorSimple(
+                                     nizModifikacija
+                                    ) [DesignatorSimple]
+                                  ) [DesignatorNiz]
+                                  Expression(
+                                    PocetakIzraza(
+                                    ) [PocetakIzraza]
+                                    SingleTerm(
+                                      SinglTerm(
+                                        NumFactor(
+                                         5
+                                        ) [NumFactor]
+                                      ) [SinglTerm]
+                                    ) [SingleTerm]
+                                  ) [Expression]
+                                ) [DesignatorArr]
+                              ) [DesignatorAsg]
+                              Asg(
+                              ) [Asg]
+                              Expression(
+                                PocetakIzraza(
+                                ) [PocetakIzraza]
+                                SingleTerm(
+                                  SinglTerm(
+                                    BoolFactor(
+                                     false
+                                    ) [BoolFactor]
+                                  ) [SinglTerm]
+                                ) [SingleTerm]
+                              ) [Expression]
+                            ) [DesignatorAssignment]
+                          ) [StatementDesignator]
+                        ) [Statements]
+                        StatementDesignator(
+                          DesignatorAssignment(
+                            DesignatorAsg(
+                              DesignatorArr(
+                                DesignatorNiz(
+                                  DesignatorSimple(
+                                   nizModifikacija
+                                  ) [DesignatorSimple]
+                                ) [DesignatorNiz]
+                                Expression(
+                                  PocetakIzraza(
+                                  ) [PocetakIzraza]
+                                  SingleTerm(
+                                    SinglTerm(
+                                      NumFactor(
+                                       6
+                                      ) [NumFactor]
+                                    ) [SinglTerm]
+                                  ) [SingleTerm]
+                                ) [Expression]
+                              ) [DesignatorArr]
+                            ) [DesignatorAsg]
+                            Asg(
+                            ) [Asg]
+                            Expression(
+                              PocetakIzraza(
+                              ) [PocetakIzraza]
+                              SingleTerm(
+                                SinglTerm(
+                                  BoolFactor(
+                                   true
+                                  ) [BoolFactor]
+                                ) [SinglTerm]
+                              ) [SingleTerm]
+                            ) [Expression]
+                          ) [DesignatorAssignment]
+                        ) [StatementDesignator]
+                      ) [Statements]
+                      StatementDesignator(
+                        DesignatorAssignment(
+                          DesignatorAsg(
+                            DesignatorArr(
+                              DesignatorNiz(
+                                DesignatorSimple(
+                                 nizModifikacija
+                                ) [DesignatorSimple]
+                              ) [DesignatorNiz]
+                              Expression(
+                                PocetakIzraza(
+                                ) [PocetakIzraza]
+                                SingleTerm(
+                                  SinglTerm(
+                                    NumFactor(
+                                     7
+                                    ) [NumFactor]
+                                  ) [SinglTerm]
+                                ) [SingleTerm]
+                              ) [Expression]
+                            ) [DesignatorArr]
+                          ) [DesignatorAsg]
+                          Asg(
+                          ) [Asg]
+                          Expression(
+                            PocetakIzraza(
+                            ) [PocetakIzraza]
+                            SingleTerm(
+                              SinglTerm(
+                                BoolFactor(
+                                 false
+                                ) [BoolFactor]
+                              ) [SinglTerm]
+                            ) [SingleTerm]
+                          ) [Expression]
+                        ) [DesignatorAssignment]
+                      ) [StatementDesignator]
+                    ) [Statements]
+                    PrintStatement(
+                      Expression(
+                        PocetakIzraza(
+                        ) [PocetakIzraza]
+                        SingleTerm(
+                          SinglTerm(
+                            ModifikacijaDolar(
+                              DesignatorSimple(
+                               nizModifikacija
+                              ) [DesignatorSimple]
+                            ) [ModifikacijaDolar]
+                          ) [SinglTerm]
+                        ) [SingleTerm]
+                      ) [Expression]
+                      NoOptionalPrint(
+                      ) [NoOptionalPrint]
+                    ) [PrintStatement]
+                  ) [Statements]
+                  StatementDesignator(
+                    DesignatorAssignment(
+                      DesignatorAsg(
+                        DesignatorSimple(
+                         nizModifikacija3
+                        ) [DesignatorSimple]
+                      ) [DesignatorAsg]
+                      Asg(
+                      ) [Asg]
+                      Expression(
+                        PocetakIzraza(
+                        ) [PocetakIzraza]
+                        SingleTerm(
+                          SinglTerm(
+                            ModifikacijaKapica(
+                              NumFactor(
+                               1094861636
+                              ) [NumFactor]
+                            ) [ModifikacijaKapica]
+                          ) [SinglTerm]
+                        ) [SingleTerm]
+                      ) [Expression]
+                    ) [DesignatorAssignment]
+                  ) [StatementDesignator]
+                ) [Statements]
+                PrintStatement(
+                  Expression(
+                    PocetakIzraza(
+                    ) [PocetakIzraza]
+                    SingleTerm(
+                      SinglTerm(
+                        DesignatorFactor(
+                          DesignatorArr(
+                            DesignatorNiz(
+                              DesignatorSimple(
+                               nizModifikacija3
+                              ) [DesignatorSimple]
+                            ) [DesignatorNiz]
+                            Expression(
+                              PocetakIzraza(
+                              ) [PocetakIzraza]
+                              SingleTerm(
+                                SinglTerm(
+                                  NumFactor(
+                                   0
+                                  ) [NumFactor]
+                                ) [SinglTerm]
+                              ) [SingleTerm]
+                            ) [Expression]
+                          ) [DesignatorArr]
+                        ) [DesignatorFactor]
+                      ) [SinglTerm]
+                    ) [SingleTerm]
+                  ) [Expression]
+                  NoOptionalPrint(
+                  ) [NoOptionalPrint]
+                ) [PrintStatement]
+              ) [Statements]
+              PrintStatement(
+                Expression(
+                  PocetakIzraza(
+                  ) [PocetakIzraza]
+                  SingleTerm(
+                    SinglTerm(
+                      DesignatorFactor(
+                        DesignatorArr(
+                          DesignatorNiz(
+                            DesignatorSimple(
+                             nizModifikacija3
+                            ) [DesignatorSimple]
+                          ) [DesignatorNiz]
+                          Expression(
+                            PocetakIzraza(
+                            ) [PocetakIzraza]
+                            SingleTerm(
+                              SinglTerm(
+                                NumFactor(
+                                 1
+                                ) [NumFactor]
+                              ) [SinglTerm]
+                            ) [SingleTerm]
+                          ) [Expression]
+                        ) [DesignatorArr]
+                      ) [DesignatorFactor]
+                    ) [SinglTerm]
+                  ) [SingleTerm]
+                ) [Expression]
+                NoOptionalPrint(
+                ) [NoOptionalPrint]
+              ) [PrintStatement]
+            ) [Statements]
+            PrintStatement(
+              Expression(
+                PocetakIzraza(
+                ) [PocetakIzraza]
+                SingleTerm(
+                  SinglTerm(
+                    DesignatorFactor(
+                      DesignatorArr(
+                        DesignatorNiz(
+                          DesignatorSimple(
+                           nizModifikacija3
+                          ) [DesignatorSimple]
+                        ) [DesignatorNiz]
+                        Expression(
+                          PocetakIzraza(
+                          ) [PocetakIzraza]
+                          SingleTerm(
+                            SinglTerm(
+                              NumFactor(
+                               2
+                              ) [NumFactor]
+                            ) [SinglTerm]
+                          ) [SingleTerm]
+                        ) [Expression]
+                      ) [DesignatorArr]
+                    ) [DesignatorFactor]
+                  ) [SinglTerm]
+                ) [SingleTerm]
+              ) [Expression]
+              NoOptionalPrint(
+              ) [NoOptionalPrint]
+            ) [PrintStatement]
+          ) [Statements]
+          PrintStatement(
+            Expression(
+              PocetakIzraza(
+              ) [PocetakIzraza]
+              SingleTerm(
+                SinglTerm(
+                  DesignatorFactor(
+                    DesignatorArr(
+                      DesignatorNiz(
+                        DesignatorSimple(
+                         nizModifikacija3
+                        ) [DesignatorSimple]
+                      ) [DesignatorNiz]
+                      Expression(
+                        PocetakIzraza(
+                        ) [PocetakIzraza]
+                        SingleTerm(
+                          SinglTerm(
+                            NumFactor(
+                             3
+                            ) [NumFactor]
+                          ) [SinglTerm]
+                        ) [SingleTerm]
+                      ) [Expression]
+                    ) [DesignatorArr]
+                  ) [DesignatorFactor]
+                ) [SinglTerm]
+              ) [SingleTerm]
+            ) [Expression]
+            NoOptionalPrint(
+            ) [NoOptionalPrint]
+          ) [PrintStatement]
+        ) [Statements]
+        PrintStatement(
+          Expression(
+            PocetakIzraza(
+            ) [PocetakIzraza]
+            SingleTerm(
+              SinglTerm(
+                ModifikacijaBrojevi(
+                  Expression(
+                    PocetakIzraza(
+                    ) [PocetakIzraza]
+                    MultipleTerms(
+                      SingleTerm(
+                        MultiplTerms(
+                          SinglTerm(
+                            NumFactor(
+                             2
+                            ) [NumFactor]
+                          ) [SinglTerm]
+                          MulLeftOp(
+                            MulOpMul(
+                            ) [MulOpMul]
+                          ) [MulLeftOp]
+                          NumFactor(
+                           5
+                          ) [NumFactor]
+                        ) [MultiplTerms]
+                      ) [SingleTerm]
+                      AddLeftOp(
+                        AddPlus(
+                        ) [AddPlus]
+                      ) [AddLeftOp]
+                      SinglTerm(
+                        NumFactor(
+                         1
+                        ) [NumFactor]
+                      ) [SinglTerm]
+                    ) [MultipleTerms]
+                  ) [Expression]
+                  Expression(
+                    PocetakIzraza(
+                    ) [PocetakIzraza]
+                    MultipleTerms(
+                      SingleTerm(
+                        SinglTerm(
+                          NumFactor(
+                           1
+                          ) [NumFactor]
+                        ) [SinglTerm]
+                      ) [SingleTerm]
+                      AddLeftOp(
+                        AddPlus(
+                        ) [AddPlus]
+                      ) [AddLeftOp]
+                      SinglTerm(
+                        NumFactor(
+                         4
+                        ) [NumFactor]
+                      ) [SinglTerm]
+                    ) [MultipleTerms]
+                  ) [Expression]
+                  Expression(
+                    PocetakIzraza(
+                    ) [PocetakIzraza]
+                    SingleTerm(
+                      MultiplTerms(
+                        SinglTerm(
+                          NumFactor(
+                           4
+                          ) [NumFactor]
+                        ) [SinglTerm]
+                        MulLeftOp(
+                          MulOpMul(
+                          ) [MulOpMul]
+                        ) [MulLeftOp]
+                        NumFactor(
+                         2
+                        ) [NumFactor]
+                      ) [MultiplTerms]
+                    ) [SingleTerm]
+                  ) [Expression]
+                ) [ModifikacijaBrojevi]
+              ) [SinglTerm]
+            ) [SingleTerm]
+          ) [Expression]
+          NoOptionalPrint(
+          ) [NoOptionalPrint]
+        ) [PrintStatement]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarations]
+) [Program]
+INFO  21:04:09,470 - ===================================
+INFO  21:04:09,475 - Deklarisana je konstanta: 'nula' tipa int   na liniji 5
+INFO  21:04:09,475 - Deklarisana je konstanta: 'jedan' tipa int   na liniji 6
+INFO  21:04:09,475 - Deklarisana je konstanta: 'pet' tipa int   na liniji 7
+INFO  21:04:09,475 - Deklarisan je niz: 'niz' na liniji 9
+INFO  21:04:09,475 - Deklarisan je niz: 'nizch' na liniji 10
+INFO  21:04:09,475 - Deklarisana je promenljiva: chr na liniji 11
+INFO  21:04:09,475 - Deklarisan je niz: 'nizModifikacija' na liniji 12
+INFO  21:04:09,475 - Deklarisan je niz: 'nizModifikacija3' na liniji 13
+INFO  21:04:09,475 - Obradjuje se funkcija: main na liniji 15
+INFO  21:04:09,475 - Deklarisana je promenljiva: bodovi na liniji 16
+INFO  21:04:09,475 - Pristup promenljivoj:'bodovi' - na liniji 18
+INFO  21:04:09,475 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 18
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 19
+INFO  21:04:09,476 - Uspesno odraden inkrement promenljivoj: 'bodovi' - na liniji 19
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 20
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 20
+INFO  21:04:09,476 - Pristup promenljivoj:'jedan' - na liniji 20
+INFO  21:04:09,476 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 20
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 21
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 21
+INFO  21:04:09,476 - Pristup promenljivoj:'pet' - na liniji 21
+INFO  21:04:09,476 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 21
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 22
+INFO  21:04:09,476 - Uspesno odraden dekrement promenljivoj: 'bodovi' - na liniji 22
+INFO  21:04:09,476 - Pristup promenljivoj:'bodovi' - na liniji 23
+INFO  21:04:09,476 - Pristup promenljivoj:'niz' - na liniji 26
+INFO  21:04:09,476 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 26
+INFO  21:04:09,476 - Pristup promenljivoj:'niz' - na liniji 27
+INFO  21:04:09,476 - Pristup promenljivoj:'nula' - na liniji 27
+INFO  21:04:09,476 - Pristup elementu niza: 'niz' - na liniji 27
+INFO  21:04:09,476 - Pristup promenljivoj:'jedan' - na liniji 27
+INFO  21:04:09,476 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 27
+INFO  21:04:09,476 - Pristup promenljivoj:'niz' - na liniji 28
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 28
+INFO  21:04:09,477 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 28
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup promenljivoj:'jedan' - na liniji 29
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  21:04:09,477 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 29
+INFO  21:04:09,477 - Pristup promenljivoj:'bodovi' - na liniji 30
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 30
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 30
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 30
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 30
+INFO  21:04:09,477 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 30
+INFO  21:04:09,477 - Pristup promenljivoj:'bodovi' - na liniji 31
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 32
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 32
+INFO  21:04:09,477 - Pristup promenljivoj:'bodovi' - na liniji 34
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 35
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 35
+INFO  21:04:09,477 - Pristup promenljivoj:'bodovi' - na liniji 35
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 35
+INFO  21:04:09,477 - Pristup elementu niza: 'niz' - na liniji 35
+INFO  21:04:09,477 - Pristup promenljivoj:'pet' - na liniji 35
+INFO  21:04:09,477 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 35
+INFO  21:04:09,477 - Pristup promenljivoj:'niz' - na liniji 36
+INFO  21:04:09,478 - Pristup elementu niza: 'niz' - na liniji 36
+INFO  21:04:09,478 - Uspesno odraden inkrement promenljivoj: 'niz' - na liniji 36
+INFO  21:04:09,478 - Pristup promenljivoj:'niz' - na liniji 37
+INFO  21:04:09,478 - Pristup elementu niza: 'niz' - na liniji 37
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 40
+INFO  21:04:09,478 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 40
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 41
+INFO  21:04:09,478 - Pristup elementu niza: 'nizch' - na liniji 41
+INFO  21:04:09,478 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 41
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 42
+INFO  21:04:09,478 - Pristup promenljivoj:'jedan' - na liniji 42
+INFO  21:04:09,478 - Pristup elementu niza: 'nizch' - na liniji 42
+INFO  21:04:09,478 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 42
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 43
+INFO  21:04:09,478 - Pristup promenljivoj:'pet' - na liniji 43
+INFO  21:04:09,478 - Pristup elementu niza: 'nizch' - na liniji 43
+INFO  21:04:09,478 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 43
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 44
+INFO  21:04:09,478 - Pristup elementu niza: 'nizch' - na liniji 44
+INFO  21:04:09,478 - Pristup promenljivoj:'nizch' - na liniji 45
+INFO  21:04:09,478 - Pristup promenljivoj:'jedan' - na liniji 45
+INFO  21:04:09,478 - Pristup elementu niza: 'nizch' - na liniji 45
+INFO  21:04:09,478 - Pristup promenljivoj:'bodovi' - na liniji 48
+INFO  21:04:09,478 - Pristup promenljivoj:'bodovi' - na liniji 48
+INFO  21:04:09,478 - Pristup promenljivoj:'pet' - na liniji 48
+INFO  21:04:09,478 - Pristup promenljivoj:'jedan' - na liniji 48
+INFO  21:04:09,478 - Pristup promenljivoj:'bodovi' - na liniji 48
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 48
+INFO  21:04:09,479 - Pristup promenljivoj:'bodovi' - na liniji 49
+INFO  21:04:09,479 - Pristup promenljivoj:'niz' - na liniji 51
+INFO  21:04:09,479 - Pristup promenljivoj:'chr' - na liniji 53
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'chr' - na liniji 53
+INFO  21:04:09,479 - Pristup promenljivoj:'chr' - na liniji 55
+INFO  21:04:09,479 - Pristup promenljivoj:'chr' - na liniji 57
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'chr' - na liniji 57
+INFO  21:04:09,479 - Pristup promenljivoj:'chr' - na liniji 59
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 61
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 61
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 62
+INFO  21:04:09,479 - Pristup elementu niza: 'nizModifikacija' - na liniji 62
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 62
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 63
+INFO  21:04:09,479 - Pristup elementu niza: 'nizModifikacija' - na liniji 63
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 63
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 64
+INFO  21:04:09,479 - Pristup elementu niza: 'nizModifikacija' - na liniji 64
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 64
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 65
+INFO  21:04:09,479 - Pristup elementu niza: 'nizModifikacija' - na liniji 65
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 65
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 66
+INFO  21:04:09,479 - Pristup elementu niza: 'nizModifikacija' - na liniji 66
+INFO  21:04:09,479 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 66
+INFO  21:04:09,479 - Pristup promenljivoj:'nizModifikacija' - na liniji 67
+INFO  21:04:09,480 - Pristup elementu niza: 'nizModifikacija' - na liniji 67
+INFO  21:04:09,480 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 67
+INFO  21:04:09,480 - Pristup promenljivoj:'nizModifikacija' - na liniji 68
+INFO  21:04:09,480 - Pristup elementu niza: 'nizModifikacija' - na liniji 68
+INFO  21:04:09,480 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 68
+INFO  21:04:09,480 - Pristup promenljivoj:'nizModifikacija' - na liniji 69
+INFO  21:04:09,480 - Pristup elementu niza: 'nizModifikacija' - na liniji 69
+INFO  21:04:09,480 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija' - na liniji 69
+INFO  21:04:09,480 - Pristup promenljivoj:'nizModifikacija' - na liniji 71
+INFO  21:04:09,480 - Pristup promenljivoj:'nizModifikacija3' - na liniji 74
+INFO  21:04:09,480 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizModifikacija3' - na liniji 74
+INFO  21:04:09,480 - Pristup promenljivoj:'nizModifikacija3' - na liniji 75
+INFO  21:04:09,481 - Pristup elementu niza: 'nizModifikacija3' - na liniji 75
+INFO  21:04:09,481 - Pristup promenljivoj:'nizModifikacija3' - na liniji 76
+INFO  21:04:09,481 - Pristup elementu niza: 'nizModifikacija3' - na liniji 76
+INFO  21:04:09,481 - Pristup promenljivoj:'nizModifikacija3' - na liniji 77
+INFO  21:04:09,481 - Pristup elementu niza: 'nizModifikacija3' - na liniji 77
+INFO  21:04:09,481 - Pristup promenljivoj:'nizModifikacija3' - na liniji 78
+INFO  21:04:09,481 - Pristup elementu niza: 'nizModifikacija3' - na liniji 78
+INFO  21:04:09,481 - Zavrsava se obrada funkcije: 'main' - na liniji 15
+INFO  21:04:09,481 - =========================
+INFO  21:04:09,492 - Parsiranje uspesno zavrseno!

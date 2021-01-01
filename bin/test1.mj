@@ -1,0 +1,31 @@
+program Test1
+	const int x = 1;
+	int y,z;
+	int w; 
+	char arr[];
+{
+	void test()
+	int xx,yy;
+	{
+		xx=2;
+		print(xx);
+		yy=3;
+		print(yy);
+	}
+	
+	void main(){
+		arr = new char[2];
+		arr[0]='P';
+		arr[1]='P';
+		
+		print(arr[0]);
+		print(arr[1]);
+		
+		w = 100 + 500;
+		print(w);
+		w = 100/4;
+		print(w);
+		
+		print(x);
+	}
+}

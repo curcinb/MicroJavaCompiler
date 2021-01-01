@@ -1,0 +1,316 @@
+ package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+
+parser code {:
+	boolean errorDetected=false;
+
+	Logger log = Logger.getLogger(getClass());
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska! ", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti! ", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+    		msg.append("'").append(((Symbol)info).value).append("' na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+
+terminal PROG, LEFT_BRACE, RIGHT_BRACE, LEFT_PAREN, RIGHT_PAREN, LEFT_BRACKET, RIGHT_BRACKET;
+terminal VOID, SEMICOLON, READ, PRINT,ASSIGN;
+terminal PLUS, MINUS, MOD, DIVIDE, MULTIPLY, CONST, COMMA;
+terminal INCREMENT, DECREMENT, NEW;
+terminal String IDENT;
+terminal Integer NUMBER;
+terminal Character CHARCONST;
+terminal String BOOLCONST;
+terminal ADDASG, SUBASG, MULASG, DIVASG, MODASG;
+terminal RETURN;
+terminal AT;
+terminal HASH;
+terminal DOLAR;
+terminal KAPICA;
+terminal CRTA;
+terminal DVOTACKA;
+
+//Dodatak za januar!
+terminal UPITNIK;
+terminal DVOTACKA2;
+terminal JEDNAKO, NEJEDNAKO, VECE, VECEJEDNAKO, MANJE, MANJEJEDNAKO;
+nonterminal RelOp, CondFact;
+
+nonterminal DeclList, MethDeclList, ConstList, FormParameters, FormPars, VarDeclList, StatementList, FormalParamDecl;
+nonterminal Statement, OptionalPrint, AddOp, MulOp, AssignOp, AddOpRight, AddOpLeft, MulOpRight, MulOpLeft;
+nonterminal DesignatorNiz, DesignatorAsg;
+nonterminal PocetakIzraza, HashMod;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethTypeName, Designator;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct NewType, ReturnType, DesignatorStatement, Value;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct VarDecl, VarList, VarDef, Factor, Expr, Term, Terms, ConstDecl;
+
+
+Program ::= (Program) PROG ProgName:p DeclList LEFT_BRACE MethDeclList RIGHT_BRACE;
+
+ProgName ::= (ProgName) IDENT:pr;
+
+DeclList ::= (ConstDeclarations) DeclList ConstDecl
+			 |
+			 (VarDeclarations) DeclList VarDecl
+			 |
+			 (NoDeclList) /* epsilon */
+			 ;
+			 
+MethDeclList ::= (MethodDeclarations) MethDeclList MethDecl
+				 |
+				 (NoMethodDecl) /* epsilon */
+				 ;
+			 	
+ConstDecl ::= (ConstDeclaration) CONST NewType:constType IDENT:constName ASSIGN Value:constValue ConstList SEMICOLON;
+
+ConstList ::= (ConstListSingle) COMMA IDENT:name ASSIGN Value:constValue
+			  |
+			  (NoConstList) /* epsilon */
+			  ;
+	
+VarDecl ::= (VarDeclar) NewType:varType VarList SEMICOLON;	
+
+VarList ::= (VarListMultiple) VarDef COMMA VarList
+			|
+			(VarListSingle) VarDef
+			|
+			(NoVarList) /* epsilon */
+			;
+
+VarDef ::= (VarDefinition) IDENT:varName
+		   |
+		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET
+		   |
+		   (VarDefErr) error:l 
+		   {: parser.report_error("Oporavak od greske kod globalne promenljive na liniji: " + lleft, null); :}
+		   ;
+
+MethDecl ::= (MethodDeclaration) MethTypeName LEFT_PAREN FormParameters RIGHT_PAREN VarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+ 
+MethTypeName ::= (MethodName) ReturnType:returnType IDENT:methName;
+
+ReturnType ::= (ReturnTypeNormal) NewType:tip
+			   |
+			   (ReturnTypeVoid) VOID
+			   ;
+
+NewType ::= (PraviTip) IDENT:typeName;
+
+FormParameters ::= (FormParametres) FormPars
+				   |
+				   (NoFormParameters) /* epsilon */
+				   ;
+				   
+FormPars ::= (FormParamDecl) FormPars COMMA FormalParamDecl
+			 |
+			 (SingleFormalParamDecl) FormalParamDecl
+		     ;		 
+
+FormalParamDecl ::= (FormParam) NewType:paramType IDENT:name
+				  |
+				  (FormParamArr) NewType:paramType IDENT:name LEFT_BRACKET RIGHT_BRACKET
+				  |
+				  (FormalParamDeclError) error:l
+				  {: parser.report_error("Oporavak od greske kod parametara na liniji:" + lleft, null); :}
+				  ;
+				
+VarDeclList ::= (LocalVarDeclList) VarDeclList VarDecl
+				|
+				(NoLocalVarDeclList) /* epsilon */
+				;
+
+StatementList ::= (Statements) StatementList Statement
+				  |
+				  (NoStatement) /* epsilon */
+				  ;
+				 
+Statement ::= (StatementDesignator) DesignatorStatement SEMICOLON
+			  |
+			  (ReadStatement) READ LEFT_PAREN Designator RIGHT_PAREN SEMICOLON
+			  |
+			  (PrintStatement) PRINT LEFT_PAREN Expr OptionalPrint RIGHT_PAREN SEMICOLON
+			  |
+			  (ReturnStatement1) RETURN SEMICOLON
+			  |
+			  (ReturnStatement2) RETURN Expr SEMICOLON  
+			  ;
+
+OptionalPrint ::= (PrintOptional) COMMA NUMBER:val
+				  |
+				  (NoOptionalPrint) /* epsilon */
+				  ;
+
+DesignatorStatement ::= (DesignatorAssignment) DesignatorAsg AssignOp Expr
+						|
+						(AssignErr) error SEMICOLON:l
+						{: parser.report_error("Oporavak od greske pri iskazu dodele/sabiranja/oduzimanja na liniji: "+lleft ,null); :}	
+						|
+						(DesignatorIncrement) Designator:d INCREMENT 
+						|
+						(DesignatorDecrement) Designator:d DECREMENT 
+						|
+						(DesignatorFunction) Designator:d LEFT_PAREN RIGHT_PAREN 
+						;
+
+Designator ::= (DesignatorSimple) IDENT:name
+			   |
+			   (DesignatorArr) DesignatorNiz LEFT_BRACKET Expr RIGHT_BRACKET
+			   ;
+
+DesignatorNiz ::= (DesignatorNiz) Designator;
+
+DesignatorAsg ::= (DesignatorAsg) Designator;
+
+AssignOp ::= (Asg) ASSIGN
+			  |
+			  (AddRight) AddOpRight
+			  |
+			  (MulRight) MulOpRight
+			  ;
+			  
+Expr ::= (CondFactExpr) PocetakIzraza CondFact UPITNIK Terms DVOTACKA2 Terms:t2
+		 |
+		 (Expression) PocetakIzraza Terms
+		 |
+		 (ErrorExpression) error:l
+		 {: parser.report_error("Oporavak od greske na liniji: " + lleft, null); :}
+		 ;
+		 
+PocetakIzraza ::= (PocetakIzraza) /* epsilon */ ; //Samo da bih znao kada izraz pocinje, zbog steka
+
+CondFact ::= (CondFactSingle) Terms
+			 |
+			 (CondFactDouble) Terms RelOp Terms:t2
+			 ;
+	 
+Terms ::= (MultipleTerms) Terms AddOp Term
+		  |
+		  (SingleTerm) Term
+		  |
+		  (SingleTermMinus) MINUS Term
+		  |
+		  (ModifikacijaHash) LEFT_BRACKET Terms HashMod HASH Terms:t2 RIGHT_BRACKET
+		  ;
+
+HashMod ::= (HashMod) /* epsilon */ ; //U generatoru da bih uradio % 65 ('A') nad prvim izrazom Expr, pre nego sto na stek stavim drugi
+
+Term ::= (MultiplTerms) Term MulOp Factor
+		 |
+		 (SinglTerm) Factor
+		 ;
+		 
+//Sve faktore sem DesignatorFactora bacimo na expresion stek prilikom njihovog obilaska
+Factor ::= (NumFactor) NUMBER
+		   |
+		   (CharFactor) CHARCONST
+		   |
+		   (ExprFactor) LEFT_PAREN Expr RIGHT_PAREN
+		   |
+		   (BoolFactor) BOOLCONST
+		   |
+		   (NewFactorNoExpr) NEW NewType
+		   |
+		   (NewFactorExpr) NEW NewType LEFT_BRACKET Expr RIGHT_BRACKET
+		   |
+		   (DesignatorFactor) Designator //Jedino kod njega poslednjiFaktor nije null
+		   |
+		   (DesignatorFactorFuncCall) Designator:d LEFT_PAREN RIGHT_PAREN
+		   |
+		   (ModifikacijaAt) Designator AT Factor	
+		   |
+		   (ModifikacijaDolar) DOLAR Designator
+		   |
+		   (ModifikacijaKapica) KAPICA Factor// ^4*5+6 - Moze Factor(4), Term(20) i moze Expr(26)
+		   |
+		   (ModifikacijaBrojevi) CRTA Expr DVOTACKA Expr DVOTACKA Expr CRTA // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
+		   ;
+
+AddOp ::= (AddLeftOp) AddOpLeft
+		  |
+		  (AddRightOp) AddOpRight
+		  ;
+		  
+AddOpLeft ::= (AddPlus) PLUS
+			  |
+			  (AddMinus) MINUS
+			  ;
+			  
+AddOpRight ::= (AddEq) ADDASG
+			   |
+			   (SubEq) SUBASG
+			   ;
+
+MulOp ::= (MulLeftOp) MulOpLeft
+		  |
+		  (MulRightOp) MulOpRight
+		  ;
+
+MulOpLeft ::= (MulOpMul) MULTIPLY
+		  |
+		  (MulOpDiv) DIVIDE
+		  |
+		  (MulOpMod) MOD
+		  ; 
+		  
+MulOpRight ::= (MulAsgOp) MULASG
+			   |
+			   (DivAsgOp) DIVASG
+			   |
+			   (ModAsgOp) MODASG
+			   ;
+
+RelOp ::= (JednakoOp) JEDNAKO
+		  |
+		  (NejednakoOp) NEJEDNAKO
+		  |
+		  (VeceOp) VECE
+		  |
+		  (VeceJednakoOp) VECEJEDNAKO
+		  |
+		  (ManjeOp) MANJE
+		  |
+		  (ManjeJednakoOp) MANJEJEDNAKO
+		  ;
+			   
+Value ::= (IntType) NUMBER:brojT
+		 |
+		 (CharType) CHARCONST:charT
+		 |
+		 (BoolType) BOOLCONST:boolT
+		 ;
+

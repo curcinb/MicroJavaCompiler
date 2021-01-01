@@ -1,0 +1,11 @@
+program Test2
+	const int x = 1;
+{
+	void main() 	
+		int y=;
+	{
+		x=+1;	
+		print(x);
+		print(128);
+	}
+}

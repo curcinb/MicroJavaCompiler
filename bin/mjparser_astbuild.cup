@@ -1,0 +1,334 @@
+ package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+
+parser code {:
+	boolean errorDetected=false;
+
+	Logger log = Logger.getLogger(getClass());
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska! ", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti! ", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+    		msg.append("'").append(((Symbol)info).value).append("' na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+
+terminal PROG, LEFT_BRACE, RIGHT_BRACE, LEFT_PAREN, RIGHT_PAREN, LEFT_BRACKET, RIGHT_BRACKET;
+terminal VOID, SEMICOLON, READ, PRINT,ASSIGN;
+terminal PLUS, MINUS, MOD, DIVIDE, MULTIPLY, CONST, COMMA;
+terminal INCREMENT, DECREMENT, NEW;
+terminal String IDENT;
+terminal Integer NUMBER;
+terminal Character CHARCONST;
+terminal String BOOLCONST;
+terminal ADDASG, SUBASG, MULASG, DIVASG, MODASG;
+terminal RETURN;
+terminal AT;
+terminal HASH;
+terminal DOLAR;
+terminal KAPICA;
+terminal CRTA;
+terminal DVOTACKA;
+
+//Dodatak za januar!
+terminal UPITNIK;
+terminal DVOTACKA2;
+terminal JEDNAKO, NEJEDNAKO, VECE, VECEJEDNAKO, MANJE, MANJEJEDNAKO;
+nonterminal RelOp RelOp;
+nonterminal CondFact CondFact;
+
+nonterminal DeclList DeclList;
+nonterminal MethDeclList MethDeclList;
+nonterminal ConstList ConstList;
+nonterminal FormParameters FormParameters;
+nonterminal FormPars FormPars;
+nonterminal VarDeclList VarDeclList;
+nonterminal StatementList StatementList;
+nonterminal FormalParamDecl FormalParamDecl;
+nonterminal Statement Statement;
+nonterminal OptionalPrint OptionalPrint;
+nonterminal AddOp AddOp;
+nonterminal MulOp MulOp;
+nonterminal AssignOp AssignOp;
+nonterminal AddOpRight AddOpRight;
+nonterminal AddOpLeft AddOpLeft;
+nonterminal MulOpRight MulOpRight;
+nonterminal MulOpLeft MulOpLeft;
+nonterminal DesignatorNiz DesignatorNiz;
+nonterminal DesignatorAsg DesignatorAsg;
+nonterminal PocetakIzraza PocetakIzraza;
+nonterminal HashMod HashMod;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethTypeName, Designator;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct NewType, ReturnType, DesignatorStatement, Value;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct VarDecl, VarList, VarDef, Factor, Expr, Term, Terms, ConstDecl;
+
+
+Program ::= (Program) PROG ProgName:p DeclList:D1 LEFT_BRACE MethDeclList:M2 RIGHT_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :};
+
+ProgName ::= (ProgName) IDENT:pr {: RESULT=new ProgName(pr); RESULT.setLine(prleft); :};
+
+DeclList ::= (ConstDeclarations) DeclList:D1 ConstDecl:C2 {: RESULT=new ConstDeclarations(D1, C2); RESULT.setLine(D1left); :}
+			 |
+			 (VarDeclarations) DeclList:D1 VarDecl:V2 {: RESULT=new VarDeclarations(D1, V2); RESULT.setLine(D1left); :}
+			 |
+			 (NoDeclList) {: RESULT=new NoDeclList(); :} /* epsilon */
+			 ;
+			 
+MethDeclList ::= (MethodDeclarations) MethDeclList:M1 MethDecl:M2 {: RESULT=new MethodDeclarations(M1, M2); RESULT.setLine(M1left); :}
+				 |
+				 (NoMethodDecl) {: RESULT=new NoMethodDecl(); :} /* epsilon */
+				 ;
+			 	
+ConstDecl ::= (ConstDeclaration) CONST NewType:constType IDENT:constName ASSIGN Value:constValue ConstList:C1 SEMICOLON {: RESULT=new ConstDeclaration(constType, constName, constValue, C1); RESULT.setLine(constTypeleft); :};
+
+ConstList ::= (ConstListSingle) COMMA IDENT:name ASSIGN Value:constValue {: RESULT=new ConstListSingle(name, constValue); RESULT.setLine(nameleft); :}
+			  |
+			  (NoConstList) {: RESULT=new NoConstList(); :} /* epsilon */
+			  ;
+	
+VarDecl ::= (VarDeclar) NewType:varType VarList:V1 SEMICOLON {: RESULT=new VarDeclar(varType, V1); RESULT.setLine(varTypeleft); :};	
+
+VarList ::= (VarListMultiple) VarDef:V1 COMMA VarList:V2 {: RESULT=new VarListMultiple(V1, V2); RESULT.setLine(V1left); :}
+			|
+			(VarListSingle) VarDef:V1 {: RESULT=new VarListSingle(V1); RESULT.setLine(V1left); :}
+			|
+			(NoVarList) {: RESULT=new NoVarList(); :} /* epsilon */
+			;
+
+VarDef ::= (VarDefinition) IDENT:varName {: RESULT=new VarDefinition(varName); RESULT.setLine(varNameleft); :}
+		   |
+		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDefArr(varName); RESULT.setLine(varNameleft); :}
+		   |
+		   (VarDefErr) error:l 
+		   {: parser.report_error("Oporavak od greske kod globalne promenljive na liniji: " + lleft, null); :} {: RESULT=new VarDefErr(); :}
+		   ;
+
+MethDecl ::= (MethodDeclaration) MethTypeName:M1 LEFT_PAREN FormParameters:F2 RIGHT_PAREN VarDeclList:V3 LEFT_BRACE StatementList:S4 RIGHT_BRACE {: RESULT=new MethodDeclaration(M1, F2, V3, S4); RESULT.setLine(M1left); :};
+ 
+MethTypeName ::= (MethodName) ReturnType:returnType IDENT:methName {: RESULT=new MethodName(returnType, methName); RESULT.setLine(returnTypeleft); :};
+
+ReturnType ::= (ReturnTypeNormal) NewType:tip {: RESULT=new ReturnTypeNormal(tip); RESULT.setLine(tipleft); :}
+			   |
+			   (ReturnTypeVoid) VOID {: RESULT=new ReturnTypeVoid(); :}
+			   ;
+
+NewType ::= (PraviTip) IDENT:typeName {: RESULT=new PraviTip(typeName); RESULT.setLine(typeNameleft); :};
+
+FormParameters ::= (FormParametres) FormPars:F1 {: RESULT=new FormParametres(F1); RESULT.setLine(F1left); :}
+				   |
+				   (NoFormParameters) {: RESULT=new NoFormParameters(); :} /* epsilon */
+				   ;
+				   
+FormPars ::= (FormParamDecl) FormPars:F1 COMMA FormalParamDecl:F2 {: RESULT=new FormParamDecl(F1, F2); RESULT.setLine(F1left); :}
+			 |
+			 (SingleFormalParamDecl) FormalParamDecl:F1 {: RESULT=new SingleFormalParamDecl(F1); RESULT.setLine(F1left); :}
+		     ;		 
+
+FormalParamDecl ::= (FormParam) NewType:paramType IDENT:name {: RESULT=new FormParam(paramType, name); RESULT.setLine(paramTypeleft); :}
+				  |
+				  (FormParamArr) NewType:paramType IDENT:name LEFT_BRACKET RIGHT_BRACKET {: RESULT=new FormParamArr(paramType, name); RESULT.setLine(paramTypeleft); :}
+				  |
+				  (FormalParamDeclError) error:l
+				  {: parser.report_error("Oporavak od greske kod parametara na liniji:" + lleft, null); :} {: RESULT=new FormalParamDeclError(); :}
+				  ;
+				
+VarDeclList ::= (LocalVarDeclList) VarDeclList:V1 VarDecl:V2 {: RESULT=new LocalVarDeclList(V1, V2); RESULT.setLine(V1left); :}
+				|
+				(NoLocalVarDeclList) {: RESULT=new NoLocalVarDeclList(); :} /* epsilon */
+				;
+
+StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new Statements(S1, S2); RESULT.setLine(S1left); :}
+				  |
+				  (NoStatement) {: RESULT=new NoStatement(); :} /* epsilon */
+				  ;
+				 
+Statement ::= (StatementDesignator) DesignatorStatement:D1 SEMICOLON {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :}
+			  |
+			  (ReadStatement) READ LEFT_PAREN Designator:D1 RIGHT_PAREN SEMICOLON {: RESULT=new ReadStatement(D1); RESULT.setLine(D1left); :}
+			  |
+			  (PrintStatement) PRINT LEFT_PAREN Expr:E1 OptionalPrint:O2 RIGHT_PAREN SEMICOLON {: RESULT=new PrintStatement(E1, O2); RESULT.setLine(E1left); :}
+			  |
+			  (ReturnStatement1) RETURN SEMICOLON {: RESULT=new ReturnStatement1(); :}
+			  |
+			  (ReturnStatement2) RETURN Expr:E1 SEMICOLON {: RESULT=new ReturnStatement2(E1); RESULT.setLine(E1left); :}  
+			  ;
+
+OptionalPrint ::= (PrintOptional) COMMA NUMBER:val {: RESULT=new PrintOptional(val); RESULT.setLine(valleft); :}
+				  |
+				  (NoOptionalPrint) {: RESULT=new NoOptionalPrint(); :} /* epsilon */
+				  ;
+
+DesignatorStatement ::= (DesignatorAssignment) DesignatorAsg:D1 AssignOp:A2 Expr:E3 {: RESULT=new DesignatorAssignment(D1, A2, E3); RESULT.setLine(D1left); :}
+						|
+						(AssignErr) error SEMICOLON:l
+						{: parser.report_error("Oporavak od greske pri iskazu dodele/sabiranja/oduzimanja na liniji: "+lleft ,null); :} {: RESULT=new AssignErr(); :}	
+						|
+						(DesignatorIncrement) Designator:d INCREMENT {: RESULT=new DesignatorIncrement(d); RESULT.setLine(dleft); :} 
+						|
+						(DesignatorDecrement) Designator:d DECREMENT {: RESULT=new DesignatorDecrement(d); RESULT.setLine(dleft); :} 
+						|
+						(DesignatorFunction) Designator:d LEFT_PAREN RIGHT_PAREN {: RESULT=new DesignatorFunction(d); RESULT.setLine(dleft); :} 
+						;
+
+Designator ::= (DesignatorSimple) IDENT:name {: RESULT=new DesignatorSimple(name); RESULT.setLine(nameleft); :}
+			   |
+			   (DesignatorArr) DesignatorNiz:D1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new DesignatorArr(D1, E2); RESULT.setLine(D1left); :}
+			   ;
+
+DesignatorNiz ::= (DesignatorNiz) Designator:D1 {: RESULT=new DesignatorNiz(D1); RESULT.setLine(D1left); :};
+
+DesignatorAsg ::= (DesignatorAsg) Designator:D1 {: RESULT=new DesignatorAsg(D1); RESULT.setLine(D1left); :};
+
+AssignOp ::= (Asg) ASSIGN {: RESULT=new Asg(); :}
+			  |
+			  (AddRight) AddOpRight:A1 {: RESULT=new AddRight(A1); RESULT.setLine(A1left); :}
+			  |
+			  (MulRight) MulOpRight:M1 {: RESULT=new MulRight(M1); RESULT.setLine(M1left); :}
+			  ;
+			  
+Expr ::= (CondFactExpr) PocetakIzraza:P1 CondFact:C2 UPITNIK Terms:T3 DVOTACKA2 Terms:t2 {: RESULT=new CondFactExpr(P1, C2, T3, t2); RESULT.setLine(P1left); :}
+		 |
+		 (Expression) PocetakIzraza:P1 Terms:T2 {: RESULT=new Expression(P1, T2); RESULT.setLine(P1left); :}
+		 |
+		 (ErrorExpression) error:l
+		 {: parser.report_error("Oporavak od greske na liniji: " + lleft, null); :} {: RESULT=new ErrorExpression(); :}
+		 ;
+		 
+PocetakIzraza ::= (PocetakIzraza) {: RESULT=new PocetakIzraza(); :} /* epsilon */ ; //Samo da bih znao kada izraz pocinje, zbog steka
+
+CondFact ::= (CondFactSingle) Terms:T1 {: RESULT=new CondFactSingle(T1); RESULT.setLine(T1left); :}
+			 |
+			 (CondFactDouble) Terms:T1 RelOp:R2 Terms:t2 {: RESULT=new CondFactDouble(T1, R2, t2); RESULT.setLine(T1left); :}
+			 ;
+	 
+Terms ::= (MultipleTerms) Terms:T1 AddOp:A2 Term:T3 {: RESULT=new MultipleTerms(T1, A2, T3); RESULT.setLine(T1left); :}
+		  |
+		  (SingleTerm) Term:T1 {: RESULT=new SingleTerm(T1); RESULT.setLine(T1left); :}
+		  |
+		  (SingleTermMinus) MINUS Term:T1 {: RESULT=new SingleTermMinus(T1); RESULT.setLine(T1left); :}
+		  |
+		  (ModifikacijaHash) LEFT_BRACKET Terms:T1 HashMod:H2 HASH Terms:t2 RIGHT_BRACKET {: RESULT=new ModifikacijaHash(T1, H2, t2); RESULT.setLine(T1left); :}
+		  ;
+
+HashMod ::= (HashMod) {: RESULT=new HashMod(); :} /* epsilon */ ; //U generatoru da bih uradio % 65 ('A') nad prvim izrazom Expr, pre nego sto na stek stavim drugi
+
+Term ::= (MultiplTerms) Term:T1 MulOp:M2 Factor:F3 {: RESULT=new MultiplTerms(T1, M2, F3); RESULT.setLine(T1left); :}
+		 |
+		 (SinglTerm) Factor:F1 {: RESULT=new SinglTerm(F1); RESULT.setLine(F1left); :}
+		 ;
+		 
+//Sve faktore sem DesignatorFactora bacimo na expresion stek prilikom njihovog obilaska
+Factor ::= (NumFactor) NUMBER:N1 {: RESULT=new NumFactor(N1); RESULT.setLine(N1left); :}
+		   |
+		   (CharFactor) CHARCONST:C1 {: RESULT=new CharFactor(C1); RESULT.setLine(C1left); :}
+		   |
+		   (ExprFactor) LEFT_PAREN Expr:E1 RIGHT_PAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}
+		   |
+		   (BoolFactor) BOOLCONST:B1 {: RESULT=new BoolFactor(B1); RESULT.setLine(B1left); :}
+		   |
+		   (NewFactorNoExpr) NEW NewType:N1 {: RESULT=new NewFactorNoExpr(N1); RESULT.setLine(N1left); :}
+		   |
+		   (NewFactorExpr) NEW NewType:N1 LEFT_BRACKET Expr:E2 RIGHT_BRACKET {: RESULT=new NewFactorExpr(N1, E2); RESULT.setLine(N1left); :}
+		   |
+		   (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :} //Jedino kod njega poslednjiFaktor nije null
+		   |
+		   (DesignatorFactorFuncCall) Designator:d LEFT_PAREN RIGHT_PAREN {: RESULT=new DesignatorFactorFuncCall(d); RESULT.setLine(dleft); :}
+		   |
+		   (ModifikacijaAt) Designator:D1 AT Factor:F2 {: RESULT=new ModifikacijaAt(D1, F2); RESULT.setLine(D1left); :}	
+		   |
+		   (ModifikacijaDolar) DOLAR Designator:D1 {: RESULT=new ModifikacijaDolar(D1); RESULT.setLine(D1left); :}
+		   |
+		   (ModifikacijaKapica) KAPICA Factor:F1 {: RESULT=new ModifikacijaKapica(F1); RESULT.setLine(F1left); :}// ^4*5+6 - Moze Factor(4), Term(20) i moze Expr(26)
+		   |
+		   (ModifikacijaBrojevi) CRTA Expr:E1 DVOTACKA Expr:E2 DVOTACKA Expr:E3 CRTA {: RESULT=new ModifikacijaBrojevi(E1, E2, E3); RESULT.setLine(E1left); :} // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
+		   ;
+
+AddOp ::= (AddLeftOp) AddOpLeft:A1 {: RESULT=new AddLeftOp(A1); RESULT.setLine(A1left); :}
+		  |
+		  (AddRightOp) AddOpRight:A1 {: RESULT=new AddRightOp(A1); RESULT.setLine(A1left); :}
+		  ;
+		  
+AddOpLeft ::= (AddPlus) PLUS {: RESULT=new AddPlus(); :}
+			  |
+			  (AddMinus) MINUS {: RESULT=new AddMinus(); :}
+			  ;
+			  
+AddOpRight ::= (AddEq) ADDASG {: RESULT=new AddEq(); :}
+			   |
+			   (SubEq) SUBASG {: RESULT=new SubEq(); :}
+			   ;
+
+MulOp ::= (MulLeftOp) MulOpLeft:M1 {: RESULT=new MulLeftOp(M1); RESULT.setLine(M1left); :}
+		  |
+		  (MulRightOp) MulOpRight:M1 {: RESULT=new MulRightOp(M1); RESULT.setLine(M1left); :}
+		  ;
+
+MulOpLeft ::= (MulOpMul) MULTIPLY {: RESULT=new MulOpMul(); :}
+		  |
+		  (MulOpDiv) DIVIDE {: RESULT=new MulOpDiv(); :}
+		  |
+		  (MulOpMod) MOD {: RESULT=new MulOpMod(); :}
+		  ; 
+		  
+MulOpRight ::= (MulAsgOp) MULASG {: RESULT=new MulAsgOp(); :}
+			   |
+			   (DivAsgOp) DIVASG {: RESULT=new DivAsgOp(); :}
+			   |
+			   (ModAsgOp) MODASG {: RESULT=new ModAsgOp(); :}
+			   ;
+
+RelOp ::= (JednakoOp) JEDNAKO {: RESULT=new JednakoOp(); :}
+		  |
+		  (NejednakoOp) NEJEDNAKO {: RESULT=new NejednakoOp(); :}
+		  |
+		  (VeceOp) VECE {: RESULT=new VeceOp(); :}
+		  |
+		  (VeceJednakoOp) VECEJEDNAKO {: RESULT=new VeceJednakoOp(); :}
+		  |
+		  (ManjeOp) MANJE {: RESULT=new ManjeOp(); :}
+		  |
+		  (ManjeJednakoOp) MANJEJEDNAKO {: RESULT=new ManjeJednakoOp(); :}
+		  ;
+			   
+Value ::= (IntType) NUMBER:brojT {: RESULT=new IntType(brojT); RESULT.setLine(brojTleft); :}
+		 |
+		 (CharType) CHARCONST:charT {: RESULT=new CharType(charT); RESULT.setLine(charTleft); :}
+		 |
+		 (BoolType) BOOLCONST:boolT {: RESULT=new BoolType(boolT); RESULT.setLine(boolTleft); :}
+		 ;
+
