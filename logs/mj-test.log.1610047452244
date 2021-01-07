@@ -1,275 +1,271 @@
-INFO  20:24:12,247 - Compiling source file: D:\Bosko\ETF\VIISemestar\PP1\Projekat\Projekat\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
-INFO  20:24:12,292 - #2 program
-INFO  20:24:12,292 - #24 test301
-INFO  20:24:12,292 - #19 const
-INFO  20:24:12,293 - #24 int
-INFO  20:24:12,293 - #24 nula
-INFO  20:24:12,293 - #13 =
-INFO  20:24:12,293 - #25 0
-INFO  20:24:12,293 - #10 ;
-INFO  20:24:12,294 - #19 const
-INFO  20:24:12,294 - #24 int
-INFO  20:24:12,294 - #24 jedan
-INFO  20:24:12,294 - #13 =
-INFO  20:24:12,294 - #25 1
-INFO  20:24:12,294 - #10 ;
-INFO  20:24:12,295 - #19 const
-INFO  20:24:12,295 - #24 int
-INFO  20:24:12,295 - #24 pet
-INFO  20:24:12,295 - #13 =
-INFO  20:24:12,295 - #25 5
-INFO  20:24:12,295 - #10 ;
-INFO  20:24:12,296 - #24 int
-INFO  20:24:12,296 - #24 niz
-INFO  20:24:12,296 - #7 [
-INFO  20:24:12,296 - #8 ]
-INFO  20:24:12,296 - #14 +
-ERROR 20:24:12,296 - 
-Sintaksna greska! '+' na liniji 9
-INFO  20:24:12,296 - #25 1
-INFO  20:24:12,296 - #10 ;
-INFO  20:24:12,296 - #24 char
-INFO  20:24:12,297 - #24 nizch
-INFO  20:24:12,297 - #7 [
-INFO  20:24:12,297 - #8 ]
-INFO  20:24:12,297 - #10 ;
-INFO  20:24:12,297 - #3 {
-INFO  20:24:12,297 - #9 void
-INFO  20:24:12,298 - #24 main
-INFO  20:24:12,298 - #5 (
-INFO  20:24:12,298 - #6 )
-INFO  20:24:12,299 - #24 int
-INFO  20:24:12,299 - #24 bodovi
-INFO  20:24:12,299 - #10 ;
-INFO  20:24:12,299 - #24 bool
-INFO  20:24:12,299 - #24 bt
-INFO  20:24:12,300 - #10 ;
-INFO  20:24:12,300 - #3 {
-INFO  20:24:12,300 - #24 bodovi
-INFO  20:24:12,300 - #13 =
-INFO  20:24:12,300 - #25 0
-INFO  20:24:12,301 - #10 ;
-INFO  20:24:12,301 - #24 bodovi
-INFO  20:24:12,302 - #21 ++
-INFO  20:24:12,302 - #10 ;
-INFO  20:24:12,302 - #24 bodovi
-INFO  20:24:12,302 - #13 =
-INFO  20:24:12,302 - #24 bodovi
-INFO  20:24:12,302 - #14 +
-INFO  20:24:12,302 - #24 jedan
-INFO  20:24:12,303 - #10 ;
-INFO  20:24:12,303 - #24 bodovi
-INFO  20:24:12,303 - #13 =
-INFO  20:24:12,303 - #24 bodovi
-INFO  20:24:12,303 - #18 *
-INFO  20:24:12,303 - #24 pet
-INFO  20:24:12,304 - #10 ;
-INFO  20:24:12,304 - #24 bodovi
-INFO  20:24:12,304 - #22 --
-INFO  20:24:12,304 - #10 ;
-INFO  20:24:12,305 - #12 print
-INFO  20:24:12,305 - #5 (
-INFO  20:24:12,305 - #24 bodovi
-INFO  20:24:12,305 - #6 )
-INFO  20:24:12,305 - #10 ;
-INFO  20:24:12,306 - #24 niz
-INFO  20:24:12,306 - #13 =
-INFO  20:24:12,306 - #23 new
-INFO  20:24:12,306 - #24 int
-INFO  20:24:12,306 - #7 [
-INFO  20:24:12,306 - #25 3
-INFO  20:24:12,306 - #8 ]
-INFO  20:24:12,306 - #10 ;
-INFO  20:24:12,306 - #24 niz
-INFO  20:24:12,306 - #7 [
-INFO  20:24:12,307 - #24 nula
-INFO  20:24:12,307 - #8 ]
-INFO  20:24:12,307 - #13 =
-INFO  20:24:12,307 - #24 jedan
-INFO  20:24:12,308 - #10 ;
-INFO  20:24:12,308 - #24 niz
-INFO  20:24:12,308 - #7 [
-INFO  20:24:12,308 - #25 1
-INFO  20:24:12,308 - #8 ]
-INFO  20:24:12,308 - #13 =
-INFO  20:24:12,308 - #25 2
-INFO  20:24:12,308 - #10 ;
-INFO  20:24:12,308 - #24 niz
-INFO  20:24:12,309 - #7 [
-INFO  20:24:12,309 - #24 niz
-INFO  20:24:12,309 - #7 [
-INFO  20:24:12,309 - #24 jedan
-INFO  20:24:12,309 - #8 ]
-INFO  20:24:12,309 - #8 ]
-INFO  20:24:12,309 - #13 =
-INFO  20:24:12,309 - #24 niz
-INFO  20:24:12,309 - #7 [
-INFO  20:24:12,309 - #24 niz
-INFO  20:24:12,309 - #7 [
-INFO  20:24:12,309 - #25 0
-INFO  20:24:12,309 - #8 ]
-INFO  20:24:12,309 - #8 ]
-INFO  20:24:12,309 - #18 *
-INFO  20:24:12,309 - #25 3
-INFO  20:24:12,309 - #10 ;
-INFO  20:24:12,309 - #24 bodovi
-INFO  20:24:12,309 - #13 =
-INFO  20:24:12,310 - #24 niz
-INFO  20:24:12,310 - #7 [
-INFO  20:24:12,310 - #25 2
-INFO  20:24:12,310 - #8 ]
-INFO  20:24:12,310 - #17 /
-INFO  20:24:12,310 - #24 niz
-INFO  20:24:12,310 - #7 [
-INFO  20:24:12,310 - #25 0
-INFO  20:24:12,310 - #8 ]
-INFO  20:24:12,310 - #10 ;
-INFO  20:24:12,311 - #12 print
-INFO  20:24:12,311 - #5 (
-INFO  20:24:12,311 - #24 bodovi
-INFO  20:24:12,311 - #6 )
-INFO  20:24:12,311 - #10 ;
-INFO  20:24:12,311 - #12 print
-INFO  20:24:12,311 - #5 (
-INFO  20:24:12,311 - #24 niz
-INFO  20:24:12,311 - #7 [
-INFO  20:24:12,311 - #25 2
-INFO  20:24:12,311 - #8 ]
-INFO  20:24:12,311 - #6 )
-INFO  20:24:12,311 - #10 ;
-INFO  20:24:12,311 - #24 nizch
-INFO  20:24:12,311 - #13 =
-INFO  20:24:12,311 - #23 new
-INFO  20:24:12,311 - #24 char
-INFO  20:24:12,311 - #7 [
-INFO  20:24:12,311 - #25 3
-INFO  20:24:12,311 - #8 ]
-INFO  20:24:12,311 - #10 ;
-INFO  20:24:12,312 - #24 nizch
-INFO  20:24:12,312 - #7 [
-INFO  20:24:12,312 - #25 0
-INFO  20:24:12,312 - #8 ]
-INFO  20:24:12,312 - #13 =
-INFO  20:24:12,312 - #26 a
-INFO  20:24:12,312 - #10 ;
-INFO  20:24:12,312 - #24 nizch
-INFO  20:24:12,312 - #7 [
-INFO  20:24:12,312 - #24 jedan
-INFO  20:24:12,312 - #8 ]
-INFO  20:24:12,312 - #13 =
-INFO  20:24:12,312 - #26 b
-INFO  20:24:12,312 - #10 ;
-INFO  20:24:12,312 - #24 nizch
-INFO  20:24:12,312 - #7 [
-INFO  20:24:12,312 - #24 pet
-INFO  20:24:12,312 - #15 -
-INFO  20:24:12,313 - #25 3
-INFO  20:24:12,313 - #8 ]
-INFO  20:24:12,313 - #13 =
-INFO  20:24:12,313 - #26 c
-INFO  20:24:12,313 - #10 ;
-INFO  20:24:12,313 - #12 print
-INFO  20:24:12,313 - #5 (
-INFO  20:24:12,313 - #24 nizch
-INFO  20:24:12,314 - #7 [
-INFO  20:24:12,314 - #25 1
-INFO  20:24:12,314 - #8 ]
-INFO  20:24:12,314 - #6 )
-INFO  20:24:12,314 - #10 ;
-INFO  20:24:12,314 - #12 print
-INFO  20:24:12,314 - #5 (
-INFO  20:24:12,314 - #24 nizch
-INFO  20:24:12,314 - #7 [
-INFO  20:24:12,314 - #24 jedan
-INFO  20:24:12,314 - #18 *
-INFO  20:24:12,314 - #25 2
-INFO  20:24:12,314 - #8 ]
-INFO  20:24:12,314 - #6 )
-INFO  20:24:12,314 - #10 ;
-INFO  20:24:12,314 - #24 bodovi
-INFO  20:24:12,314 - #13 =
-INFO  20:24:12,314 - #24 bodovi
-INFO  20:24:12,314 - #14 +
-INFO  20:24:12,314 - #5 (
-INFO  20:24:12,314 - #24 pet
-INFO  20:24:12,314 - #18 *
-INFO  20:24:12,314 - #24 jedan
-INFO  20:24:12,315 - #15 -
-INFO  20:24:12,315 - #25 1
-INFO  20:24:12,320 - #6 )
-INFO  20:24:12,320 - #18 *
-INFO  20:24:12,320 - #24 bodovi
-INFO  20:24:12,320 - #15 -
-INFO  20:24:12,320 - #5 (
-INFO  20:24:12,321 - #25 3
-INFO  20:24:12,321 - #16 %
-INFO  20:24:12,321 - #25 2
-INFO  20:24:12,321 - #14 +
-INFO  20:24:12,321 - #25 3
-INFO  20:24:12,321 - #18 *
-INFO  20:24:12,321 - #25 2
-INFO  20:24:12,321 - #15 -
-INFO  20:24:12,321 - #25 3
-INFO  20:24:12,321 - #6 )
-INFO  20:24:12,321 - #10 ;
-INFO  20:24:12,321 - #12 print
-INFO  20:24:12,321 - #5 (
-INFO  20:24:12,321 - #24 bodovi
-INFO  20:24:12,321 - #6 )
-INFO  20:24:12,321 - #10 ;
-INFO  20:24:12,321 - #11 read
-INFO  20:24:12,322 - #5 (
-INFO  20:24:12,322 - #24 bodovi
-INFO  20:24:12,322 - #6 )
-INFO  20:24:12,322 - #10 ;
-INFO  20:24:12,322 - #24 bt
-INFO  20:24:12,322 - #13 =
-INFO  20:24:12,322 - #27 true
-INFO  20:24:12,322 - #10 ;
-INFO  20:24:12,322 - #12 print
-INFO  20:24:12,322 - #5 (
-INFO  20:24:12,322 - #24 bt
-INFO  20:24:12,322 - #35 ?
-INFO  20:24:12,322 - #24 bodovi
-INFO  20:24:12,322 - #36 :
-INFO  20:24:12,322 - #24 bodovi
-INFO  20:24:12,323 - #14 +
-INFO  20:24:12,323 - #25 10
-INFO  20:24:12,323 - #6 )
-INFO  20:24:12,323 - #10 ;
-INFO  20:24:12,323 - #12 print
-INFO  20:24:12,323 - #5 (
-INFO  20:24:12,323 - #27 false
-INFO  20:24:12,323 - #35 ?
-INFO  20:24:12,323 - #24 bodovi
-INFO  20:24:12,323 - #14 +
-INFO  20:24:12,323 - #25 20
-INFO  20:24:12,323 - #36 :
-INFO  20:24:12,323 - #24 bodovi
-INFO  20:24:12,323 - #14 +
-INFO  20:24:12,323 - #25 30
-INFO  20:24:12,323 - #6 )
-INFO  20:24:12,324 - #10 ;
-INFO  20:24:12,324 - #12 print
-INFO  20:24:12,324 - #5 (
-INFO  20:24:12,324 - #24 bodovi
-INFO  20:24:12,324 - #39 >
-INFO  20:24:12,324 - #25 10
-INFO  20:24:12,325 - #35 ?
-INFO  20:24:12,325 - #26 +
-INFO  20:24:12,325 - #36 :
-INFO  20:24:12,325 - #24 bodovi
-INFO  20:24:12,325 - #41 <
-INFO  20:24:12,325 - #25 5
-INFO  20:24:12,326 - #35 ?
-INFO  20:24:12,326 - #26 *
-INFO  20:24:12,326 - #36 :
-INFO  20:24:12,326 - #26 -
-INFO  20:24:12,326 - #6 )
-INFO  20:24:12,326 - #10 ;
-INFO  20:24:12,326 - #4 }
-INFO  20:24:12,326 - #4 }
-INFO  20:24:12,350 - Program(
+INFO  20:23:30,609 - Compiling source file: D:\Bosko\ETF\VIISemestar\PP1\Projekat\Projekat\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  20:23:30,640 - #2 program
+INFO  20:23:30,640 - #24 test301
+INFO  20:23:30,640 - #19 const
+INFO  20:23:30,641 - #24 int
+INFO  20:23:30,641 - #24 nula
+INFO  20:23:30,641 - #13 =
+INFO  20:23:30,641 - #25 0
+INFO  20:23:30,641 - #10 ;
+INFO  20:23:30,642 - #19 const
+INFO  20:23:30,642 - #24 int
+INFO  20:23:30,642 - #24 jedan
+INFO  20:23:30,642 - #13 =
+INFO  20:23:30,642 - #25 1
+INFO  20:23:30,642 - #10 ;
+INFO  20:23:30,643 - #19 const
+INFO  20:23:30,643 - #24 int
+INFO  20:23:30,643 - #24 pet
+INFO  20:23:30,643 - #13 =
+INFO  20:23:30,643 - #25 5
+INFO  20:23:30,643 - #10 ;
+INFO  20:23:30,643 - #24 int
+INFO  20:23:30,643 - #24 niz
+INFO  20:23:30,644 - #7 [
+INFO  20:23:30,644 - #8 ]
+INFO  20:23:30,644 - #10 ;
+INFO  20:23:30,644 - #24 char
+INFO  20:23:30,644 - #24 nizch
+INFO  20:23:30,644 - #7 [
+INFO  20:23:30,644 - #8 ]
+INFO  20:23:30,644 - #10 ;
+INFO  20:23:30,644 - #3 {
+INFO  20:23:30,644 - #9 void
+INFO  20:23:30,645 - #24 main
+INFO  20:23:30,645 - #5 (
+INFO  20:23:30,645 - #6 )
+INFO  20:23:30,646 - #24 int
+INFO  20:23:30,646 - #24 bodovi
+INFO  20:23:30,646 - #10 ;
+INFO  20:23:30,646 - #24 bool
+INFO  20:23:30,646 - #24 bt
+INFO  20:23:30,646 - #10 ;
+INFO  20:23:30,647 - #3 {
+INFO  20:23:30,647 - #24 bodovi
+INFO  20:23:30,647 - #13 =
+INFO  20:23:30,647 - #25 0
+INFO  20:23:30,648 - #10 ;
+INFO  20:23:30,648 - #24 bodovi
+INFO  20:23:30,649 - #21 ++
+INFO  20:23:30,649 - #10 ;
+INFO  20:23:30,649 - #24 bodovi
+INFO  20:23:30,649 - #13 =
+INFO  20:23:30,649 - #24 bodovi
+INFO  20:23:30,649 - #14 +
+INFO  20:23:30,649 - #24 jedan
+INFO  20:23:30,650 - #10 ;
+INFO  20:23:30,650 - #24 bodovi
+INFO  20:23:30,650 - #13 =
+INFO  20:23:30,650 - #24 bodovi
+INFO  20:23:30,650 - #18 *
+INFO  20:23:30,650 - #24 pet
+INFO  20:23:30,651 - #10 ;
+INFO  20:23:30,651 - #24 bodovi
+INFO  20:23:30,651 - #22 --
+INFO  20:23:30,651 - #10 ;
+INFO  20:23:30,652 - #12 print
+INFO  20:23:30,652 - #5 (
+INFO  20:23:30,652 - #24 bodovi
+INFO  20:23:30,652 - #6 )
+INFO  20:23:30,652 - #10 ;
+INFO  20:23:30,652 - #24 niz
+INFO  20:23:30,652 - #13 =
+INFO  20:23:30,652 - #23 new
+INFO  20:23:30,653 - #24 int
+INFO  20:23:30,653 - #7 [
+INFO  20:23:30,653 - #25 3
+INFO  20:23:30,653 - #8 ]
+INFO  20:23:30,653 - #10 ;
+INFO  20:23:30,653 - #24 niz
+INFO  20:23:30,653 - #7 [
+INFO  20:23:30,654 - #24 nula
+INFO  20:23:30,654 - #8 ]
+INFO  20:23:30,654 - #13 =
+INFO  20:23:30,654 - #24 jedan
+INFO  20:23:30,654 - #10 ;
+INFO  20:23:30,654 - #24 niz
+INFO  20:23:30,654 - #7 [
+INFO  20:23:30,654 - #25 1
+INFO  20:23:30,654 - #8 ]
+INFO  20:23:30,654 - #13 =
+INFO  20:23:30,655 - #25 2
+INFO  20:23:30,655 - #10 ;
+INFO  20:23:30,655 - #24 niz
+INFO  20:23:30,655 - #7 [
+INFO  20:23:30,655 - #24 niz
+INFO  20:23:30,655 - #7 [
+INFO  20:23:30,655 - #24 jedan
+INFO  20:23:30,655 - #8 ]
+INFO  20:23:30,655 - #8 ]
+INFO  20:23:30,655 - #13 =
+INFO  20:23:30,655 - #24 niz
+INFO  20:23:30,655 - #7 [
+INFO  20:23:30,655 - #24 niz
+INFO  20:23:30,655 - #7 [
+INFO  20:23:30,655 - #25 0
+INFO  20:23:30,655 - #8 ]
+INFO  20:23:30,655 - #8 ]
+INFO  20:23:30,655 - #18 *
+INFO  20:23:30,655 - #25 3
+INFO  20:23:30,656 - #10 ;
+INFO  20:23:30,656 - #24 bodovi
+INFO  20:23:30,656 - #13 =
+INFO  20:23:30,656 - #24 niz
+INFO  20:23:30,656 - #7 [
+INFO  20:23:30,656 - #25 2
+INFO  20:23:30,656 - #8 ]
+INFO  20:23:30,656 - #17 /
+INFO  20:23:30,656 - #24 niz
+INFO  20:23:30,656 - #7 [
+INFO  20:23:30,656 - #25 0
+INFO  20:23:30,656 - #8 ]
+INFO  20:23:30,656 - #10 ;
+INFO  20:23:30,657 - #12 print
+INFO  20:23:30,657 - #5 (
+INFO  20:23:30,657 - #24 bodovi
+INFO  20:23:30,657 - #6 )
+INFO  20:23:30,657 - #10 ;
+INFO  20:23:30,657 - #12 print
+INFO  20:23:30,657 - #5 (
+INFO  20:23:30,657 - #24 niz
+INFO  20:23:30,657 - #7 [
+INFO  20:23:30,657 - #25 2
+INFO  20:23:30,657 - #8 ]
+INFO  20:23:30,657 - #6 )
+INFO  20:23:30,657 - #10 ;
+INFO  20:23:30,657 - #24 nizch
+INFO  20:23:30,657 - #13 =
+INFO  20:23:30,657 - #23 new
+INFO  20:23:30,658 - #24 char
+INFO  20:23:30,658 - #7 [
+INFO  20:23:30,658 - #25 3
+INFO  20:23:30,658 - #8 ]
+INFO  20:23:30,658 - #10 ;
+INFO  20:23:30,658 - #24 nizch
+INFO  20:23:30,658 - #7 [
+INFO  20:23:30,658 - #25 0
+INFO  20:23:30,658 - #8 ]
+INFO  20:23:30,658 - #13 =
+INFO  20:23:30,658 - #26 a
+INFO  20:23:30,658 - #10 ;
+INFO  20:23:30,658 - #24 nizch
+INFO  20:23:30,658 - #7 [
+INFO  20:23:30,658 - #24 jedan
+INFO  20:23:30,659 - #8 ]
+INFO  20:23:30,659 - #13 =
+INFO  20:23:30,659 - #26 b
+INFO  20:23:30,659 - #10 ;
+INFO  20:23:30,659 - #24 nizch
+INFO  20:23:30,659 - #7 [
+INFO  20:23:30,659 - #24 pet
+INFO  20:23:30,659 - #15 -
+INFO  20:23:30,659 - #25 3
+INFO  20:23:30,659 - #8 ]
+INFO  20:23:30,660 - #13 =
+INFO  20:23:30,660 - #26 c
+INFO  20:23:30,660 - #10 ;
+INFO  20:23:30,660 - #12 print
+INFO  20:23:30,660 - #5 (
+INFO  20:23:30,660 - #24 nizch
+INFO  20:23:30,660 - #7 [
+INFO  20:23:30,660 - #25 1
+INFO  20:23:30,660 - #8 ]
+INFO  20:23:30,660 - #6 )
+INFO  20:23:30,660 - #10 ;
+INFO  20:23:30,660 - #12 print
+INFO  20:23:30,660 - #5 (
+INFO  20:23:30,660 - #24 nizch
+INFO  20:23:30,660 - #7 [
+INFO  20:23:30,660 - #24 jedan
+INFO  20:23:30,660 - #18 *
+INFO  20:23:30,661 - #25 2
+INFO  20:23:30,661 - #8 ]
+INFO  20:23:30,661 - #6 )
+INFO  20:23:30,661 - #10 ;
+INFO  20:23:30,661 - #24 bodovi
+INFO  20:23:30,661 - #13 =
+INFO  20:23:30,661 - #24 bodovi
+INFO  20:23:30,661 - #14 +
+INFO  20:23:30,661 - #5 (
+INFO  20:23:30,661 - #24 pet
+INFO  20:23:30,661 - #18 *
+INFO  20:23:30,661 - #24 jedan
+INFO  20:23:30,661 - #15 -
+INFO  20:23:30,661 - #25 1
+INFO  20:23:30,661 - #6 )
+INFO  20:23:30,661 - #18 *
+INFO  20:23:30,661 - #24 bodovi
+INFO  20:23:30,667 - #15 -
+INFO  20:23:30,667 - #5 (
+INFO  20:23:30,667 - #25 3
+INFO  20:23:30,667 - #16 %
+INFO  20:23:30,667 - #25 2
+INFO  20:23:30,667 - #14 +
+INFO  20:23:30,667 - #25 3
+INFO  20:23:30,667 - #18 *
+INFO  20:23:30,667 - #25 2
+INFO  20:23:30,667 - #15 -
+INFO  20:23:30,667 - #25 3
+INFO  20:23:30,667 - #6 )
+INFO  20:23:30,667 - #10 ;
+INFO  20:23:30,668 - #12 print
+INFO  20:23:30,668 - #5 (
+INFO  20:23:30,668 - #24 bodovi
+INFO  20:23:30,668 - #6 )
+INFO  20:23:30,668 - #10 ;
+INFO  20:23:30,668 - #11 read
+INFO  20:23:30,668 - #5 (
+INFO  20:23:30,668 - #24 bodovi
+INFO  20:23:30,668 - #6 )
+INFO  20:23:30,668 - #10 ;
+INFO  20:23:30,668 - #24 bt
+INFO  20:23:30,668 - #13 =
+INFO  20:23:30,668 - #27 true
+INFO  20:23:30,668 - #10 ;
+INFO  20:23:30,668 - #12 print
+INFO  20:23:30,669 - #5 (
+INFO  20:23:30,669 - #24 bt
+INFO  20:23:30,669 - #35 ?
+INFO  20:23:30,669 - #24 bodovi
+INFO  20:23:30,669 - #36 :
+INFO  20:23:30,669 - #24 bodovi
+INFO  20:23:30,669 - #14 +
+INFO  20:23:30,669 - #25 10
+INFO  20:23:30,669 - #6 )
+INFO  20:23:30,670 - #10 ;
+INFO  20:23:30,670 - #12 print
+INFO  20:23:30,670 - #5 (
+INFO  20:23:30,670 - #27 false
+INFO  20:23:30,670 - #35 ?
+INFO  20:23:30,670 - #24 bodovi
+INFO  20:23:30,670 - #14 +
+INFO  20:23:30,670 - #25 20
+INFO  20:23:30,670 - #36 :
+INFO  20:23:30,670 - #24 bodovi
+INFO  20:23:30,670 - #14 +
+INFO  20:23:30,670 - #25 30
+INFO  20:23:30,670 - #6 )
+INFO  20:23:30,670 - #10 ;
+INFO  20:23:30,670 - #12 print
+INFO  20:23:30,670 - #5 (
+INFO  20:23:30,670 - #24 bodovi
+INFO  20:23:30,670 - #39 >
+INFO  20:23:30,671 - #25 10
+INFO  20:23:30,671 - #35 ?
+INFO  20:23:30,671 - #26 +
+INFO  20:23:30,671 - #36 :
+INFO  20:23:30,672 - #24 bodovi
+INFO  20:23:30,672 - #41 <
+INFO  20:23:30,672 - #25 5
+INFO  20:23:30,672 - #35 ?
+INFO  20:23:30,672 - #26 *
+INFO  20:23:30,672 - #36 :
+INFO  20:23:30,672 - #26 -
+INFO  20:23:30,672 - #6 )
+INFO  20:23:30,673 - #10 ;
+INFO  20:23:30,673 - #4 }
+INFO  20:23:30,673 - #4 }
+INFO  20:23:30,695 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -316,11 +312,16 @@ INFO  20:24:12,350 - Program(
           ) [NoConstList]
         ) [ConstDeclaration]
       ) [ConstDeclarations]
-      VarDeclarError(
+      VarDeclar(
         PraviTip(
          int
         ) [PraviTip]
-      ) [VarDeclarError]
+        VarListSingle(
+          VarDefArr(
+           niz
+          ) [VarDefArr]
+        ) [VarListSingle]
+      ) [VarDeclar]
     ) [VarDeclarations]
     VarDeclar(
       PraviTip(
@@ -1351,97 +1352,94 @@ INFO  20:24:12,350 - Program(
     ) [MethodDeclaration]
   ) [MethodDeclarations]
 ) [Program]
-INFO  20:24:12,352 - ===================================
-INFO  20:24:12,354 - Deklarisana je konstanta: 'nula' tipa int   na liniji 5
-INFO  20:24:12,354 - Deklarisana je konstanta: 'jedan' tipa int   na liniji 6
-INFO  20:24:12,355 - Deklarisana je konstanta: 'pet' tipa int   na liniji 7
-INFO  20:24:12,355 - Oporavak od greske kod promenljive: ' na liniji 9
-INFO  20:24:12,355 - Deklarisan je niz: 'nizch' na liniji 10
-INFO  20:24:12,355 - Obradjuje se funkcija: main na liniji 13
-INFO  20:24:12,355 - Deklarisana je promenljiva: bodovi na liniji 14
-INFO  20:24:12,355 - Deklarisana je promenljiva: bt na liniji 15
-INFO  20:24:12,355 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 17
-INFO  20:24:12,355 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 17
-INFO  20:24:12,355 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 18
-INFO  20:24:12,355 - Uspesno odraden inkrement promenljivoj: 'bodovi' - na liniji 18
-INFO  20:24:12,355 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 19
-INFO  20:24:12,355 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 19
-INFO  20:24:12,355 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 19
-INFO  20:24:12,356 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 19
-INFO  20:24:12,356 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 20
-INFO  20:24:12,356 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 20
-INFO  20:24:12,356 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 20
-INFO  20:24:12,356 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 20
-INFO  20:24:12,356 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 21
-INFO  20:24:12,356 - Uspesno odraden dekrement promenljivoj: 'bodovi' - na liniji 21
-INFO  20:24:12,356 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 22
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 25
-ERROR 20:24:12,356 - Greska! Tipovi nekompatibilni - na liniji 25
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 26
-INFO  20:24:12,356 - Pristup konstanti:'Con nula: int, 0, 0 ' - na liniji 26
-ERROR 20:24:12,356 - Promenljiva: 'noObj' nije deklarisana - na liniji 26
-INFO  20:24:12,356 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 26
-ERROR 20:24:12,356 - Greska! Tipovi nekompatibilni - na liniji 26
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 27
-ERROR 20:24:12,356 - Promenljiva: 'noObj' nije deklarisana - na liniji 27
-ERROR 20:24:12,356 - Greska! Tipovi nekompatibilni - na liniji 27
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 28
-INFO  20:24:12,356 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'noObj' nije deklarisana - na liniji 28
-ERROR 20:24:12,356 - Greska: Promenljivoj: 'noObj' indeks mora da bude tipa int - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'noObj' nije deklarisana - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'niz' nije deklarisana - na liniji 28
-ERROR 20:24:12,356 - Promenljiva: 'noObj' nije deklarisana - na liniji 28
-ERROR 20:24:12,357 - Greska: Promenljivoj: 'noObj' indeks mora da bude tipa int - na liniji 28
-ERROR 20:24:12,357 - Promenljiva: 'noObj' nije deklarisana - na liniji 28
-INFO  20:24:12,357 - Uspesno dodeljivanje vrednosti promenljivoj: 'noObj' - na liniji 28
-INFO  20:24:12,357 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 29
-ERROR 20:24:12,357 - Promenljiva: 'niz' nije deklarisana - na liniji 29
-ERROR 20:24:12,357 - Promenljiva: 'noObj' nije deklarisana - na liniji 29
-ERROR 20:24:12,357 - Promenljiva: 'niz' nije deklarisana - na liniji 29
-ERROR 20:24:12,357 - Promenljiva: 'noObj' nije deklarisana - na liniji 29
-ERROR 20:24:12,357 - Greska! Tipovi nekompatibilni - na liniji 29
-INFO  20:24:12,357 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 30
-ERROR 20:24:12,357 - Promenljiva: 'niz' nije deklarisana - na liniji 31
-ERROR 20:24:12,357 - Promenljiva: 'noObj' nije deklarisana - na liniji 31
-ERROR 20:24:12,357 - Greska! Na liniji: 31: PRINT prima samo char, int ili boool!
-INFO  20:24:12,357 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 34
-INFO  20:24:12,357 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 34
-INFO  20:24:12,357 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 35
-INFO  20:24:12,357 - Pristup elementu niza: 'nizch' - na liniji 35
-INFO  20:24:12,357 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 35
-INFO  20:24:12,357 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 36
-INFO  20:24:12,357 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 36
-INFO  20:24:12,357 - Pristup elementu niza: 'nizch' - na liniji 36
-INFO  20:24:12,358 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 36
-INFO  20:24:12,358 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 37
-INFO  20:24:12,358 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 37
-INFO  20:24:12,358 - Pristup elementu niza: 'nizch' - na liniji 37
-INFO  20:24:12,358 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 37
-INFO  20:24:12,358 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 38
-INFO  20:24:12,358 - Pristup elementu niza: 'nizch' - na liniji 38
-INFO  20:24:12,358 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 0, 0 ' - na liniji 39
-INFO  20:24:12,358 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 39
-INFO  20:24:12,358 - Pristup elementu niza: 'nizch' - na liniji 39
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
-INFO  20:24:12,358 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 42
-INFO  20:24:12,358 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 42
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
-INFO  20:24:12,358 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 42
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 43
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 45
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bt: , 1, 1 ' - na liniji 46
-INFO  20:24:12,358 - Uspesno dodeljivanje vrednosti promenljivoj: 'bt' - na liniji 46
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bt: , 1, 1 ' - na liniji 48
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 48
-INFO  20:24:12,358 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 48
-INFO  20:24:12,359 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 49
-INFO  20:24:12,359 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 49
-INFO  20:24:12,359 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 50
-INFO  20:24:12,359 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 50
-INFO  20:24:12,359 - Zavrsava se obrada funkcije: 'main' - na liniji 13
-INFO  20:24:12,359 - =========================
-ERROR 20:24:12,359 - Parsiranje nije uspesno zavrseno!
+INFO  20:23:30,698 - ===================================
+INFO  20:23:30,700 - Deklarisana je konstanta: 'nula' tipa int   na liniji 5
+INFO  20:23:30,700 - Deklarisana je konstanta: 'jedan' tipa int   na liniji 6
+INFO  20:23:30,700 - Deklarisana je konstanta: 'pet' tipa int   na liniji 7
+INFO  20:23:30,700 - Deklarisan je niz: 'niz' na liniji 9
+INFO  20:23:30,700 - Deklarisan je niz: 'nizch' na liniji 10
+INFO  20:23:30,701 - Obradjuje se funkcija: main na liniji 13
+INFO  20:23:30,701 - Deklarisana je promenljiva: bodovi na liniji 14
+INFO  20:23:30,701 - Deklarisana je promenljiva: bt na liniji 15
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 17
+INFO  20:23:30,701 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 17
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 18
+INFO  20:23:30,701 - Uspesno odraden inkrement promenljivoj: 'bodovi' - na liniji 18
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 19
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 19
+INFO  20:23:30,701 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 19
+INFO  20:23:30,701 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 19
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 20
+INFO  20:23:30,701 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 20
+INFO  20:23:30,701 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 20
+INFO  20:23:30,702 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 20
+INFO  20:23:30,702 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 21
+INFO  20:23:30,702 - Uspesno odraden dekrement promenljivoj: 'bodovi' - na liniji 21
+INFO  20:23:30,702 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 22
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 25
+INFO  20:23:30,702 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 25
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 26
+INFO  20:23:30,702 - Pristup konstanti:'Con nula: int, 0, 0 ' - na liniji 26
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 26
+INFO  20:23:30,702 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 26
+INFO  20:23:30,702 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 26
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 27
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 27
+INFO  20:23:30,702 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 27
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 28
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 28
+INFO  20:23:30,702 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 28
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 28
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 28
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 28
+INFO  20:23:30,702 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 28
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 28
+INFO  20:23:30,702 - Pristup elementu niza: 'niz' - na liniji 28
+INFO  20:23:30,702 - Uspesno dodeljivanje vrednosti promenljivoj: 'niz' - na liniji 28
+INFO  20:23:30,702 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 29
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 29
+INFO  20:23:30,703 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 29
+INFO  20:23:30,703 - Pristup elementu niza: 'niz' - na liniji 29
+INFO  20:23:30,703 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 29
+INFO  20:23:30,703 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 30
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var niz: Arr of int, 0, 0 ' - na liniji 31
+INFO  20:23:30,703 - Pristup elementu niza: 'niz' - na liniji 31
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 34
+INFO  20:23:30,703 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 34
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 35
+INFO  20:23:30,703 - Pristup elementu niza: 'nizch' - na liniji 35
+INFO  20:23:30,703 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 35
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 36
+INFO  20:23:30,703 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 36
+INFO  20:23:30,703 - Pristup elementu niza: 'nizch' - na liniji 36
+INFO  20:23:30,703 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 36
+INFO  20:23:30,703 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 37
+INFO  20:23:30,703 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 37
+INFO  20:23:30,703 - Pristup elementu niza: 'nizch' - na liniji 37
+INFO  20:23:30,703 - Uspesno dodeljivanje vrednosti promenljivoj: 'nizch' - na liniji 37
+INFO  20:23:30,704 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 38
+INFO  20:23:30,704 - Pristup elementu niza: 'nizch' - na liniji 38
+INFO  20:23:30,704 - Pristup globalnoj promenljivoj:'Var nizch: Arr of char, 1, 0 ' - na liniji 39
+INFO  20:23:30,704 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 39
+INFO  20:23:30,704 - Pristup elementu niza: 'nizch' - na liniji 39
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
+INFO  20:23:30,704 - Pristup konstanti:'Con pet: int, 5, 0 ' - na liniji 42
+INFO  20:23:30,704 - Pristup konstanti:'Con jedan: int, 1, 0 ' - na liniji 42
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 42
+INFO  20:23:30,704 - Uspesno dodeljivanje vrednosti promenljivoj: 'bodovi' - na liniji 42
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 43
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 45
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bt: , 1, 1 ' - na liniji 46
+INFO  20:23:30,704 - Uspesno dodeljivanje vrednosti promenljivoj: 'bt' - na liniji 46
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bt: , 1, 1 ' - na liniji 48
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 48
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 48
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 49
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 49
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 50
+INFO  20:23:30,704 - Pristup lokalnoj promenljivoj:'Var bodovi: int, 0, 1 ' - na liniji 50
+INFO  20:23:30,704 - Zavrsava se obrada funkcije: 'main' - na liniji 13
+INFO  20:23:30,704 - =========================
+INFO  20:23:30,709 - Parsiranje uspesno zavrseno!

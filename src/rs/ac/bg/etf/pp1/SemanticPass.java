@@ -561,8 +561,18 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
-	// public void visit(VarDeclarError vE) {} //Dodati i za ostale greske!
-
+	public void visit(VarDeclarError vE) {
+		report_info("Oporavak od greske kod promenljive: '", vE);
+	} 
+	
+	public void visit(VarListMultipleError vM) {
+		report_info("Oporavak od greske kod promenljive: '", vM);
+	}
+	
+	public void visit(AssignErr aE) {
+		report_info("Oporavak od greske kod iskaza dodele! '", aE);
+	}
+	
 	public boolean passed() {
 		return !errorDetected;
 	}

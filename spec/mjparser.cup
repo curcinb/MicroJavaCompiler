@@ -54,7 +54,6 @@ terminal String IDENT;
 terminal Integer NUMBER;
 terminal Character CHARCONST;
 terminal String BOOLCONST;
-terminal ADDASG, SUBASG, MULASG, DIVASG, MODASG;
 terminal RETURN;
 terminal AT;
 terminal HASH;
@@ -71,9 +70,9 @@ nonterminal RelOp;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct CondFact, Dvotacka2;
 
 nonterminal DeclList, MethDeclList, ConstList, FormParameters, FormPars, VarDeclList, StatementList, FormalParamDecl;
-nonterminal Statement, OptionalPrint, AddOp, MulOp, AssignOp, AddOpRight, AddOpLeft, MulOpRight, MulOpLeft;
-nonterminal DesignatorNiz, DesignatorAsg;
-nonterminal PocetakIzraza, HashMod;
+nonterminal Statement, OptionalPrint, AddOp, MulOp, AssignOp;
+nonterminal DesignatorNiz;
+nonterminal HashMod;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethTypeName, Designator;
 

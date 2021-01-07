@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 20:6:41
+// 7/0/2021 20:21:15
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -12,10 +12,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormalParamDecl FormalParamDecl) { }
     public void visit(MethTypeName MethTypeName) { }
     public void visit(StatementList StatementList) { }
-    public void visit(MulOpLeft MulOpLeft) { }
     public void visit(Factor Factor) { }
     public void visit(VarList VarList) { }
-    public void visit(PocetakIzraza PocetakIzraza) { }
     public void visit(ConstList ConstList) { }
     public void visit(MethDeclList MethDeclList) { }
     public void visit(DeclList DeclList) { }
@@ -24,25 +22,21 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethDecl MethDecl) { }
     public void visit(Terms Terms) { }
     public void visit(MulOp MulOp) { }
-    public void visit(AddOpRight AddOpRight) { }
     public void visit(Value Value) { }
     public void visit(RelOp RelOp) { }
     public void visit(AssignOp AssignOp) { }
     public void visit(NewType NewType) { }
     public void visit(VarDeclList VarDeclList) { }
-    public void visit(Expr Expr) { }
     public void visit(OptionalPrint OptionalPrint) { }
+    public void visit(Expr Expr) { }
     public void visit(AddOp AddOp) { }
-    public void visit(VarDef VarDef) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
+    public void visit(VarDef VarDef) { }
     public void visit(Statement Statement) { }
     public void visit(VarDecl VarDecl) { }
-    public void visit(AddOpLeft AddOpLeft) { }
-    public void visit(MulOpRight MulOpRight) { }
     public void visit(ConstDecl ConstDecl) { }
     public void visit(CondFact CondFact) { }
     public void visit(FormPars FormPars) { }
-    public void visit(DesignatorAsg DesignatorAsg) { }
     public void visit(BoolType BoolType) { visit(); }
     public void visit(CharType CharType) { visit(); }
     public void visit(IntType IntType) { visit(); }

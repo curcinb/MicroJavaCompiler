@@ -44,15 +44,10 @@ import java_cup.runtime.Symbol;
 
 //Operatori:
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
-"+=" 		{ return new_symbol(sym.ADDASG, yytext()); }
 "-"			{ return new_symbol(sym.MINUS, yytext()); }
-"-="		{ return new_symbol(sym.SUBASG, yytext()); }
 "*"			{ return new_symbol(sym.MULTIPLY, yytext()); }
-"*="		{ return new_symbol(sym.MULASG, yytext()); }
 "/"			{ return new_symbol(sym.DIVIDE, yytext()); }
-"/="		{ return new_symbol(sym.DIVASG, yytext()); }
 "%"			{ return new_symbol(sym.MOD, yytext()); }
-"%="		{ return new_symbol(sym.MODASG, yytext()); }
 "=" 		{ return new_symbol(sym.ASSIGN, yytext()); }
 ";" 		{ return new_symbol(sym.SEMICOLON, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
