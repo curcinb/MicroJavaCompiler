@@ -1,23 +1,18 @@
 package rs.ac.bg.etf.pp1;
 
-import java.util.Stack;
-
 import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
+import rs.etf.pp1.symboltable.visitors.DumpSymbolTableVisitor;
 
 public class SemanticPass extends VisitorAdaptor {
 
-	int printCallCount = 0;
 	int varDeclCount = 0;
 	Obj currentMethod = null;
 	boolean errorDetected = false;
 	int nVars;
-	private boolean naisaoNaObicanOperator; // za tekuci izraz
-	private Stack<Boolean> stekZaSveIzraze = new Stack<>(); // za ugnjezdene izraze
-	Obj poslednjiFaktor;
 
 	Logger log = Logger.getLogger(getClass());
 
@@ -150,7 +145,7 @@ public class SemanticPass extends VisitorAdaptor {
 		Obj tmp = Tab.currentScope().findSymbol(varDefArr.getVarName());
 		if (tmp == null) {
 			report_info("Deklarisan je niz: '" + varDefArr.getVarName() + "'", varDefArr);
-			Tab.insert(Obj.Var, varDefArr.getVarName(), new Struct(Struct.Array, currentType)); 
+			Tab.insert(Obj.Var, varDefArr.getVarName(), new Struct(Struct.Array, currentType));
 			varDeclCount++;
 		} else {
 			report_error("Greska: Niz: " + varDefArr.getVarName() + " je vec deklarisana", null);
@@ -228,7 +223,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska! Na liniji: " + printStatement.getLine() + ": PRINT prima samo char, int ili boool!",
 					null);
 		}
-		printCallCount++;
 	}
 
 	int printVal;
@@ -239,34 +233,18 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorAssignment designatorAssignment) {
-		Obj obj = designatorAssignment.getDesignatorAsg().getDesignator().obj;
+		Obj obj = designatorAssignment.getDesignator().obj;
 		int tmp = obj.getKind();
-		Struct designatorType;
-		Struct tmp2 = Tab.intType;
+		Struct designatorType = obj.getType();
 
 		if (tmp != Obj.Var && tmp != Obj.Elem && tmp != Obj.Fld) {
 			report_error("Greska! Designator: '" + obj.getName() + "' nije ni promenljiva, ni element ni polje!",
 					designatorAssignment);
 		}
 
-		if (tmp == Struct.Array) {
-			designatorType = obj.getType().getElemType();
-		} else {
-			designatorType = obj.getType();
-		}
-
 		// ok
-		if (!designatorType.compatibleWith(designatorAssignment.getExpr().struct)) {
-			if (designatorAssignment.getExpr().struct != Tab.intType) {
-				report_info("Uspesno dodeljivanje vrednosti promenljivoj: '" + obj.getName() + "' -",
-						designatorAssignment);
-				obj.getType().setElementType(Tab.intType);
-			} else {
-				report_error("Greska! Tipovi nekompatibilni -", designatorAssignment);
-				if (designatorType.compatibleWith(tmp2)) {
-					tmp2 = Tab.charType;
-				}
-			}
+		if (!designatorAssignment.getExpr().struct.assignableTo(designatorType)) {
+			report_error("Greska! Tipovi nekompatibilni -", designatorAssignment);
 		} else {
 			report_info("Uspesno dodeljivanje vrednosti promenljivoj: '" + obj.getName() + "' -", designatorAssignment);
 		}
@@ -313,7 +291,7 @@ public class SemanticPass extends VisitorAdaptor {
 					designatorDecrement);
 		}
 	}
- 
+
 	// ok
 	public void visit(DesignatorFunction designatorFunction) {
 		Obj func = designatorFunction.getDesignator().obj;
@@ -350,7 +328,17 @@ public class SemanticPass extends VisitorAdaptor {
 		designatorSimple.obj = obj;
 
 		if (obj != Tab.noObj) {
-			report_info("Pristup promenljivoj:'" + designatorSimple.getName() + "' -", designatorSimple);
+			DumpSymbolTableVisitor dumpSym = new DumpSymbolTableVisitor();
+			dumpSym.visitObjNode(obj);
+			if (obj.getKind() == Obj.Con) {
+				report_info("Pristup konstanti:'" + dumpSym.getOutput() + "' -", designatorSimple);
+			} else if (obj.getKind() == Obj.Var) {
+				if (obj.getLevel() == 0) {
+					report_info("Pristup globalnoj promenljivoj:'" + dumpSym.getOutput() + "' -", designatorSimple);
+				} else {
+					report_info("Pristup lokalnoj promenljivoj:'" + dumpSym.getOutput() + "' -", designatorSimple);
+				}
+			}
 		} else {
 			report_error("Promenljiva: '" + designatorSimple.getName() + "' nije deklarisana -", designatorSimple);
 		}
@@ -390,22 +378,18 @@ public class SemanticPass extends VisitorAdaptor {
 
 	public void visit(NumFactor numFactor) {
 		numFactor.struct = Tab.intType;
-		poslednjiFaktor = null;
 	}
 
 	public void visit(CharFactor charFactor) {
 		charFactor.struct = Tab.charType;
-		poslednjiFaktor = null;
 	}
 
 	public void visit(ExprFactor exprFactor) {
 		exprFactor.struct = exprFactor.getExpr().struct;
-		poslednjiFaktor = null;
 	}
 
 	public void visit(BoolFactor boolFactor) {
 		boolFactor.struct = boolTip;
-		poslednjiFaktor = null;
 	}
 
 	public void visit(NewFactorExpr newFactorExpr) {
@@ -416,12 +400,10 @@ public class SemanticPass extends VisitorAdaptor {
 					newFactorExpr);
 			newFactorExpr.struct = Tab.noType;
 		}
-		poslednjiFaktor = null;
 	}
 
 	public void visit(DesignatorFactor designatorFactor) {
 		designatorFactor.struct = designatorFactor.getDesignator().obj.getType();
-		poslednjiFaktor = designatorFactor.getDesignator().obj;
 	}
 
 	public void visit(DesignatorFactorFuncCall designatorFactorFuncCall) {
@@ -433,7 +415,6 @@ public class SemanticPass extends VisitorAdaptor {
 					+ "na liniji: " + designatorFactorFuncCall.getLine() + " nije metoda!", null);
 			designatorFactorFuncCall.struct = Tab.noType;
 		}
-		poslednjiFaktor = null;
 	}
 
 	public void visit(ModifikacijaAt modifikacijaAt) {
@@ -448,7 +429,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska! Nekompatibilan desni operand za operaciju @ : ", modifikacijaAt);
 			modifikacijaAt.struct = Tab.noType;
 		}
-		poslednjiFaktor = null;
 
 	}
 
@@ -460,8 +440,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska! Nekompatibilan operand za operaciju $ : ", modifikacijaD);
 			modifikacijaD.struct = Tab.noType;
 		}
-		poslednjiFaktor = null;
-
 	}
 
 	public void visit(ModifikacijaKapica modifikacijaK) {
@@ -471,8 +449,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska! Nekompatibilan operand za operaciju ^ : ", modifikacijaK);
 			modifikacijaK.struct = Tab.noType;
 		}
-
-		poslednjiFaktor = null;
 	}
 
 	public void visit(ModifikacijaBrojevi modifikacijaB) {
@@ -492,8 +468,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska! Nekompatibilan 3. operand za modifikaciju brojevi : ", modifikacijaB);
 			modifikacijaB.struct = Tab.noType;
 		}
-
-		poslednjiFaktor = null;
 	}
 
 	public void visit(IntType intType) {
@@ -529,13 +503,6 @@ public class SemanticPass extends VisitorAdaptor {
 
 	public void visit(Expression expression) {
 		expression.struct = expression.getTerms().struct;
-
-		stekZaSveIzraze.pop();
-		if (stekZaSveIzraze.empty()) {
-			naisaoNaObicanOperator = false;
-		} else {
-			naisaoNaObicanOperator = stekZaSveIzraze.peek();
-		}
 	}
 
 	public void visit(ModifikacijaHash exprHash) {
@@ -550,70 +517,51 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
-	public void visit(PocetakIzraza pocetakIzraza) {
-		naisaoNaObicanOperator = false;
-		stekZaSveIzraze.push(naisaoNaObicanOperator);
-	}
-
-	public void visit(AddLeftOp addLeftOp) {
-		naisaoNaObicanOperator = true;
-		stekZaSveIzraze.pop();
-		stekZaSveIzraze.push(naisaoNaObicanOperator);
-	}
-
-	public void visit(MulLeftOp mulLeftOp) {
-		naisaoNaObicanOperator = true;
-		stekZaSveIzraze.pop();
-		stekZaSveIzraze.push(naisaoNaObicanOperator);
-	}
-
-	public void visit(AddRightOp addRightOp) {
-		if (naisaoNaObicanOperator) {
-			report_error("Ne moze se izrazu dodeliti vrednost!", addRightOp);
-			naisaoNaObicanOperator = false;
-			stekZaSveIzraze.pop();
-			stekZaSveIzraze.push(naisaoNaObicanOperator);
-		}
-		if (poslednjiFaktor == null || poslednjiFaktor.getKind() != Obj.Fld && poslednjiFaktor.getKind() != Obj.Var
-				&& poslednjiFaktor.getKind() != Obj.Elem) {
-			report_error("Ne moze se dodeliti vrednost necemu sto nije lvalue!", addRightOp);
-		}
-	}
-
-	public void visit(MulRightOp mulRightOp) {
-		if (naisaoNaObicanOperator) {
-			report_error("Ne moze se izrazu dodeliti vrednost!", mulRightOp);
-			naisaoNaObicanOperator = false;
-			stekZaSveIzraze.pop();
-			stekZaSveIzraze.push(naisaoNaObicanOperator);
-		}
-		if (poslednjiFaktor == null || poslednjiFaktor.getKind() != Obj.Fld && poslednjiFaktor.getKind() != Obj.Var
-				&& poslednjiFaktor.getKind() != Obj.Elem) {
-			report_error("Ne moze se dodeliti vrednost necemu sto nije lvalue!", mulRightOp);
-		}
-	}
-	
-	//TODO: Dodatak:
 	public void visit(CondFactExpr condFactExpr) {
-		//Provera da li su istog tipa
-		if(condFactExpr.getTerms().struct != condFactExpr.getTerms1().struct) {
-			report_error("Nekompatiblni tipovi!", condFactExpr);
+		// Zapamtio sam kog su tipa izrazi:
+		Struct tipCondFact1 = condFactExpr.getExpr().struct;
+		Struct tipCondFact2 = condFactExpr.getExpr1().struct;
+
+		if (!tipCondFact1.compatibleWith(tipCondFact2)) {
+			report_error("Nekompatibilni tipovi kod uslova sa relacionim operatorom!", condFactExpr);
+			condFactExpr.struct = Tab.noType;
 		}
+		else {
+			condFactExpr.struct = tipCondFact1;
+		}
+		
 	}
-	
-	public void visit(CondFactDouble condFactDouble) {
-		//Provera da li su istog tipa
-		if(condFactDouble.getTerms().struct != condFactDouble.getTerms1().struct) {
-			report_error("Nekompatiblni tipovi!", condFactDouble);
+
+	public void visit(CondSingle condSingle) {
+		if (condSingle.getTerms().struct != boolTip) {
+			report_error("Uslov mora da bude tipa bool!", condSingle);
 		}
-		//Provera da li su element niza ili polje klase
-		if(condFactDouble.getTerms().struct.getKind() == Obj.Elem || condFactDouble.getTerms().struct.getKind() == Obj.Fld) {
-			//Ako jesu, onda moze samo != i == da se koristi!
-			if(!(condFactDouble.getRelOp() instanceof JednakoOp) && !(condFactDouble.getRelOp() instanceof NejednakoOp)) {
-				report_error("Izmedju elemenata niza ili polja klasa moze da se vrsi samo poredjenje po (ne)jednakosti!", condFactDouble);
+
+	}
+
+	public void visit(CondDouble condDouble) {
+		// Zapamtio sam kog su tipa izrazi:
+		Struct tipCondFact1 = condDouble.getTerms().struct;
+		Struct tipCondFact2 = condDouble.getTerms1().struct;
+
+		if (!tipCondFact1.compatibleWith(tipCondFact2)) {
+			report_error("Nekompatibilni tipovi kod uslova sa relacionim operatorom!", condDouble);
+		} else {
+			// Provera da li je element niza ili polje klase
+			if (tipCondFact1.getKind() == Struct.Array
+					|| tipCondFact1.getKind() == Struct.Class) {
+				// Ako jesu, onda moze samo != i == da se koristi!
+				if (!(condDouble.getRelOp() instanceof JednakoOp)
+						&& !(condDouble.getRelOp() instanceof NejednakoOp)) {
+					report_error(
+							"Izmedju elemenata niza ili polja klasa moze da se vrsi samo poredjenje po (ne)jednakosti!",
+							condDouble);
+				}
 			}
 		}
 	}
+
+	// public void visit(VarDeclarError vE) {} //Dodati i za ostale greske!
 
 	public boolean passed() {
 		return !errorDetected;

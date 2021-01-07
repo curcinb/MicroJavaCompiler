@@ -1,34 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 29/11/2020 17:53:48
+// 7/0/2021 20:6:41
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class CondFactExpr extends Expr {
 
-    private PocetakIzraza PocetakIzraza;
     private CondFact CondFact;
-    private Terms Terms;
-    private Terms Terms1;
+    private Expr Expr;
+    private Dvotacka2 Dvotacka2;
+    private Expr Expr1;
 
-    public CondFactExpr (PocetakIzraza PocetakIzraza, CondFact CondFact, Terms Terms, Terms Terms1) {
-        this.PocetakIzraza=PocetakIzraza;
-        if(PocetakIzraza!=null) PocetakIzraza.setParent(this);
+    public CondFactExpr (CondFact CondFact, Expr Expr, Dvotacka2 Dvotacka2, Expr Expr1) {
         this.CondFact=CondFact;
         if(CondFact!=null) CondFact.setParent(this);
-        this.Terms=Terms;
-        if(Terms!=null) Terms.setParent(this);
-        this.Terms1=Terms1;
-        if(Terms1!=null) Terms1.setParent(this);
-    }
-
-    public PocetakIzraza getPocetakIzraza() {
-        return PocetakIzraza;
-    }
-
-    public void setPocetakIzraza(PocetakIzraza PocetakIzraza) {
-        this.PocetakIzraza=PocetakIzraza;
+        this.Expr=Expr;
+        if(Expr!=null) Expr.setParent(this);
+        this.Dvotacka2=Dvotacka2;
+        if(Dvotacka2!=null) Dvotacka2.setParent(this);
+        this.Expr1=Expr1;
+        if(Expr1!=null) Expr1.setParent(this);
     }
 
     public CondFact getCondFact() {
@@ -39,20 +31,28 @@ public class CondFactExpr extends Expr {
         this.CondFact=CondFact;
     }
 
-    public Terms getTerms() {
-        return Terms;
+    public Expr getExpr() {
+        return Expr;
     }
 
-    public void setTerms(Terms Terms) {
-        this.Terms=Terms;
+    public void setExpr(Expr Expr) {
+        this.Expr=Expr;
     }
 
-    public Terms getTerms1() {
-        return Terms1;
+    public Dvotacka2 getDvotacka2() {
+        return Dvotacka2;
     }
 
-    public void setTerms1(Terms Terms1) {
-        this.Terms1=Terms1;
+    public void setDvotacka2(Dvotacka2 Dvotacka2) {
+        this.Dvotacka2=Dvotacka2;
+    }
+
+    public Expr getExpr1() {
+        return Expr1;
+    }
+
+    public void setExpr1(Expr Expr1) {
+        this.Expr1=Expr1;
     }
 
     public void accept(Visitor visitor) {
@@ -60,25 +60,25 @@ public class CondFactExpr extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(PocetakIzraza!=null) PocetakIzraza.accept(visitor);
         if(CondFact!=null) CondFact.accept(visitor);
-        if(Terms!=null) Terms.accept(visitor);
-        if(Terms1!=null) Terms1.accept(visitor);
+        if(Expr!=null) Expr.accept(visitor);
+        if(Dvotacka2!=null) Dvotacka2.accept(visitor);
+        if(Expr1!=null) Expr1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(PocetakIzraza!=null) PocetakIzraza.traverseTopDown(visitor);
         if(CondFact!=null) CondFact.traverseTopDown(visitor);
-        if(Terms!=null) Terms.traverseTopDown(visitor);
-        if(Terms1!=null) Terms1.traverseTopDown(visitor);
+        if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(Dvotacka2!=null) Dvotacka2.traverseTopDown(visitor);
+        if(Expr1!=null) Expr1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(PocetakIzraza!=null) PocetakIzraza.traverseBottomUp(visitor);
         if(CondFact!=null) CondFact.traverseBottomUp(visitor);
-        if(Terms!=null) Terms.traverseBottomUp(visitor);
-        if(Terms1!=null) Terms1.traverseBottomUp(visitor);
+        if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(Dvotacka2!=null) Dvotacka2.traverseBottomUp(visitor);
+        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -87,26 +87,26 @@ public class CondFactExpr extends Expr {
         buffer.append(tab);
         buffer.append("CondFactExpr(\n");
 
-        if(PocetakIzraza!=null)
-            buffer.append(PocetakIzraza.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
         if(CondFact!=null)
             buffer.append(CondFact.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Terms!=null)
-            buffer.append(Terms.toString("  "+tab));
+        if(Expr!=null)
+            buffer.append(Expr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Terms1!=null)
-            buffer.append(Terms1.toString("  "+tab));
+        if(Dvotacka2!=null)
+            buffer.append(Dvotacka2.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Expr1!=null)
+            buffer.append(Expr1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

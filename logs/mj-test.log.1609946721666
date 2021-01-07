@@ -1,0 +1,115 @@
+INFO  16:25:05,995 - Compiling source file: D:\Bosko\ETF\VIISemestar\PP1\Projekat\Projekat\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  16:25:06,028 - #2 program
+INFO  16:25:06,028 - #24 test301
+INFO  16:25:06,028 - #3 {
+INFO  16:25:06,029 - #9 void
+INFO  16:25:06,029 - #24 main
+INFO  16:25:06,030 - #5 (
+INFO  16:25:06,030 - #6 )
+INFO  16:25:06,030 - #24 int
+INFO  16:25:06,031 - #24 tmp
+INFO  16:25:06,031 - #10 ;
+INFO  16:25:06,031 - #3 {
+INFO  16:25:06,032 - #24 tmp
+INFO  16:25:06,032 - #13 =
+INFO  16:25:06,032 - #5 (
+INFO  16:25:06,033 - #27 true
+INFO  16:25:06,033 - #43 !=
+INFO  16:25:06,034 - #27 false
+INFO  16:25:06,034 - #6 )
+ERROR 16:25:06,034 - 
+Sintaksna greska! ')' na liniji 10
+INFO  16:25:06,035 - #40 ?
+INFO  16:25:06,035 - #25 1
+INFO  16:25:06,035 - #41 :
+ERROR 16:25:06,035 - Oporavak od greske na liniji: 10
+INFO  16:25:06,036 - #25 0
+INFO  16:25:06,036 - #10 ;
+INFO  16:25:06,037 - #4 }
+INFO  16:25:06,037 - #4 }
+INFO  16:25:06,055 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoDeclList(
+  ) [NoDeclList]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDeclaration(
+      MethodName(
+        ReturnTypeVoid(
+        ) [ReturnTypeVoid]
+       main
+      ) [MethodName]
+      NoFormParameters(
+      ) [NoFormParameters]
+      LocalVarDeclList(
+        NoLocalVarDeclList(
+        ) [NoLocalVarDeclList]
+        VarDeclar(
+          PraviTip(
+           int
+          ) [PraviTip]
+          VarListSingle(
+            VarDefinition(
+             tmp
+            ) [VarDefinition]
+          ) [VarListSingle]
+        ) [VarDeclar]
+      ) [LocalVarDeclList]
+      Statements(
+        NoStatement(
+        ) [NoStatement]
+        StatementDesignator(
+          DesignatorAssignment(
+            DesignatorAsg(
+              DesignatorSimple(
+               tmp
+              ) [DesignatorSimple]
+            ) [DesignatorAsg]
+            Asg(
+            ) [Asg]
+            CondFactExpr(
+              PocetakIzraza(
+              ) [PocetakIzraza]
+              CondFactSingle(
+                SingleTerm(
+                  SinglTerm(
+                    ExprFactor(
+                      ErrorExpression(
+                      ) [ErrorExpression]
+                    ) [ExprFactor]
+                  ) [SinglTerm]
+                ) [SingleTerm]
+              ) [CondFactSingle]
+              SingleTerm(
+                SinglTerm(
+                  NumFactor(
+                   1
+                  ) [NumFactor]
+                ) [SinglTerm]
+              ) [SingleTerm]
+              SingleTerm(
+                SinglTerm(
+                  NumFactor(
+                   0
+                  ) [NumFactor]
+                ) [SinglTerm]
+              ) [SingleTerm]
+            ) [CondFactExpr]
+          ) [DesignatorAssignment]
+        ) [StatementDesignator]
+      ) [Statements]
+    ) [MethodDeclaration]
+  ) [MethodDeclarations]
+) [Program]
+INFO  16:25:06,055 - ===================================
+INFO  16:25:06,059 - Obradjuje se funkcija: main na liniji 7
+INFO  16:25:06,059 - Deklarisana je promenljiva: tmp na liniji 8
+INFO  16:25:06,059 - Pristup promenljivoj:'tmp' - na liniji 10
+ERROR 16:25:06,059 - Nekompatibilni tipovi pri dodeli! na liniji 6
+INFO  16:25:06,059 - Uspesno dodeljivanje vrednosti promenljivoj: 'tmp' - na liniji 10
+INFO  16:25:06,059 - Zavrsava se obrada funkcije: 'main' - na liniji 7
+INFO  16:25:06,059 - =========================
+ERROR 16:25:06,060 - Parsiranje nije uspesno zavrseno!

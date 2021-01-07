@@ -13,9 +13,6 @@ import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 public class CodeGenerator extends VisitorAdaptor {
 
 	private int mainPc;
-	private Stack<KlasaZaStek> stekZaTekuci; // uvek ce biti na vrhu ovog drugog steka
-	private Stack<Stack<KlasaZaStek>> stekStekova = new Stack<>();
-	Obj poslednjiFaktor;
 
 	public int getMainPc() {
 		return mainPc;
@@ -45,7 +42,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(formParsCnt.getCount() + varCnt.getCount());
 	}
 
-	//Citanje:
+	//READ():
 	public void visit(ReadStatement readStatement) {
 		Struct tip = readStatement.getDesignator().obj.getType();
 
@@ -57,17 +54,17 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(readStatement.getDesignator().obj);
 	}
 
-	//Ispis:
+	//PRINT();
 	public void visit(PrintStatement printStatement) {
 		if (printStatement.getOptionalPrint() == null) {
-			if (printStatement.getExpr().struct == Tab.intType) {
+			if (printStatement.getExpr().struct == Tab.intType) { //int
 				Code.loadConst(5);
 				Code.put(Code.print);
-			} else {
+			} else {											  //char
 				Code.loadConst(1);
 				Code.put(Code.bprint);
 			}
-		} else {
+		} else {	//Prvo na expr stek nabacim vrednost
 			Code.loadConst(printVal);
 			if (printStatement.getExpr().struct != Tab.charType) {
 				Code.put(Code.print);
@@ -77,46 +74,17 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 
-	// ok
+	//PRINT(NESTO): Ovde zapamtim vrednost koja treba da se stampa
 	int printVal;
 	public void visit(PrintOptional printOptional) {
 		printVal = printOptional.getVal();
 	}
 
-	// ok
+	
 	public void visit(DesignatorAssignment designatorAssignment) {
-		if (designatorAssignment.getAssignOp() instanceof AddRight) {
-			AddRight addRight = (AddRight) designatorAssignment.getAssignOp();
-			if (addRight.getAddOpRight() instanceof AddEq) {
-				Code.put(Code.add);
-			} else {
-				Code.put(Code.sub);
-			}
-		} else if (designatorAssignment.getAssignOp() instanceof MulRight) {
-			MulRight mulRight = (MulRight) designatorAssignment.getAssignOp();
-			if (mulRight.getMulOpRight() instanceof MulAsgOp) {
-				Code.put(Code.mul);
-			} else if (mulRight.getMulOpRight() instanceof DivAsgOp) {
-				Code.put(Code.div);
-			} else {
-				Code.put(Code.rem);
-			}
-		}
-		Code.store(designatorAssignment.getDesignatorAsg().getDesignator().obj);
+		Code.store(designatorAssignment.getDesignator().obj);
 	}
 
-	public void visit(DesignatorAsg designatorAsg) {
-		DesignatorAssignment parent = (DesignatorAssignment) designatorAsg.getParent();
-		if (!(parent.getAssignOp() instanceof Asg)) {
-			Obj obj = designatorAsg.getDesignator().obj;
-			if (obj.getKind() == Obj.Elem) {
-				Code.put(Code.dup2);
-			}
-			Code.load(obj);
-		}
-	}
-
-	// ok
 	public void visit(DesignatorIncrement designatorIncrement) {
 		Obj obj = designatorIncrement.getDesignator().obj;
 		if (obj.getKind() == Obj.Elem) {
@@ -128,7 +96,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(obj);
 	}
 
-	// ok
 	public void visit(DesignatorDecrement designatorDecrement) {
 		Obj obj = designatorDecrement.getDesignator().obj;
 		if (obj.getKind() == Obj.Elem) {
@@ -151,70 +118,52 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorNiz designatorNiz) {
+		//Pamtim adresu niza na expr steku
 		Code.load(designatorNiz.getDesignator().obj);
 	}
 
 	public void visit(SingleTermMinus singleTermMinus) {
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-		}
 		Code.put(Code.neg);
 	}
 
+	//Mnozenje, deljenje, ostatak
 	public void visit(MultiplTerms multiplTerms) {
-		if (multiplTerms.getMulOp() instanceof MulLeftOp) {
-			if (poslednjiFaktor != null) {
-				Code.load(poslednjiFaktor);
-				poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-			}
+		MulOp ml = multiplTerms.getMulOp();
 
-			MulOpLeft ml = ((MulLeftOp) multiplTerms.getMulOp()).getMulOpLeft();
-
-			if (ml instanceof MulOpMul) {
-				Code.put(Code.mul);
-			}
-			if (ml instanceof MulOpDiv) {
-				Code.put(Code.div);
-			}
-			if (ml instanceof MulOpMod) {
-				Code.put(Code.rem);
-			}
+		if (ml instanceof MulOpMul) {
+			Code.put(Code.mul);
+		}
+		if (ml instanceof MulOpDiv) {
+			Code.put(Code.div);
+		}
+		if (ml instanceof MulOpMod) {
+			Code.put(Code.rem);
 		}
 	}
 
+	//Sabiranje, oduzimanje
 	public void visit(MultipleTerms multipleTerms) {
-		if (multipleTerms.getAddOp() instanceof AddLeftOp) {
-			if (poslednjiFaktor != null) {
-				Code.load(poslednjiFaktor);
-				poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-			}
+		AddOp aL = multipleTerms.getAddOp();
 
-			AddLeftOp aL = (AddLeftOp) multipleTerms.getAddOp();
-
-			if (aL.getAddOpLeft() instanceof AddPlus) {
-				Code.put(Code.add);
-			} else {
-				Code.put(Code.sub);
-			}
+		if (aL instanceof AddPlus) {
+			Code.put(Code.add);
+		} else {
+			Code.put(Code.sub);
 		}
 	}
 
-	//Jedino kod njega poslednjiFaktor nije null!
 	public void visit(DesignatorFactor designatorFactor) {
-		poslednjiFaktor = designatorFactor.getDesignator().obj;
+		Code.load(designatorFactor.getDesignator().obj);
 	}
 
 	//Samo na exprstek bacim broj:
 	public void visit(NumFactor numFactor) {
 		Code.loadConst(numFactor.getN1());
-		poslednjiFaktor = null;
 	}
 
 	//Samo na exprstek bacim char:
 	public void visit(CharFactor charFactor) {
 		Code.loadConst(charFactor.getC1());
-		poslednjiFaktor = null;
 	}
 
 	//Samo na exprstek bacim boolean kao broj:
@@ -225,7 +174,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		} else {
 			Code.loadConst(0);
 		}
-		poslednjiFaktor = null;
 	}
 
 	//Pravljenje niza:
@@ -236,12 +184,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		} else {
 			Code.put(1);
 		}
-		poslednjiFaktor = null;
-	}
-
-	//Samo setujem poslednjiFaktor:
-	public void visit(ExprFactor exprFactor) {
-		poslednjiFaktor = null;
 	}
 
 	//Poziv funkcije:
@@ -250,18 +192,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		int offset = functionObj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
-		poslednjiFaktor = null;
 	}
 
-	//TODO: Dodati sta treba da radi @ modifikacija!
-	//print(niz @ 2 * 3); - ispisuje 
+	//print(niz @ 2 * 3); - ispisuje  zbir 2gog i (poslednji-2)gog elementa
 	public void visit(ModifikacijaAt modifikacijaAt) {
-		// Ovde dodajemo faktor kao drugi operand za operaciju @, pa zato moramo da ga
-		// nabacimo na expression stek
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null;
-		}
 
 		//Simuliram ulazak u funkciju da bih mogao da pokupim parametre dodatne:
 		Code.put(Code.enter);
@@ -286,7 +220,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.aload);
 	
 			Code.put(Code.add);			//radim sabiranje
-			Code.put(Code.store_n + 1); //u prvu pomogcnu pamtim dobijenu vrednost
+			Code.put(Code.store_n + 1); //u prvu pomogcnu pamtim dobijenu vrednost - da bih mogao da je zapamtim u drugu promenljivu niza
 	
 			Code.load(modifikacijaAt.getDesignator().obj); // Adresa
 			Code.put(Code.load_n + 0); // Index
@@ -295,8 +229,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 			Code.put(Code.load_n + 1); // Vracam dobijenu sabranu vrednost
 		Code.put(Code.exit);
-
-		poslednjiFaktor = null; // PAZI DA I OVO TREBA DA SE POSTAVI!
 	}
 
 	//print($niz) - Ispisuje broj dat u nizu u binarnom obliku:
@@ -310,18 +242,10 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.aload);
 			Code.put(Code.add);
 		}
-		poslednjiFaktor = null; // PAZI DA I OVO TREBA DA SE POSTAVI!
 	}
 
 	//nizModifikacija3 = ^1094861636; - Treba da ispise A B C D
 	public void visit(ModifikacijaKapica modifikacijaK) {
-		// Ovde dodajemo faktor kao operand za operaciju ^, pa zato moramo da ga
-		// nabacimo na expression stek
-		// Pazi i ovde!
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null;
-		}
 
 		Code.loadConst(4);
 		Code.put(Code.newarray); // Napravio niz charova i vratio na Expression stek adresu alociranoh niza
@@ -348,15 +272,16 @@ public class CodeGenerator extends VisitorAdaptor {
 		// Na kraju ne bih morao da imam ovu iznad liniju, jer bi na samom steku ostala
 		// adresa od pre petlje - v2
 		Code.put(Code.exit);
-
-		poslednjiFaktor = null; // PAZI DA I OVO TREBA DA SE POSTAVI! //Ne mora, ali da ne zaboravim!
 	}
 
+	//TODO: Skokovi
 	//print(|2*5+1::1+4::4*2|) - treba da ispise srednji broj od data 3
 	public void visit(ModifikacijaBrojevi modifikacijaB) {
 		Code.put(Code.enter);
-		Code.put(3); // 2 parametar
-		Code.put(3); // Zbir param + pomocna
+		Code.put(3); // Broj parametara metode
+		Code.put(3); // Zbir parametara + pomocnih promenljivih
+		
+		//Primer:
 		int rez;
 		if (0 > 1) {
 			//zameni im mesta
@@ -368,45 +293,40 @@ public class CodeGenerator extends VisitorAdaptor {
 				rez = 2;
 		} else
 			rez = 0;
-
-		// IF 1. > 2.
+		//kraj primera
+		
+		// IF 0. > 1.
 		Code.put(Code.load_n + 0);
 		Code.put(Code.load_n + 1);
 		Code.putFalseJump(Code.gt, 0);
 		int adresaPosleThena = Code.pc - 2;
-
-		// THEN -- dodao sam ih opet na expression stek i skinuo da ih vratim u obrnutom
-		// redosledu
+		// THEN -- dodao sam ih opet na expression stek i skinuo da ih vratim u obrnutom redosledu
 		Code.put(Code.load_n + 0);
 		Code.put(Code.load_n + 1);
 		Code.put(Code.store_n + 0);
 		Code.put(Code.store_n + 1);
-
 		// Ovde treba da skocim -> namestam adresu ako uslov nije zadovoljen
-		// FixupMetoda iz Code klase
 		Code.fixup(adresaPosleThena);
 
-		// Manja u 0. veca u 1.
-		// Drugi if
+		//Nakon toga: 0.< 1. sigurno
+		// IF 0. < 2.
 		Code.put(Code.load_n + 0);
 		Code.put(Code.load_n + 2);
 		Code.putFalseJump(Code.lt, 0);
 		adresaPosleThena = Code.pc - 2;
-
-		// THEN
-			// IF
+		//THEN
+			// IF 1. < 2.
 			Code.put(Code.load_n +1);
 			Code.put(Code.load_n +2);
 			Code.putFalseJump(Code.le, 0);
 			int adresaPosleThena2 = Code.pc - 2;
-			
 			//THEN
 			Code.put(Code.load_n + 1);
 			//Na kraju then grane pamtim adresu gde zelim da preskocim else(kraj elsa)
 			Code.putJump(0);
 			int adresaPreskok = Code.pc - 2;
 			
-			//ELSE
+			//ELSE 1. > 2.
 			Code.fixup(adresaPosleThena2);
 			Code.put(Code.load_n + 2);
 			//A na kraju else grane fixupujem tu adresu preskoka i svaki put radim tako!!!
@@ -414,45 +334,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		Code.putJump(0);
 		adresaPreskok = Code.pc - 2;
-		
-		// ELSE
+		// ELSE 0.> 2.
 		// Ovde treba da skocim -> namestam adresu ako uslov nije zadovoljen
-		// FixupMetoda iz Code klase
 		Code.fixup(adresaPosleThena);
 		Code.put(Code.load_n + 0);
 		Code.fixup(adresaPreskok);
-
+		
 		Code.put(Code.exit);
-
-		poslednjiFaktor = null;
-	}
-
-	public void visit(PocetakIzraza pocetakIzraza) {
-		stekZaTekuci = new Stack<>();
-		stekStekova.push(stekZaTekuci);
-	}
-
-	public void visit(Expression expression) {
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-		}
-		while (!stekZaTekuci.empty()) {
-			KlasaZaStek kS = stekZaTekuci.pop();
-			Code.put(kS.operationCode);
-			if (kS.rezultat.getKind() != Obj.Elem) {
-				Code.put(Code.dup);
-			} else {
-				Code.put(Code.dup_x2);
-			}
-			Code.store(kS.rezultat);
-		}
-		stekStekova.pop();
-		if (stekStekova.empty()) {
-			stekZaTekuci = null;
-		} else {
-			stekZaTekuci = stekStekova.peek();
-		}
 	}
 
 	//Cezarova sifra:
@@ -480,65 +368,50 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.loadConst(65);
 		Code.put(Code.rem);
 	}
+	
 
-	public void visit(AddRightOp addRightOp) {
-		KlasaZaStek kS = new KlasaZaStek();
-		kS.rezultat = poslednjiFaktor;
-
-		if (addRightOp.getAddOpRight() instanceof AddEq) {
-			kS.operationCode = Code.add;
-		} else {
-			kS.operationCode = Code.sub;
-		}
-
-		stekZaTekuci.push(kS);
-		if (poslednjiFaktor.getKind() == Obj.Elem) {
-			Code.put(Code.dup2);
-		}
-		Code.load(poslednjiFaktor);
-		poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-	}
-
-	public void visit(MulRightOp mulRightOp) {
-		KlasaZaStek kS = new KlasaZaStek();
-		kS.rezultat = poslednjiFaktor;
-
-		if (mulRightOp.getMulOpRight() instanceof MulAsgOp) {
-			kS.operationCode = Code.mul;
-		} else if (mulRightOp.getMulOpRight() instanceof DivAsgOp) {
-			kS.operationCode = Code.div;
-		} else {
-			kS.operationCode = Code.rem;
-		}
-
-		stekZaTekuci.push(kS);
-		// Cela poenta odlozenog ucitavanja na stek:
-		if (poslednjiFaktor.getKind() == Obj.Elem) {
-			Code.put(Code.dup2);
-		}
-		Code.load(poslednjiFaktor);
-		poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-	}
-
-	public void visit(MulLeftOp mulLeftOp) {
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-		}
-	}
-
-	public void visit(AddLeftOp addLeftOp) {
-		if (poslednjiFaktor != null) {
-			Code.load(poslednjiFaktor);
-			poslednjiFaktor = null; // dok nije loadovan, on je razlicit od null
-		}
-	}
-
-	// Cuvam kombinovanu operaciju i promenljivu u koju cu da sacuvam rezultat
-	private static class KlasaZaStek {
-		public int operationCode;
-		public Obj rezultat;
+	//TODO: Dodatak:
+	public void visit(CondFactExpr condFactExpr) {
+		Code.fixup(condFactExpr.getDvotacka2().struct.getKind());
 	}
 	
-	//TODO: Dodatak:
+	public void visit(Dvotacka2 dvotacka) {
+		//Ako uslov jeste zadovoljen, ovde ide preskok else grane
+		Code.putJump(0);
+		int adresaSkoka = Code.pc-2;
+		dvotacka.struct = new Struct(adresaSkoka); 
+		
+		//Skacemo ako uslov nije zadovoljen
+		CondFactExpr condFactExpr = (CondFactExpr)dvotacka.getParent();
+		Code.fixup(condFactExpr.getCondFact().struct.getKind());
+	}
+	
+	public void visit(CondDouble condFactDouble) {
+		int op = Code.ge;
+		if(condFactDouble.getRelOp() instanceof JednakoOp) {
+			op = Code.eq;
+		}
+		else if(condFactDouble.getRelOp() instanceof NejednakoOp) {
+			op = Code.ne;
+		}
+		else if(condFactDouble.getRelOp() instanceof VeceOp) {
+			op = Code.gt;
+		}
+		else if(condFactDouble.getRelOp() instanceof ManjeOp) {
+			op = Code.lt;
+		}
+		else if(condFactDouble.getRelOp() instanceof ManjeJednakoOp) {
+			op = Code.le;
+		}
+		Code.putFalseJump(op, 0);
+		int adresaSkoka = Code.pc-2;
+		condFactDouble.struct = new Struct(adresaSkoka);
+	}
+	
+	public void visit(CondSingle condFactSingle) {
+		Code.loadConst(1);
+		Code.putFalseJump(Code.eq, 0);
+		int adresaSkoka = Code.pc-2;
+		condFactSingle.struct = new Struct(adresaSkoka);
+	}
 }

@@ -8,12 +8,11 @@ program test301
 
 	int niz[];
 	char nizch[];
-	char chr;
-	bool nizModifikacija[];
-	char nizModifikacija3[];
+	
 {
-	void main(int bla)	
+	void main()	
 		int bodovi;
+		bool bt;
 	{
 		bodovi = 0;
 		bodovi++;
@@ -31,11 +30,6 @@ program test301
 		print(bodovi); 
 		print(niz[2]);
 		
-		read(bodovi);
-		niz[2] += bodovi *= niz[1] -= pet;
-		niz[2]++;
-		print(niz[2]);
-		
 		
 		nizch = new char[3];
 		nizch[0] = 'a';
@@ -47,38 +41,13 @@ program test301
 		
 		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3); 
 		print(bodovi);
+			
+		read(bodovi);
+		bt = true;
 		
-		print(501);
-		
-		print(niz @ 2 * 3);
-		
-		chr = [ 'A' # 2 ];
-		print(chr);
-		
-		chr = [[[ 'A' # 2 ] # -3 ] # 1];
-		print(chr);
-		
-		nizModifikacija = new bool[8];
-		nizModifikacija[0] = false;
-		nizModifikacija[1] = true;
-		nizModifikacija[2] = false;
-		nizModifikacija[3] = false;
-		nizModifikacija[4] = false;
-		nizModifikacija[5] = false;
-		nizModifikacija[6] = true;
-		nizModifikacija[7] = false;
-		
-		print($nizModifikacija);
-		
-		
-		nizModifikacija3 = ^1094861636;
-		print(nizModifikacija3[0]);
-		print(nizModifikacija3[1]);
-		print(nizModifikacija3[2]);
-		print(nizModifikacija3[3]);
-		
-		
-		print(|2*5+1::1+4::4*2|);
+		print(bt ? bodovi : bodovi + 10);
+		print(false ? bodovi + 20 : bodovi + 30);
+		print(bodovi > 10 ? '+' : bodovi < 5 ? '*' : '-');
 	}
 }
 

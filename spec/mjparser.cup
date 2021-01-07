@@ -67,7 +67,8 @@ terminal DVOTACKA;
 terminal UPITNIK;
 terminal DVOTACKA2;
 terminal JEDNAKO, NEJEDNAKO, VECE, VECEJEDNAKO, MANJE, MANJEJEDNAKO;
-nonterminal RelOp, CondFact;
+nonterminal RelOp;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct CondFact, Dvotacka2;
 
 nonterminal DeclList, MethDeclList, ConstList, FormParameters, FormPars, VarDeclList, StatementList, FormalParamDecl;
 nonterminal Statement, OptionalPrint, AddOp, MulOp, AssignOp, AddOpRight, AddOpLeft, MulOpRight, MulOpLeft;
@@ -103,9 +104,14 @@ ConstList ::= (ConstListSingle) COMMA IDENT:name ASSIGN Value:constValue
 			  (NoConstList) /* epsilon */
 			  ;
 	
-VarDecl ::= (VarDeclar) NewType:varType VarList SEMICOLON;	
+VarDecl ::= (VarDeclar) NewType VarList SEMICOLON
+			|
+			(VarDeclarError) NewType error SEMICOLON
+			;	
 
 VarList ::= (VarListMultiple) VarDef COMMA VarList
+			|
+			(VarListMultipleError) error COMMA VarList
 			|
 			(VarListSingle) VarDef
 			|
@@ -115,9 +121,6 @@ VarList ::= (VarListMultiple) VarDef COMMA VarList
 VarDef ::= (VarDefinition) IDENT:varName
 		   |
 		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET
-		   |
-		   (VarDefErr) error:l 
-		   {: parser.report_error("Oporavak od greske kod globalne promenljive na liniji: " + lleft, null); :}
 		   ;
 
 MethDecl ::= (MethodDeclaration) MethTypeName LEFT_PAREN FormParameters RIGHT_PAREN VarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
@@ -144,9 +147,6 @@ FormPars ::= (FormParamDecl) FormPars COMMA FormalParamDecl
 FormalParamDecl ::= (FormParam) NewType:paramType IDENT:name
 				  |
 				  (FormParamArr) NewType:paramType IDENT:name LEFT_BRACKET RIGHT_BRACKET
-				  |
-				  (FormalParamDeclError) error:l
-				  {: parser.report_error("Oporavak od greske kod parametara na liniji:" + lleft, null); :}
 				  ;
 				
 VarDeclList ::= (LocalVarDeclList) VarDeclList VarDecl
@@ -175,16 +175,15 @@ OptionalPrint ::= (PrintOptional) COMMA NUMBER:val
 				  (NoOptionalPrint) /* epsilon */
 				  ;
 
-DesignatorStatement ::= (DesignatorAssignment) DesignatorAsg AssignOp Expr
+DesignatorStatement ::= (DesignatorAssignment) Designator AssignOp Expr
 						|
-						(AssignErr) error SEMICOLON:l
-						{: parser.report_error("Oporavak od greske pri iskazu dodele/sabiranja/oduzimanja na liniji: "+lleft ,null); :}	
+						(AssignErr) Designator AssignOp error 
 						|
-						(DesignatorIncrement) Designator:d INCREMENT 
+						(DesignatorIncrement) Designator INCREMENT 
 						|
-						(DesignatorDecrement) Designator:d DECREMENT 
+						(DesignatorDecrement) Designator DECREMENT 
 						|
-						(DesignatorFunction) Designator:d LEFT_PAREN RIGHT_PAREN 
+						(DesignatorFunction) Designator LEFT_PAREN RIGHT_PAREN 
 						;
 
 Designator ::= (DesignatorSimple) IDENT:name
@@ -194,30 +193,21 @@ Designator ::= (DesignatorSimple) IDENT:name
 
 DesignatorNiz ::= (DesignatorNiz) Designator;
 
-DesignatorAsg ::= (DesignatorAsg) Designator;
-
 AssignOp ::= (Asg) ASSIGN
-			  |
-			  (AddRight) AddOpRight
-			  |
-			  (MulRight) MulOpRight
 			  ;
-			  
-Expr ::= (CondFactExpr) PocetakIzraza CondFact UPITNIK Terms DVOTACKA2 Terms:t2
-		 |
-		 (Expression) PocetakIzraza Terms
-		 |
-		 (ErrorExpression) error:l
-		 {: parser.report_error("Oporavak od greske na liniji: " + lleft, null); :}
-		 ;
 		 
-PocetakIzraza ::= (PocetakIzraza) /* epsilon */ ; //Samo da bih znao kada izraz pocinje, zbog steka
+CondFact ::= (CondDouble) Terms RelOp Terms
+			   |
+			   (CondSingle) Terms
+			   ;
+			  
+Expr ::= (CondFactExpr) CondFact UPITNIK Expr Dvotacka2 Expr
+		 |
+		 (Expression) Terms
+		 ;
 
-CondFact ::= (CondFactSingle) Terms
-			 |
-			 (CondFactDouble) Terms RelOp Terms:t2
-			 ;
-	 
+Dvotacka2 ::= (Dvotacka2) DVOTACKA2;
+
 Terms ::= (MultipleTerms) Terms AddOp Term
 		  |
 		  (SingleTerm) Term
@@ -260,40 +250,18 @@ Factor ::= (NumFactor) NUMBER
 		   (ModifikacijaBrojevi) CRTA Expr DVOTACKA Expr DVOTACKA Expr CRTA // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
 		   ;
 
-AddOp ::= (AddLeftOp) AddOpLeft
+AddOp ::= (AddPlus) PLUS
 		  |
-		  (AddRightOp) AddOpRight
+		  (AddMinus) MINUS
 		  ;
-		  
-AddOpLeft ::= (AddPlus) PLUS
-			  |
-			  (AddMinus) MINUS
-			  ;
 			  
-AddOpRight ::= (AddEq) ADDASG
-			   |
-			   (SubEq) SUBASG
-			   ;
-
-MulOp ::= (MulLeftOp) MulOpLeft
-		  |
-		  (MulRightOp) MulOpRight
-		  ;
-
-MulOpLeft ::= (MulOpMul) MULTIPLY
+MulOp ::= (MulOpMul) MULTIPLY
 		  |
 		  (MulOpDiv) DIVIDE
 		  |
 		  (MulOpMod) MOD
 		  ; 
 		  
-MulOpRight ::= (MulAsgOp) MULASG
-			   |
-			   (DivAsgOp) DIVASG
-			   |
-			   (ModAsgOp) MODASG
-			   ;
-
 RelOp ::= (JednakoOp) JEDNAKO
 		  |
 		  (NejednakoOp) NEJEDNAKO

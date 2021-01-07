@@ -68,7 +68,7 @@ terminal UPITNIK;
 terminal DVOTACKA2;
 terminal JEDNAKO, NEJEDNAKO, VECE, VECEJEDNAKO, MANJE, MANJEJEDNAKO;
 nonterminal RelOp RelOp;
-nonterminal CondFact CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct CondFact, Dvotacka2;
 
 nonterminal DeclList DeclList;
 nonterminal MethDeclList MethDeclList;
@@ -121,9 +121,14 @@ ConstList ::= (ConstListSingle) COMMA IDENT:name ASSIGN Value:constValue {: RESU
 			  (NoConstList) {: RESULT=new NoConstList(); :} /* epsilon */
 			  ;
 	
-VarDecl ::= (VarDeclar) NewType:varType VarList:V1 SEMICOLON {: RESULT=new VarDeclar(varType, V1); RESULT.setLine(varTypeleft); :};	
+VarDecl ::= (VarDeclar) NewType:N1 VarList:V2 SEMICOLON {: RESULT=new VarDeclar(N1, V2); RESULT.setLine(N1left); :}
+			|
+			(VarDeclarError) NewType:N1 error SEMICOLON {: RESULT=new VarDeclarError(N1); RESULT.setLine(N1left); :}
+			;	
 
 VarList ::= (VarListMultiple) VarDef:V1 COMMA VarList:V2 {: RESULT=new VarListMultiple(V1, V2); RESULT.setLine(V1left); :}
+			|
+			(VarListMultipleError) error COMMA VarList:V1 {: RESULT=new VarListMultipleError(V1); RESULT.setLine(V1left); :}
 			|
 			(VarListSingle) VarDef:V1 {: RESULT=new VarListSingle(V1); RESULT.setLine(V1left); :}
 			|
@@ -133,9 +138,6 @@ VarList ::= (VarListMultiple) VarDef:V1 COMMA VarList:V2 {: RESULT=new VarListMu
 VarDef ::= (VarDefinition) IDENT:varName {: RESULT=new VarDefinition(varName); RESULT.setLine(varNameleft); :}
 		   |
 		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDefArr(varName); RESULT.setLine(varNameleft); :}
-		   |
-		   (VarDefErr) error:l 
-		   {: parser.report_error("Oporavak od greske kod globalne promenljive na liniji: " + lleft, null); :} {: RESULT=new VarDefErr(); :}
 		   ;
 
 MethDecl ::= (MethodDeclaration) MethTypeName:M1 LEFT_PAREN FormParameters:F2 RIGHT_PAREN VarDeclList:V3 LEFT_BRACE StatementList:S4 RIGHT_BRACE {: RESULT=new MethodDeclaration(M1, F2, V3, S4); RESULT.setLine(M1left); :};
@@ -162,9 +164,6 @@ FormPars ::= (FormParamDecl) FormPars:F1 COMMA FormalParamDecl:F2 {: RESULT=new 
 FormalParamDecl ::= (FormParam) NewType:paramType IDENT:name {: RESULT=new FormParam(paramType, name); RESULT.setLine(paramTypeleft); :}
 				  |
 				  (FormParamArr) NewType:paramType IDENT:name LEFT_BRACKET RIGHT_BRACKET {: RESULT=new FormParamArr(paramType, name); RESULT.setLine(paramTypeleft); :}
-				  |
-				  (FormalParamDeclError) error:l
-				  {: parser.report_error("Oporavak od greske kod parametara na liniji:" + lleft, null); :} {: RESULT=new FormalParamDeclError(); :}
 				  ;
 				
 VarDeclList ::= (LocalVarDeclList) VarDeclList:V1 VarDecl:V2 {: RESULT=new LocalVarDeclList(V1, V2); RESULT.setLine(V1left); :}
@@ -193,16 +192,15 @@ OptionalPrint ::= (PrintOptional) COMMA NUMBER:val {: RESULT=new PrintOptional(v
 				  (NoOptionalPrint) {: RESULT=new NoOptionalPrint(); :} /* epsilon */
 				  ;
 
-DesignatorStatement ::= (DesignatorAssignment) DesignatorAsg:D1 AssignOp:A2 Expr:E3 {: RESULT=new DesignatorAssignment(D1, A2, E3); RESULT.setLine(D1left); :}
+DesignatorStatement ::= (DesignatorAssignment) Designator:D1 AssignOp:A2 Expr:E3 {: RESULT=new DesignatorAssignment(D1, A2, E3); RESULT.setLine(D1left); :}
 						|
-						(AssignErr) error SEMICOLON:l
-						{: parser.report_error("Oporavak od greske pri iskazu dodele/sabiranja/oduzimanja na liniji: "+lleft ,null); :} {: RESULT=new AssignErr(); :}	
+						(AssignErr) Designator:D1 AssignOp:A2 error {: RESULT=new AssignErr(D1, A2); RESULT.setLine(D1left); :} 
 						|
-						(DesignatorIncrement) Designator:d INCREMENT {: RESULT=new DesignatorIncrement(d); RESULT.setLine(dleft); :} 
+						(DesignatorIncrement) Designator:D1 INCREMENT {: RESULT=new DesignatorIncrement(D1); RESULT.setLine(D1left); :} 
 						|
-						(DesignatorDecrement) Designator:d DECREMENT {: RESULT=new DesignatorDecrement(d); RESULT.setLine(dleft); :} 
+						(DesignatorDecrement) Designator:D1 DECREMENT {: RESULT=new DesignatorDecrement(D1); RESULT.setLine(D1left); :} 
 						|
-						(DesignatorFunction) Designator:d LEFT_PAREN RIGHT_PAREN {: RESULT=new DesignatorFunction(d); RESULT.setLine(dleft); :} 
+						(DesignatorFunction) Designator:D1 LEFT_PAREN RIGHT_PAREN {: RESULT=new DesignatorFunction(D1); RESULT.setLine(D1left); :} 
 						;
 
 Designator ::= (DesignatorSimple) IDENT:name {: RESULT=new DesignatorSimple(name); RESULT.setLine(nameleft); :}
@@ -212,30 +210,21 @@ Designator ::= (DesignatorSimple) IDENT:name {: RESULT=new DesignatorSimple(name
 
 DesignatorNiz ::= (DesignatorNiz) Designator:D1 {: RESULT=new DesignatorNiz(D1); RESULT.setLine(D1left); :};
 
-DesignatorAsg ::= (DesignatorAsg) Designator:D1 {: RESULT=new DesignatorAsg(D1); RESULT.setLine(D1left); :};
-
 AssignOp ::= (Asg) ASSIGN {: RESULT=new Asg(); :}
-			  |
-			  (AddRight) AddOpRight:A1 {: RESULT=new AddRight(A1); RESULT.setLine(A1left); :}
-			  |
-			  (MulRight) MulOpRight:M1 {: RESULT=new MulRight(M1); RESULT.setLine(M1left); :}
 			  ;
-			  
-Expr ::= (CondFactExpr) PocetakIzraza:P1 CondFact:C2 UPITNIK Terms:T3 DVOTACKA2 Terms:t2 {: RESULT=new CondFactExpr(P1, C2, T3, t2); RESULT.setLine(P1left); :}
-		 |
-		 (Expression) PocetakIzraza:P1 Terms:T2 {: RESULT=new Expression(P1, T2); RESULT.setLine(P1left); :}
-		 |
-		 (ErrorExpression) error:l
-		 {: parser.report_error("Oporavak od greske na liniji: " + lleft, null); :} {: RESULT=new ErrorExpression(); :}
-		 ;
 		 
-PocetakIzraza ::= (PocetakIzraza) {: RESULT=new PocetakIzraza(); :} /* epsilon */ ; //Samo da bih znao kada izraz pocinje, zbog steka
+CondFact ::= (CondDouble) Terms:T1 RelOp:R2 Terms:T3 {: RESULT=new CondDouble(T1, R2, T3); RESULT.setLine(T1left); :}
+			   |
+			   (CondSingle) Terms:T1 {: RESULT=new CondSingle(T1); RESULT.setLine(T1left); :}
+			   ;
+			  
+Expr ::= (CondFactExpr) CondFact:C1 UPITNIK Expr:E2 Dvotacka2:D3 Expr:E4 {: RESULT=new CondFactExpr(C1, E2, D3, E4); RESULT.setLine(C1left); :}
+		 |
+		 (Expression) Terms:T1 {: RESULT=new Expression(T1); RESULT.setLine(T1left); :}
+		 ;
 
-CondFact ::= (CondFactSingle) Terms:T1 {: RESULT=new CondFactSingle(T1); RESULT.setLine(T1left); :}
-			 |
-			 (CondFactDouble) Terms:T1 RelOp:R2 Terms:t2 {: RESULT=new CondFactDouble(T1, R2, t2); RESULT.setLine(T1left); :}
-			 ;
-	 
+Dvotacka2 ::= (Dvotacka2) DVOTACKA2 {: RESULT=new Dvotacka2(); :};
+
 Terms ::= (MultipleTerms) Terms:T1 AddOp:A2 Term:T3 {: RESULT=new MultipleTerms(T1, A2, T3); RESULT.setLine(T1left); :}
 		  |
 		  (SingleTerm) Term:T1 {: RESULT=new SingleTerm(T1); RESULT.setLine(T1left); :}
@@ -278,40 +267,18 @@ Factor ::= (NumFactor) NUMBER:N1 {: RESULT=new NumFactor(N1); RESULT.setLine(N1l
 		   (ModifikacijaBrojevi) CRTA Expr:E1 DVOTACKA Expr:E2 DVOTACKA Expr:E3 CRTA {: RESULT=new ModifikacijaBrojevi(E1, E2, E3); RESULT.setLine(E1left); :} // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
 		   ;
 
-AddOp ::= (AddLeftOp) AddOpLeft:A1 {: RESULT=new AddLeftOp(A1); RESULT.setLine(A1left); :}
+AddOp ::= (AddPlus) PLUS {: RESULT=new AddPlus(); :}
 		  |
-		  (AddRightOp) AddOpRight:A1 {: RESULT=new AddRightOp(A1); RESULT.setLine(A1left); :}
+		  (AddMinus) MINUS {: RESULT=new AddMinus(); :}
 		  ;
-		  
-AddOpLeft ::= (AddPlus) PLUS {: RESULT=new AddPlus(); :}
-			  |
-			  (AddMinus) MINUS {: RESULT=new AddMinus(); :}
-			  ;
 			  
-AddOpRight ::= (AddEq) ADDASG {: RESULT=new AddEq(); :}
-			   |
-			   (SubEq) SUBASG {: RESULT=new SubEq(); :}
-			   ;
-
-MulOp ::= (MulLeftOp) MulOpLeft:M1 {: RESULT=new MulLeftOp(M1); RESULT.setLine(M1left); :}
-		  |
-		  (MulRightOp) MulOpRight:M1 {: RESULT=new MulRightOp(M1); RESULT.setLine(M1left); :}
-		  ;
-
-MulOpLeft ::= (MulOpMul) MULTIPLY {: RESULT=new MulOpMul(); :}
+MulOp ::= (MulOpMul) MULTIPLY {: RESULT=new MulOpMul(); :}
 		  |
 		  (MulOpDiv) DIVIDE {: RESULT=new MulOpDiv(); :}
 		  |
 		  (MulOpMod) MOD {: RESULT=new MulOpMod(); :}
 		  ; 
 		  
-MulOpRight ::= (MulAsgOp) MULASG {: RESULT=new MulAsgOp(); :}
-			   |
-			   (DivAsgOp) DIVASG {: RESULT=new DivAsgOp(); :}
-			   |
-			   (ModAsgOp) MODASG {: RESULT=new ModAsgOp(); :}
-			   ;
-
 RelOp ::= (JednakoOp) JEDNAKO {: RESULT=new JednakoOp(); :}
 		  |
 		  (NejednakoOp) NEJEDNAKO {: RESULT=new NejednakoOp(); :}
