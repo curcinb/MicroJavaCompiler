@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 20:21:15
+// 9/1/2021 23:8:18
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,7 +10,6 @@ public interface Visitor {
     public void visit(ReturnType ReturnType);
     public void visit(FormParameters FormParameters);
     public void visit(FormalParamDecl FormalParamDecl);
-    public void visit(MethTypeName MethTypeName);
     public void visit(StatementList StatementList);
     public void visit(Factor Factor);
     public void visit(VarList VarList);
@@ -51,6 +50,11 @@ public interface Visitor {
     public void visit(MulOpMul MulOpMul);
     public void visit(AddMinus AddMinus);
     public void visit(AddPlus AddPlus);
+    public void visit(ModifikacijaCap ModifikacijaCap);
+    public void visit(ModifikacijaKvadrat ModifikacijaKvadrat);
+    public void visit(SumaNiza SumaNiza);
+    public void visit(MaxNiza MaxNiza);
+    public void visit(ModifikacijaDvoupitnik ModifikacijaDvoupitnik);
     public void visit(ModifikacijaBrojevi ModifikacijaBrojevi);
     public void visit(ModifikacijaKapica ModifikacijaKapica);
     public void visit(ModifikacijaDolar ModifikacijaDolar);
@@ -66,6 +70,8 @@ public interface Visitor {
     public void visit(SinglTerm SinglTerm);
     public void visit(MultiplTerms MultiplTerms);
     public void visit(HashMod HashMod);
+    public void visit(FactorMulti FactorMulti);
+    public void visit(ExprFaktorijel ExprFaktorijel);
     public void visit(ModifikacijaHash ModifikacijaHash);
     public void visit(SingleTermMinus SingleTermMinus);
     public void visit(SingleTerm SingleTerm);
@@ -86,6 +92,10 @@ public interface Visitor {
     public void visit(DesignatorAssignment DesignatorAssignment);
     public void visit(NoOptionalPrint NoOptionalPrint);
     public void visit(PrintOptional PrintOptional);
+    public void visit(Labela Labela);
+    public void visit(SwapStatement SwapStatement);
+    public void visit(GotoStatement GotoStatement);
+    public void visit(LabelStatement LabelStatement);
     public void visit(ReturnStatement2 ReturnStatement2);
     public void visit(ReturnStatement1 ReturnStatement1);
     public void visit(PrintStatement PrintStatement);

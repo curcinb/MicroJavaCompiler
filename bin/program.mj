@@ -47,7 +47,7 @@ program test301
 		
 		print(bt ? bodovi : bodovi + 10);
 		print(false ? bodovi + 20 : bodovi + 30);
-		print(bodovi > 10 ? '+' : bodovi < 5 ? '*' : '-');
+		print(bodovi > 10 ? '+' : '-');
 	}
 }
 

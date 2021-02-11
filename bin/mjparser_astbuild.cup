@@ -61,6 +61,9 @@ terminal DOLAR;
 terminal KAPICA;
 terminal CRTA;
 terminal DVOTACKA;
+terminal DVOUPITNIK;
+terminal GOTO;
+
 
 //Dodatak za januar!
 terminal UPITNIK;
@@ -84,12 +87,23 @@ nonterminal MulOp MulOp;
 nonterminal AssignOp AssignOp;
 nonterminal DesignatorNiz DesignatorNiz;
 nonterminal HashMod HashMod;
+nonterminal Labela Labela;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethodName, Designator;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct NewType, ReturnType, DesignatorStatement, Value;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct VarDecl, VarList, VarDef, Factor, Expr, Term, Terms, ConstDecl;
 
+
+//Vezbanje:
+terminal KVAD;
+terminal UZV;
+terminal MULTI;
+terminal MAX;
+terminal SUM;
+terminal HASHHASH;
+terminal CAP;
+terminal SWAP;
 
 Program ::= (Program) PROG ProgName:p DeclList:D1 LEFT_BRACE MethDeclList:M2 RIGHT_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :};
 
@@ -133,9 +147,9 @@ VarDef ::= (VarDefinition) IDENT:varName {: RESULT=new VarDefinition(varName); R
 		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET {: RESULT=new VarDefArr(varName); RESULT.setLine(varNameleft); :}
 		   ;
 
-MethDecl ::= (MethodDeclaration) MethTypeName:M1 LEFT_PAREN FormParameters:F2 RIGHT_PAREN VarDeclList:V3 LEFT_BRACE StatementList:S4 RIGHT_BRACE {: RESULT=new MethodDeclaration(M1, F2, V3, S4); RESULT.setLine(M1left); :};
+MethDecl ::= (MethodDeclaration) MethodName:M1 LEFT_PAREN FormParameters:F2 RIGHT_PAREN VarDeclList:V3 LEFT_BRACE StatementList:S4 RIGHT_BRACE {: RESULT=new MethodDeclaration(M1, F2, V3, S4); RESULT.setLine(M1left); :};
  
-MethTypeName ::= (MethodName) ReturnType:returnType IDENT:methName {: RESULT=new MethodName(returnType, methName); RESULT.setLine(returnTypeleft); :};
+MethodName ::= (MethodName) VOID IDENT:methName {: RESULT=new MethodName(methName); RESULT.setLine(methNameleft); :};
 
 ReturnType ::= (ReturnTypeNormal) NewType:tip {: RESULT=new ReturnTypeNormal(tip); RESULT.setLine(tipleft); :}
 			   |
@@ -177,8 +191,16 @@ Statement ::= (StatementDesignator) DesignatorStatement:D1 SEMICOLON {: RESULT=n
 			  |
 			  (ReturnStatement1) RETURN SEMICOLON {: RESULT=new ReturnStatement1(); :}
 			  |
-			  (ReturnStatement2) RETURN Expr:E1 SEMICOLON {: RESULT=new ReturnStatement2(E1); RESULT.setLine(E1left); :}  
+			  (ReturnStatement2) RETURN Expr:E1 SEMICOLON {: RESULT=new ReturnStatement2(E1); RESULT.setLine(E1left); :} 
+			  |
+			  (LabelStatement) Labela:L1 DVOTACKA2 Statement:S2 {: RESULT=new LabelStatement(L1, S2); RESULT.setLine(L1left); :}
+			  |
+			  (GotoStatement) GOTO DVOTACKA2 IDENT:I1 SEMICOLON {: RESULT=new GotoStatement(I1); RESULT.setLine(I1left); :}
+			  |
+			  (SwapStatement) DesignatorNiz:D1 SWAP Expr:prvi COMMA Expr:drugi SWAP SEMICOLON {: RESULT=new SwapStatement(D1, prvi, drugi); RESULT.setLine(D1left); :}
 			  ;
+
+Labela ::= (Labela) IDENT:I1 {: RESULT=new Labela(I1); RESULT.setLine(I1left); :};
 
 OptionalPrint ::= (PrintOptional) COMMA NUMBER:val {: RESULT=new PrintOptional(val); RESULT.setLine(valleft); :}
 				  |
@@ -225,6 +247,10 @@ Terms ::= (MultipleTerms) Terms:T1 AddOp:A2 Term:T3 {: RESULT=new MultipleTerms(
 		  (SingleTermMinus) MINUS Term:T1 {: RESULT=new SingleTermMinus(T1); RESULT.setLine(T1left); :}
 		  |
 		  (ModifikacijaHash) LEFT_BRACKET Terms:T1 HashMod:H2 HASH Terms:t2 RIGHT_BRACKET {: RESULT=new ModifikacijaHash(T1, H2, t2); RESULT.setLine(T1left); :}
+		  |
+		  (ExprFaktorijel) Term:T1 UZV {: RESULT=new ExprFaktorijel(T1); RESULT.setLine(T1left); :}
+		  |
+		  (FactorMulti) MULTI Term:T1 {: RESULT=new FactorMulti(T1); RESULT.setLine(T1left); :}
 		  ;
 
 HashMod ::= (HashMod) {: RESULT=new HashMod(); :} /* epsilon */ ; //U generatoru da bih uradio % 65 ('A') nad prvim izrazom Expr, pre nego sto na stek stavim drugi
@@ -258,6 +284,16 @@ Factor ::= (NumFactor) NUMBER:N1 {: RESULT=new NumFactor(N1); RESULT.setLine(N1l
 		   (ModifikacijaKapica) KAPICA Factor:F1 {: RESULT=new ModifikacijaKapica(F1); RESULT.setLine(F1left); :}// ^4*5+6 - Moze Factor(4), Term(20) i moze Expr(26)
 		   |
 		   (ModifikacijaBrojevi) CRTA Expr:E1 DVOTACKA Expr:E2 DVOTACKA Expr:E3 CRTA {: RESULT=new ModifikacijaBrojevi(E1, E2, E3); RESULT.setLine(E1left); :} // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
+		   |
+		   (ModifikacijaDvoupitnik) DVOUPITNIK Designator:D1 {: RESULT=new ModifikacijaDvoupitnik(D1); RESULT.setLine(D1left); :}
+		   |
+		   (MaxNiza) MAX LEFT_PAREN DesignatorNiz:D1 RIGHT_PAREN {: RESULT=new MaxNiza(D1); RESULT.setLine(D1left); :}
+		   |
+		   (SumaNiza) SUM LEFT_PAREN Designator:D1 RIGHT_PAREN {: RESULT=new SumaNiza(D1); RESULT.setLine(D1left); :}
+		   |
+		   (ModifikacijaKvadrat) KVAD Factor:F1 {: RESULT=new ModifikacijaKvadrat(F1); RESULT.setLine(F1left); :}
+		   |
+		   (ModifikacijaCap) CAP LEFT_PAREN Factor:F1 RIGHT_PAREN {: RESULT=new ModifikacijaCap(F1); RESULT.setLine(F1left); :}
 		   ;
 
 AddOp ::= (AddPlus) PLUS {: RESULT=new AddPlus(); :}

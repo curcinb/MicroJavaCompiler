@@ -3,6 +3,7 @@ package rs.ac.bg.etf.pp1;
 import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
+import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.*;
 import rs.etf.pp1.symboltable.concepts.*;
 import rs.etf.pp1.symboltable.visitors.DumpSymbolTableVisitor;
@@ -154,27 +155,39 @@ public class SemanticPass extends VisitorAdaptor {
 
 	// ok
 	public void visit(MethodDeclaration methodDeclaration) {
-		if (currentMethod != null) {
+		/*if (currentMethod != null) {
 			Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
 			report_info("Zavrsava se obrada funkcije: '" + currentMethod.getName() + "' -", methodDeclaration);
 			currentMethod = null;
+		}*/
+		if("main".equals(methodDeclaration.getMethodName().getMethName())) {
+			if(currentMethod.getType().getKind() != Struct.None) {
+				report_error("Semanticka greska! Metoda main mora da bude void!", methodDeclaration);
+			}
 		}
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
+		currentMethod=null;
 	}
 
 	// ok
 	public void visit(MethodName methodName) {
-		Obj tmp = Tab.currentScope().findSymbol(methodName.getMethName());
+		/*Obj tmp = Tab.currentScope().findSymbol(methodName.getMethName());
 
 		if (tmp == null) {
-			currentMethod = Tab.insert(Obj.Meth, methodName.getMethName(), methodName.getReturnType().struct);
+			currentMethod = Tab.insert(Obj.Meth, methodName.getMethName(), new Struct(Struct.None));
 			methodName.obj = currentMethod;
 			currentMethod.setLevel(0);
 			Tab.openScope();
 			report_info("Obradjuje se funkcija: " + methodName.getMethName(), methodName);
 		} else {
 			report_error("Greska! Metoda: " + methodName.getMethName() + "  vec postoji!", null);
-		}
+		}*/
+		currentMethod = Tab.insert(Obj.Meth, methodName.getMethName(), new Struct(Struct.None));
+		methodName.obj = currentMethod;
+		Tab.openScope();
+		report_info("Obradjuje se funkcija: " + methodName.getMethName(), methodName);
 	}
 
 	public void visit(ReturnTypeVoid returnTypeVoid) {
@@ -218,7 +231,6 @@ public class SemanticPass extends VisitorAdaptor {
 	// ok
 	public void visit(PrintStatement printStatement) {
 		Struct tmp = printStatement.getExpr().struct;
-
 		if (tmp != Tab.intType && tmp != Tab.charType && tmp != boolTip) {
 			report_error("Greska! Na liniji: " + printStatement.getLine() + ": PRINT prima samo char, int ili boool!",
 					null);
@@ -416,7 +428,8 @@ public class SemanticPass extends VisitorAdaptor {
 			designatorFactorFuncCall.struct = Tab.noType;
 		}
 	}
-
+	
+	//TODO: 
 	public void visit(ModifikacijaAt modifikacijaAt) {
 		modifikacijaAt.struct = Tab.intType; // Sta je rezultat primene operatora
 		Struct type = modifikacijaAt.getDesignator().obj.getType();
@@ -431,7 +444,8 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 	}
-
+	
+	//TODO: 
 	public void visit(ModifikacijaDolar modifikacijaD) {
 		modifikacijaD.struct = Tab.charType; // Sta je rezultat primene operatora
 		Struct type = modifikacijaD.getDesignator().obj.getType();
@@ -442,6 +456,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
+	//TODO: 
 	public void visit(ModifikacijaKapica modifikacijaK) {
 		modifikacijaK.struct = new Struct(Struct.Array, Tab.charType);
 
@@ -451,6 +466,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
+	//TODO: 
 	public void visit(ModifikacijaBrojevi modifikacijaB) {
 		modifikacijaB.struct = Tab.intType;
 
@@ -469,7 +485,25 @@ public class SemanticPass extends VisitorAdaptor {
 			modifikacijaB.struct = Tab.noType;
 		}
 	}
+	
+	//TODO: 
+	public void visit(ModifikacijaHash exprHash) {
+		Struct tmp1 = exprHash.getTerms().struct;
+		Struct tmp2 = exprHash.getTerms1().struct;
 
+		if (!(tmp1 == Tab.charType) && !(exprHash.getTerms() instanceof ModifikacijaHash)) {
+			report_error("Prvi expr nije char!", exprHash);
+		}
+		if (!(tmp2 == Tab.intType)) {
+			report_error("Drugi expr nije int!", exprHash);
+		}
+	}
+
+	//TODO:
+	public void visit (ModifikacijaDvoupitnik modifikacijaDvoupitnik) {
+		modifikacijaDvoupitnik.struct= Tab.intType;
+	}
+	
 	public void visit(IntType intType) {
 		intType.struct = Tab.intType;
 	}
@@ -505,18 +539,6 @@ public class SemanticPass extends VisitorAdaptor {
 		expression.struct = expression.getTerms().struct;
 	}
 
-	public void visit(ModifikacijaHash exprHash) {
-		Struct tmp1 = exprHash.getTerms().struct;
-		Struct tmp2 = exprHash.getTerms1().struct;
-
-		if (!(tmp1 == Tab.charType) && !(exprHash.getTerms() instanceof ModifikacijaHash)) {
-			report_error("Prvi expr nije char!", exprHash);
-		}
-		if (!(tmp2 == Tab.intType)) {
-			report_error("Drugi expr nije int!", exprHash);
-		}
-	}
-
 	public void visit(CondFactExpr condFactExpr) {
 		// Zapamtio sam kog su tipa izrazi:
 		Struct tipCondFact1 = condFactExpr.getExpr().struct;
@@ -529,14 +551,12 @@ public class SemanticPass extends VisitorAdaptor {
 		else {
 			condFactExpr.struct = tipCondFact1;
 		}
-		
 	}
 
 	public void visit(CondSingle condSingle) {
 		if (condSingle.getTerms().struct != boolTip) {
 			report_error("Uslov mora da bude tipa bool!", condSingle);
 		}
-
 	}
 
 	public void visit(CondDouble condDouble) {
@@ -572,6 +592,101 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(AssignErr aE) {
 		report_info("Oporavak od greske kod iskaza dodele! '", aE);
 	}
+	
+	//TODO:
+	//Vezbanje:
+	public void visit(LabelStatement ls) {}
+	public void visit(GotoStatement gs) {}
+	
+	/*
+	//Zamena elemenata niza:
+	public void visit(SwapStatement ss) {
+		Obj designator = ss.getDesignatorNiz().getDesignator().obj;
+		if (designator == Tab.noObj) {
+			report_error("Greska!", ss);
+		} else {
+		//if designator not Array type error, else, report info
+			if (!(ss.getDesignatorNiz() instanceof DesignatorNiz) || (designator.getType().getKind() != Struct.Array)) {
+				report_error("Designator nije niz!", ss);
+			} 
+			else {
+				report_info("Zamena mesta!", ss);
+			}
+		}
+	}
+	*/
+	
+	/*
+	//Kvadriranje broja:
+	public void visit(ModifikacijaKvadrat mK) {
+		if (mK.getFactor().struct != Tab.intType) {
+			report_error("Neodgovarajuci tip u factorSquare, mora biti tipa int", mK);
+			mK.struct = Tab.noType;
+		}
+		mK.struct = Tab.intType;
+	}
+	*/
+	
+	/*
+	//Faktorijel broja:
+	 public void visit(ExprFaktorijel exprFakt) {
+		 if(exprFakt.getTerm().struct != Tab.intType) {
+			report_error("Neodgovarajuci tip u exprFaktorijel, mora biti tipa int", exprFakt);
+			exprFakt.struct = Tab.noType;
+		 }
+		 exprFakt.struct = Tab.intType;
+	 }
+	 */
+	
+	/*
+	//Ispis vise puta:
+	//!!x = x * x * x (i tako x puta) npr #3=3*3*3. #2=2*2
+	public void visit(FactorMulti factorMulti) {
+		if (factorMulti.getTerm().struct != Tab.intType) {
+			report_error("Neodgovarajuci tip u factorMulti, mora biti tipa int", factorMulti);
+			factorMulti.struct = Tab.noType;
+		}	
+		factorMulti.struct = Tab.intType;
+	}
+	*/
+	
+	/*
+	//Maksimum niza:
+	public void visit(MaxNiza factorMaxArr) {
+		if(factorMaxArr.getDesignatorNiz().getDesignator().obj.getType().getKind() != Struct.Array) {
+			report_error("Designator neodgovarajuci, mora biti niz!", factorMaxArr);
+		}
+		if(factorMaxArr.getDesignatorNiz().getDesignator().obj.getType().getElemType() != Tab.intType) {
+			report_error("Designator neodgovarajuceg tipa, mora biti int!", factorMaxArr);
+		}
+		factorMaxArr.struct = Tab.intType;
+	}
+	*/
+
+	/*
+	//Suma niza:
+	 public void visit(SumaNiza factorSumArr) {
+		 if(factorSumArr.getDesignator().obj.getType().getKind() != Struct.Array) {
+			report_error("Designator neodgovarajuci, mora biti niz!", factorSumArr);		
+		 }
+		 if(factorSumArr.getDesignator().obj.getType().getElemType() != Tab.intType) {
+			report_error("Designator neodgovarajuceg tipa, mora biti int!", factorSumArr);
+		 }
+		factorSumArr.struct = Tab.intType;
+	 }
+	 */
+	
+	/*
+	//Veliko slovo:
+	public void visit(ModifikacijaCap factorCap) {
+		//Provera da li je factor tipa Char i ne treba da bude niz, vec konstanta, varijabla ili element
+		if (factorCap.getFactor().struct != Tab.charType) {
+			report_error("Arg za factorCap op mora biti char", factorCap);
+			factorCap.struct = Tab.noType;
+		}
+		factorCap.struct = Tab.charType;
+	}
+	*/
 	
 	public boolean passed() {
 		return !errorDetected;

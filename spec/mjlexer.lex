@@ -41,6 +41,9 @@ import java_cup.runtime.Symbol;
 "read"		{ return new_symbol(sym.READ, yytext()); }
 "void"		{ return new_symbol(sym.VOID, yytext()); }
 "new"		{ return new_symbol(sym.NEW, yytext()); }
+"GOTO"		{ return new_symbol(sym.GOTO, yytext()); }
+
+
 
 //Operatori:
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
@@ -73,6 +76,17 @@ import java_cup.runtime.Symbol;
 
 "?"			{ return new_symbol(sym.UPITNIK, yytext()); }
 ":"			{ return new_symbol(sym.DVOTACKA2, yytext()); }
+"??"		{ return new_symbol(sym.DVOUPITNIK, yytext()); }
+
+
+//Vezbanje:
+"^^"		{ return new_symbol(sym.KVAD, yytext()); }
+"!" 		{ return new_symbol(sym.UZV, yytext()); }
+"!!"		{ return new_symbol(sym.MULTI, yytext()); }
+"max"		{ return new_symbol(sym.MAX, yytext()); }
+"sum" 	    { return new_symbol(sym.SUM, yytext()); }
+"cap"		{ return new_symbol(sym.CAP, yytext()); }
+"~"			{ return new_symbol(sym.SWAP, yytext()); }
 
 //Relop:
 "=="		{ return new_symbol(sym.JEDNAKO, yytext()); }

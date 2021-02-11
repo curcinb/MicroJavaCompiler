@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2021 20:21:15
+// 9/1/2021 23:8:18
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,7 +10,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ReturnType ReturnType) { }
     public void visit(FormParameters FormParameters) { }
     public void visit(FormalParamDecl FormalParamDecl) { }
-    public void visit(MethTypeName MethTypeName) { }
     public void visit(StatementList StatementList) { }
     public void visit(Factor Factor) { }
     public void visit(VarList VarList) { }
@@ -51,6 +50,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MulOpMul MulOpMul) { visit(); }
     public void visit(AddMinus AddMinus) { visit(); }
     public void visit(AddPlus AddPlus) { visit(); }
+    public void visit(ModifikacijaCap ModifikacijaCap) { visit(); }
+    public void visit(ModifikacijaKvadrat ModifikacijaKvadrat) { visit(); }
+    public void visit(SumaNiza SumaNiza) { visit(); }
+    public void visit(MaxNiza MaxNiza) { visit(); }
+    public void visit(ModifikacijaDvoupitnik ModifikacijaDvoupitnik) { visit(); }
     public void visit(ModifikacijaBrojevi ModifikacijaBrojevi) { visit(); }
     public void visit(ModifikacijaKapica ModifikacijaKapica) { visit(); }
     public void visit(ModifikacijaDolar ModifikacijaDolar) { visit(); }
@@ -66,6 +70,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(SinglTerm SinglTerm) { visit(); }
     public void visit(MultiplTerms MultiplTerms) { visit(); }
     public void visit(HashMod HashMod) { visit(); }
+    public void visit(FactorMulti FactorMulti) { visit(); }
+    public void visit(ExprFaktorijel ExprFaktorijel) { visit(); }
     public void visit(ModifikacijaHash ModifikacijaHash) { visit(); }
     public void visit(SingleTermMinus SingleTermMinus) { visit(); }
     public void visit(SingleTerm SingleTerm) { visit(); }
@@ -86,6 +92,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorAssignment DesignatorAssignment) { visit(); }
     public void visit(NoOptionalPrint NoOptionalPrint) { visit(); }
     public void visit(PrintOptional PrintOptional) { visit(); }
+    public void visit(Labela Labela) { visit(); }
+    public void visit(SwapStatement SwapStatement) { visit(); }
+    public void visit(GotoStatement GotoStatement) { visit(); }
+    public void visit(LabelStatement LabelStatement) { visit(); }
     public void visit(ReturnStatement2 ReturnStatement2) { visit(); }
     public void visit(ReturnStatement1 ReturnStatement1) { visit(); }
     public void visit(PrintStatement PrintStatement) { visit(); }

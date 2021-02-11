@@ -61,6 +61,9 @@ terminal DOLAR;
 terminal KAPICA;
 terminal CRTA;
 terminal DVOTACKA;
+terminal DVOUPITNIK;
+terminal GOTO;
+
 
 //Dodatak za januar!
 terminal UPITNIK;
@@ -73,12 +76,23 @@ nonterminal DeclList, MethDeclList, ConstList, FormParameters, FormPars, VarDecl
 nonterminal Statement, OptionalPrint, AddOp, MulOp, AssignOp;
 nonterminal DesignatorNiz;
 nonterminal HashMod;
+nonterminal Labela;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethDecl, MethodName, Designator;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct NewType, ReturnType, DesignatorStatement, Value;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct VarDecl, VarList, VarDef, Factor, Expr, Term, Terms, ConstDecl;
 
+
+//Vezbanje:
+terminal KVAD;
+terminal UZV;
+terminal MULTI;
+terminal MAX;
+terminal SUM;
+terminal HASHHASH;
+terminal CAP;
+terminal SWAP;
 
 Program ::= (Program) PROG ProgName:p DeclList LEFT_BRACE MethDeclList RIGHT_BRACE;
 
@@ -122,9 +136,9 @@ VarDef ::= (VarDefinition) IDENT:varName
 		   (VarDefArr) IDENT:varName LEFT_BRACKET RIGHT_BRACKET
 		   ;
 
-MethDecl ::= (MethodDeclaration) MethTypeName LEFT_PAREN FormParameters RIGHT_PAREN VarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+MethDecl ::= (MethodDeclaration) MethodName LEFT_PAREN FormParameters RIGHT_PAREN VarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
  
-MethTypeName ::= (MethodName) ReturnType:returnType IDENT:methName;
+MethodName ::= (MethodName) VOID IDENT:methName;
 
 ReturnType ::= (ReturnTypeNormal) NewType:tip
 			   |
@@ -166,8 +180,16 @@ Statement ::= (StatementDesignator) DesignatorStatement SEMICOLON
 			  |
 			  (ReturnStatement1) RETURN SEMICOLON
 			  |
-			  (ReturnStatement2) RETURN Expr SEMICOLON  
+			  (ReturnStatement2) RETURN Expr SEMICOLON 
+			  |
+			  (LabelStatement) Labela DVOTACKA2 Statement
+			  |
+			  (GotoStatement) GOTO DVOTACKA2 IDENT SEMICOLON
+			  |
+			  (SwapStatement) DesignatorNiz SWAP Expr:prvi COMMA Expr:drugi SWAP SEMICOLON
 			  ;
+
+Labela ::= (Labela) IDENT;
 
 OptionalPrint ::= (PrintOptional) COMMA NUMBER:val
 				  |
@@ -214,6 +236,10 @@ Terms ::= (MultipleTerms) Terms AddOp Term
 		  (SingleTermMinus) MINUS Term
 		  |
 		  (ModifikacijaHash) LEFT_BRACKET Terms HashMod HASH Terms:t2 RIGHT_BRACKET
+		  |
+		  (ExprFaktorijel) Term UZV
+		  |
+		  (FactorMulti) MULTI Term
 		  ;
 
 HashMod ::= (HashMod) /* epsilon */ ; //U generatoru da bih uradio % 65 ('A') nad prvim izrazom Expr, pre nego sto na stek stavim drugi
@@ -247,6 +273,16 @@ Factor ::= (NumFactor) NUMBER
 		   (ModifikacijaKapica) KAPICA Factor// ^4*5+6 - Moze Factor(4), Term(20) i moze Expr(26)
 		   |
 		   (ModifikacijaBrojevi) CRTA Expr DVOTACKA Expr DVOTACKA Expr CRTA // 6 * | 2*3+5 : //Pazi ovde kad dodajes na prioritete!
+		   |
+		   (ModifikacijaDvoupitnik) DVOUPITNIK Designator
+		   |
+		   (MaxNiza) MAX LEFT_PAREN DesignatorNiz RIGHT_PAREN
+		   |
+		   (SumaNiza) SUM LEFT_PAREN Designator RIGHT_PAREN
+		   |
+		   (ModifikacijaKvadrat) KVAD Factor
+		   |
+		   (ModifikacijaCap) CAP LEFT_PAREN Factor RIGHT_PAREN
 		   ;
 
 AddOp ::= (AddPlus) PLUS
